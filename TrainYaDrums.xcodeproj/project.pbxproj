@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7F7EFCAF07EC4424BE294A9 /* Pods_TrainYaDrums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */; };
+		E319501C20E82D6000A50A55 /* Drums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319501B20E82D6000A50A55 /* Drums.swift */; };
+		E319501E20E8347A00A50A55 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E319501D20E8347A00A50A55 /* Drums */; };
 		E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DF820E194DD0095856A /* AppDelegate.swift */; };
 		E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DFA20E194DD0095856A /* ViewController.swift */; };
 		E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5DFC20E194DD0095856A /* Main.storyboard */; };
@@ -15,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11DB5B01A7C2A1F9E31477D1 /* Pods-TrainYaDrums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainYaDrums.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainYaDrums/Pods-TrainYaDrums.debug.xcconfig"; sourceTree = "<group>"; };
+		406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainYaDrums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E319501B20E82D6000A50A55 /* Drums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drums.swift; sourceTree = "<group>"; };
+		E319501D20E8347A00A50A55 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Drums; path = ../../KeyboardDrummer/Drums; sourceTree = "<group>"; };
 		E3AA5DF520E194DC0095856A /* TrainYaDrums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainYaDrums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5DF820E194DD0095856A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA5DFA20E194DD0095856A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,7 @@
 		E3AA5DFF20E194DE0095856A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AA5E0220E194DE0095856A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AA5E0420E194DE0095856A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBE5BEDD681DB24D8BAEBC44 /* Pods-TrainYaDrums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainYaDrums.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainYaDrums/Pods-TrainYaDrums.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7F7EFCAF07EC4424BE294A9 /* Pods_TrainYaDrums.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DDCEF75F2DD83673E9D3C2A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11DB5B01A7C2A1F9E31477D1 /* Pods-TrainYaDrums.debug.xcconfig */,
+				EBE5BEDD681DB24D8BAEBC44 /* Pods-TrainYaDrums.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB1DB0759DC0B976B2F36765 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E3AA5DEC20E194DC0095856A = {
 			isa = PBXGroup;
 			children = (
 				E3AA5DF720E194DC0095856A /* TrainYaDrums */,
 				E3AA5DF620E194DC0095856A /* Products */,
+				0DDCEF75F2DD83673E9D3C2A /* Pods */,
+				DB1DB0759DC0B976B2F36765 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +82,14 @@
 		E3AA5DF720E194DC0095856A /* TrainYaDrums */ = {
 			isa = PBXGroup;
 			children = (
+				E319501D20E8347A00A50A55 /* Drums */,
 				E3AA5DF820E194DD0095856A /* AppDelegate.swift */,
 				E3AA5DFA20E194DD0095856A /* ViewController.swift */,
 				E3AA5DFC20E194DD0095856A /* Main.storyboard */,
 				E3AA5DFF20E194DE0095856A /* Assets.xcassets */,
 				E3AA5E0120E194DE0095856A /* LaunchScreen.storyboard */,
 				E3AA5E0420E194DE0095856A /* Info.plist */,
+				E319501B20E82D6000A50A55 /* Drums.swift */,
 			);
 			path = TrainYaDrums;
 			sourceTree = "<group>";
@@ -71,6 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3AA5E0720E194DE0095856A /* Build configuration list for PBXNativeTarget "TrainYaDrums" */;
 			buildPhases = (
+				A782C4D7024C419832B932D8 /* [CP] Check Pods Manifest.lock */,
 				E3AA5DF120E194DC0095856A /* Sources */,
 				E3AA5DF220E194DC0095856A /* Frameworks */,
 				E3AA5DF320E194DC0095856A /* Resources */,
@@ -122,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E319501E20E8347A00A50A55 /* Drums in Resources */,
 				E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */,
 				E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */,
 				E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */,
@@ -130,12 +162,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A782C4D7024C419832B932D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrainYaDrums-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3AA5DF120E194DC0095856A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */,
+				E319501C20E82D6000A50A55 /* Drums.swift in Sources */,
 				E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +332,7 @@
 		};
 		E3AA5E0820E194DE0095856A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11DB5B01A7C2A1F9E31477D1 /* Pods-TrainYaDrums.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +350,7 @@
 		};
 		E3AA5E0920E194DE0095856A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBE5BEDD681DB24D8BAEBC44 /* Pods-TrainYaDrums.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
