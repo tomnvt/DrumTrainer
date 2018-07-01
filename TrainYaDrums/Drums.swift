@@ -11,9 +11,9 @@ import AudioKit
 
 class Drums {
     
-    static let drums = AKAppleSampler()
+    let drums = AKAppleSampler()
     
-    static var drumFilesArray : [AKAudioFile?] = {
+    var drumFilesArray : [AKAudioFile?] = {
         var bassDrumFile : AKAudioFile?
         var snareDrumFile : AKAudioFile?
         var closedHiHatFile : AKAudioFile?
@@ -26,7 +26,7 @@ class Drums {
         return array
     }()
     
-    static let drumFilesPartOne = ["Drums/bass_drum",
+    let drumFilesPartOne = ["Drums/bass_drum",
                             "Drums/snare",
                             "Drums/closed_hi_hat",
                             "Drums/open_hi_hat",
@@ -35,7 +35,7 @@ class Drums {
                             "Drums/hi_tom",
                             "Drums/clap"]
     
-    static let drumFilesPartTwo = ["_C1.wav",
+    let drumFilesPartTwo = ["_C1.wav",
                             "_D1.wav",
                             "_F#1.wav",
                             "_A#1.wav",
@@ -43,8 +43,17 @@ class Drums {
                             "_B1.wav",
                             "_D2.wav",
                             "_D#1.wav"]
-    
-    static func loadDrums() {
+
+    func loadDrums() {
+        for index in 0..<drumFilesArray.count {
+            do {
+                drumFilesArray[index] = try AKAudioFile(readFileName: drumFilesPartOne[index] + "" + drumFilesPartTwo[index])
+            }
+            catch {
+                print("Error while setting drum paths")
+            }
+        }
+        
         var drumFiles = [AKAudioFile]()
         for drum in drumFilesArray {
             if let drumFile = drum { drumFiles.append(drumFile) }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A7F7EFCAF07EC4424BE294A9 /* Pods_TrainYaDrums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */; };
 		E319501C20E82D6000A50A55 /* Drums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319501B20E82D6000A50A55 /* Drums.swift */; };
-		E319501E20E8347A00A50A55 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E319501D20E8347A00A50A55 /* Drums */; };
+		E3A8811F20E8B95A005E2361 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E3A8811E20E8B95A005E2361 /* Drums */; };
 		E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DF820E194DD0095856A /* AppDelegate.swift */; };
 		E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DFA20E194DD0095856A /* ViewController.swift */; };
 		E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5DFC20E194DD0095856A /* Main.storyboard */; };
@@ -21,7 +21,7 @@
 		11DB5B01A7C2A1F9E31477D1 /* Pods-TrainYaDrums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainYaDrums.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainYaDrums/Pods-TrainYaDrums.debug.xcconfig"; sourceTree = "<group>"; };
 		406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainYaDrums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E319501B20E82D6000A50A55 /* Drums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drums.swift; sourceTree = "<group>"; };
-		E319501D20E8347A00A50A55 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Drums; path = ../../KeyboardDrummer/Drums; sourceTree = "<group>"; };
+		E3A8811E20E8B95A005E2361 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Drums; path = ../KeyboardDrummer/Drums; sourceTree = "<group>"; };
 		E3AA5DF520E194DC0095856A /* TrainYaDrums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainYaDrums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5DF820E194DD0095856A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA5DFA20E194DD0095856A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +68,7 @@
 				E3AA5DF620E194DC0095856A /* Products */,
 				0DDCEF75F2DD83673E9D3C2A /* Pods */,
 				DB1DB0759DC0B976B2F36765 /* Frameworks */,
+				E3A8811E20E8B95A005E2361 /* Drums */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,7 +83,6 @@
 		E3AA5DF720E194DC0095856A /* TrainYaDrums */ = {
 			isa = PBXGroup;
 			children = (
-				E319501D20E8347A00A50A55 /* Drums */,
 				E3AA5DF820E194DD0095856A /* AppDelegate.swift */,
 				E3AA5DFA20E194DD0095856A /* ViewController.swift */,
 				E3AA5DFC20E194DD0095856A /* Main.storyboard */,
@@ -153,7 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E319501E20E8347A00A50A55 /* Drums in Resources */,
+				E3A8811F20E8B95A005E2361 /* Drums in Resources */,
 				E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */,
 				E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */,
 				E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */,

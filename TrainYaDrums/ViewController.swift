@@ -10,15 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let drums = Drums()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Drums.loadDrums()
+        drums.loadDrums()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
