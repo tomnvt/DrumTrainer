@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioKit
 
 class ViewController: UIViewController {
     
@@ -15,6 +16,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         drums.loadDrums()
+        
+        AudioKit.output = drums.drums
+        
+        do {
+            try AudioKit.start()
+        } catch {
+            print("Error while starting AudioKit.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         print(sender.tag)
+        drums.play(note_tag: sender.tag)
     }
     
 }

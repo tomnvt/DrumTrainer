@@ -65,4 +65,46 @@ class Drums {
         }
     }
     
+    func play(note_tag: Int) {
+        switch note_tag {
+        case 0:
+            playDrum(note: 36)
+        case 1:
+            playDrum(note: 38)
+        case 2:
+            stopDrum(note: 46)
+            playDrum(note: 42)
+        case 3:
+            playDrum(note: 46)
+        case 4:
+            playDrum(note: 47)
+        case 5:
+            playDrum(note: 41)
+        case 38:
+            playDrum(note: 50)
+        case 40:
+            playDrum(note: 39)
+        default:
+            break
+        }
+    }
+    
+    func playDrum(note: Int) {
+        do {
+            print(String(note) + " played")
+            try drums.play(noteNumber: MIDINoteNumber(note))
+        }
+        catch {
+            print("Error while playing drums.")
+        }
+    }
+    
+    func stopDrum(note: Int) {
+        do {
+            try drums.stop(noteNumber: MIDINoteNumber(note - 12))
+        }
+        catch {
+            print("Error while playing drums.")
+        }
+    }
 }
