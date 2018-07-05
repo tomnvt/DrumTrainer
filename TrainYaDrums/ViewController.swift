@@ -32,7 +32,6 @@ class ViewController: UIViewController {
 
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        print(sender.tag)
         drums.play(note_tag: sender.tag)
     }
     

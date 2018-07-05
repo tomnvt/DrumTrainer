@@ -80,9 +80,9 @@ class Drums {
             playDrum(note: 47)
         case 5:
             playDrum(note: 41)
-        case 38:
+        case 6:
             playDrum(note: 50)
-        case 40:
+        case 7:
             playDrum(note: 39)
         default:
             break
@@ -91,8 +91,7 @@ class Drums {
     
     func playDrum(note: Int) {
         do {
-            print(String(note) + " played")
-            try drums.play(noteNumber: MIDINoteNumber(note))
+            try drums.play(noteNumber: MIDINoteNumber(note - 12))
         }
         catch {
             print("Error while playing drums.")
