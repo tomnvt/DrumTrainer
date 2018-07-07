@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7F7EFCAF07EC4424BE294A9 /* Pods_TrainYaDrums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */; };
 		E319501C20E82D6000A50A55 /* Drums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319501B20E82D6000A50A55 /* Drums.swift */; };
 		E3A8811F20E8B95A005E2361 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E3A8811E20E8B95A005E2361 /* Drums */; };
 		E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DF820E194DD0095856A /* AppDelegate.swift */; };
@@ -37,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7F7EFCAF07EC4424BE294A9 /* Pods_TrainYaDrums.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

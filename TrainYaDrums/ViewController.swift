@@ -35,5 +35,8 @@ class ViewController: UIViewController {
         drums.play(note_tag: sender.tag)
     }
     
+    @IBAction func clickButtonPressed(_ sender: UIButton) {
+        print("Click sound will start or stop playing")
+    }
 }
 
