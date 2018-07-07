@@ -25,11 +25,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykk-3l-d12">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="141"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="61.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7V-YI-ZRh">
+                                                <rect key="frame" x="0.0" y="79.5" width="343" height="61.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="120" minValue="20" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="thP-s2-NVF">
+                                                <rect key="frame" x="-2" y="159" width="347" height="62.5"/>
+                                            </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTz-Jd-Y0o">
-                                                <rect key="frame" x="0.0" y="159" width="343" height="141"/>
+                                                <rect key="frame" x="0.0" y="238.5" width="343" height="61.5"/>
                                                 <color key="backgroundColor" red="0.93333333330000001" green="0.83921568629999999" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="METRONOME">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
