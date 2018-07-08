@@ -260,6 +260,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bpmSlider" destination="thP-s2-NVF" id="ea8-SL-eV6"/>
                         <outlet property="bpmValueLabel" destination="b7V-YI-ZRh" id="cPk-0z-4U0"/>
                     </connections>
                 </viewController>

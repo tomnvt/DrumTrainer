@@ -12,6 +12,9 @@ import AudioKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var bpmValueLabel: UILabel!
+    @IBOutlet weak var bpmSlider: UISlider!
+    
+    let defaults = UserDefaults.standard
     
     let drums = Drums()
     
@@ -26,6 +29,9 @@ class ViewController: UIViewController {
         } catch {
             print("Error while starting AudioKit.")
         }
+        
+        bpmValueLabel.text = String(defaults.integer(forKey: "bpmValue")) + " BPM"
+        bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +50,7 @@ class ViewController: UIViewController {
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         bpmValueLabel.text = String(Int(sender.value)) + " BPM"
+        defaults.set(Int(sender.value), forKey: "bpmValue")
     }
     
 }
