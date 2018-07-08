@@ -21,7 +21,7 @@
 		406EB34D549EE61EC0267520 /* Pods_TrainYaDrums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainYaDrums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E319501B20E82D6000A50A55 /* Drums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drums.swift; sourceTree = "<group>"; };
 		E3A8811E20E8B95A005E2361 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Drums; path = ../KeyboardDrummer/Drums; sourceTree = "<group>"; };
-		E3AA5DF520E194DC0095856A /* TrainYoDrums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainYoDrums.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3AA5DF520E194DC0095856A /* DrumTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5DF820E194DD0095856A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA5DFA20E194DD0095856A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E3AA5DFD20E194DD0095856A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		E3AA5DF620E194DC0095856A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3AA5DF520E194DC0095856A /* TrainYoDrums.app */,
+				E3AA5DF520E194DC0095856A /* DrumTrainer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3AA5DF420E194DC0095856A /* TrainYoDrums */ = {
+		E3AA5DF420E194DC0095856A /* DrumTrainer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3AA5E0720E194DE0095856A /* Build configuration list for PBXNativeTarget "TrainYoDrums" */;
+			buildConfigurationList = E3AA5E0720E194DE0095856A /* Build configuration list for PBXNativeTarget "DrumTrainer" */;
 			buildPhases = (
 				A782C4D7024C419832B932D8 /* [CP] Check Pods Manifest.lock */,
 				E3AA5DF120E194DC0095856A /* Sources */,
@@ -108,9 +108,9 @@
 			);
 			dependencies = (
 			);
-			name = TrainYoDrums;
+			name = DrumTrainer;
 			productName = TrainYaDrums;
-			productReference = E3AA5DF520E194DC0095856A /* TrainYoDrums.app */;
+			productReference = E3AA5DF520E194DC0095856A /* DrumTrainer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E3AA5DF020E194DC0095856A /* Build configuration list for PBXProject "TrainYoDrums" */;
+			buildConfigurationList = E3AA5DF020E194DC0095856A /* Build configuration list for PBXProject "DrumTrainer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -141,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3AA5DF420E194DC0095856A /* TrainYoDrums */,
+				E3AA5DF420E194DC0095856A /* DrumTrainer */,
 			);
 		};
 /* End PBXProject section */
@@ -369,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3AA5DF020E194DC0095856A /* Build configuration list for PBXProject "TrainYoDrums" */ = {
+		E3AA5DF020E194DC0095856A /* Build configuration list for PBXProject "DrumTrainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3AA5E0520E194DE0095856A /* Debug */,
@@ -378,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3AA5E0720E194DE0095856A /* Build configuration list for PBXNativeTarget "TrainYoDrums" */ = {
+		E3AA5E0720E194DE0095856A /* Build configuration list for PBXNativeTarget "DrumTrainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3AA5E0820E194DE0095856A /* Debug */,

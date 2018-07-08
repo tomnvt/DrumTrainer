@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TrainYaDrums.xcodeproj">
+      location = "self:/Users/eliska/Desktop/Xcode/Apps/NVT/TrainYaDrums/DrumTrainer.xcodeproj">
    </FileRef>
 </Workspace>

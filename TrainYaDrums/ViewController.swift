@@ -11,6 +11,8 @@ import AudioKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var bpmValueLabel: UILabel!
+    
     let drums = Drums()
     
     override func viewDidLoad() {
@@ -38,5 +40,11 @@ class ViewController: UIViewController {
     @IBAction func clickButtonPressed(_ sender: UIButton) {
         print("Click sound will start or stop playing")
     }
+    
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        bpmValueLabel.text = String(Int(sender.value)) + " BPM"
+    }
+    
 }
 
