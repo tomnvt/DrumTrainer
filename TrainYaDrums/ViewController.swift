@@ -52,6 +52,6 @@ class ViewController: UIViewController {
         bpmValueLabel.text = String(Int(sender.value)) + " BPM"
         defaults.set(Int(sender.value), forKey: "bpmValue")
     }
-
+    
 }
 

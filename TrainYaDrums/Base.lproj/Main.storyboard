@@ -49,7 +49,8 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="clickButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3vQ-xn-XBS"/>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AEX-w5-dDJ"/>
+                                                    <action selector="metronomeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crJ-7O-LtC"/>
                                                 </connections>
                                             </button>
                                         </subviews>

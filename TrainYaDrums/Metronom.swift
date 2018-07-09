@@ -12,9 +12,13 @@ class Metronome {
     
     var timer = Timer()
     var metronomeIsRunning : Bool = false
+    var beatIndex : Int = 0
+    var beats : [Int] = [1, 2, 3, 4]
     
     func runMetronomeWith(BPM: Float) {
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(BPM/60)), target: self, selector: #selector(self.playClick), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(BPM/60)),
+                                     target: self, selector: #selector(self.playClick),
+                                     userInfo: nil, repeats: true)
         metronomeIsRunning = true
     }
     
@@ -29,6 +33,10 @@ class Metronome {
     }
     
     @objc func playClick() {
-        print("Click played...")
+        print("Beat number \(beats[beatIndex])")
+        beatIndex += 1
+        if beatIndex == 4 {
+            beatIndex = 0
+        }
     }
 }
