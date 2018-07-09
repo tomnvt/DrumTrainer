@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     let defaults = UserDefaults.standard
     
     let drums = Drums()
+    let metronome = Metronome()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,24 +35,23 @@ class ViewController: UIViewController {
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    
     @IBAction func buttonPressed(_ sender: UIButton) {
         drums.play(note_tag: sender.tag)
     }
-    
-    @IBAction func clickButtonPressed(_ sender: UIButton) {
-        print("Click sound will start or stop playing")
+
+    @IBAction func metronomeButtonPressed(_ sender: UIButton) {
+        if metronome.metronomeIsRunning {
+            metronome.stopMetronome()
+        } else {
+            metronome.runMetronomeWith(BPM: bpmSlider.value)
+        }
     }
-    
-    
+
     @IBAction func sliderChanged(_ sender: UISlider) {
+        metronome.changeMetronomeSpeed(toBPM: sender.value)
         bpmValueLabel.text = String(Int(sender.value)) + " BPM"
         defaults.set(Int(sender.value), forKey: "bpmValue")
     }
-    
+
 }
 
