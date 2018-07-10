@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class Metronome {
     
@@ -14,6 +15,8 @@ class Metronome {
     var metronomeIsRunning : Bool = false
     var beatIndex : Int = 0
     var beats : [Int] = [1, 2, 3, 4]
+    
+    var player : AVAudioPlayer?
     
     func runMetronomeWith(BPM: Float) {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(BPM/60)),
@@ -33,10 +36,33 @@ class Metronome {
     }
     
     @objc func playClick() {
-        print("Beat number \(beats[beatIndex])")
         beatIndex += 1
+        if beatIndex == 1 {
+            playMetronome(sound: "metronomeSound1")
+        } else {
+            playMetronome(sound: "metronomeSound2")
+        }
         if beatIndex == 4 {
             beatIndex = 0
         }
     }
+    
+    func playMetronome(sound : String) {
+        guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
