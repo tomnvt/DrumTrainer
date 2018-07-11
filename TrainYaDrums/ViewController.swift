@@ -36,9 +36,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.white
         drums.play(note_tag: sender.tag)
     }
-
+    
+    
+    @IBAction func buttonReleased(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.yellow
+    }
+    
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
         if metronome.metronomeIsRunning {
             metronome.stopMetronome()
