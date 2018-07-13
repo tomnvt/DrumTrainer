@@ -44,7 +44,7 @@
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTz-Jd-Y0o">
                                                 <rect key="frame" x="0.0" y="238.5" width="343" height="61.5"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.83921568629999999" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.88510277280000005" blue="0.32760448599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="METRONOME">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -266,7 +266,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aOF-jH-tCw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="3xU-P9-86g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aOF-jH-tCw" secondAttribute="trailing" constant="16" id="Gm6-iv-Fet"/>
@@ -278,6 +278,7 @@
                     <connections>
                         <outlet property="bpmSlider" destination="thP-s2-NVF" id="ea8-SL-eV6"/>
                         <outlet property="bpmValueLabel" destination="b7V-YI-ZRh" id="cPk-0z-4U0"/>
+                        <outlet property="metronomeButton" destination="dTz-Jd-Y0o" id="OqJ-dU-iVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

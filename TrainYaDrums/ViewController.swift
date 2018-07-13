@@ -9,11 +9,19 @@
 import UIKit
 import AudioKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MetronomeButtonFlashDelegate {
+    
+    func metronomeButtonFlash() {
+        print("Blinking")
+        metronomeButtonSubView.blink()
+    }
+    
     
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
-    
+    @IBOutlet weak var metronomeButton: UIButton!
+    var metronomeButtonSubView = UIView()
+
     let defaults = UserDefaults.standard
     
     let drums = Drums()
@@ -33,6 +41,12 @@ class ViewController: UIViewController {
         
         bpmValueLabel.text = String(defaults.integer(forKey: "bpmValue")) + " BPM"
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
+        
+        metronome.delegate = self
+        
+        metronomeButtonSubView.backgroundColor = .yellow
+        metronomeButton.addSubview(metronomeButtonSubView)
+        metronomeButtonSubView.frame.equalTo(metronomeButton.frame)
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -61,3 +75,9 @@ class ViewController: UIViewController {
     
 }
 
+extension UIView{
+    func blink() {
+        self.alpha = 0.2
+        UIView.animate(withDuration: 1, delay: 0.0, options: [.curveLinear, .repeat, .autoreverse], animations: {self.alpha = 1.0}, completion: nil)
+    }
+}

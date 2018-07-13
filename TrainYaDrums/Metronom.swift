@@ -9,12 +9,17 @@
 import Foundation
 import AVFoundation
 
+protocol MetronomeButtonFlashDelegate {
+    func metronomeButtonFlash()
+}
+
 class Metronome {
     
     var timer = Timer()
     var metronomeIsRunning : Bool = false
     var beatIndex : Int = 0
     var beats : [Int] = [1, 2, 3, 4]
+    var delegate: MetronomeButtonFlashDelegate?
     
     var player : AVAudioPlayer?
     
@@ -32,7 +37,7 @@ class Metronome {
     
     func changeMetronomeSpeed(toBPM: Float) {
         stopMetronome()
-            runMetronomeWith(BPM: toBPM)
+        runMetronomeWith(BPM: toBPM)
     }
     
     @objc func playClick() {
@@ -45,6 +50,7 @@ class Metronome {
         if beatIndex == 4 {
             beatIndex = 0
         }
+        delegate?.metronomeButtonFlash()
     }
     
     func playMetronome(sound : String) {
