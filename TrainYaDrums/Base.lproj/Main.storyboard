@@ -42,16 +42,35 @@
                                                     <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Txi-rZ-FrI"/>
                                                 </connections>
                                             </slider>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTz-Jd-Y0o">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTT-Jz-XPb">
                                                 <rect key="frame" x="0.0" y="238.5" width="343" height="61.5"/>
-                                                <color key="backgroundColor" red="1" green="0.88510277280000005" blue="0.32760448599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="METRONOME">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="metronomeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crJ-7O-LtC"/>
-                                                </connections>
-                                            </button>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gT-W8-o2P">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="61.5"/>
+                                                        <color key="backgroundColor" red="1" green="0.8862745098" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTz-Jd-Y0o">
+                                                        <rect key="frame" x="0.0" y="-0.5" width="343" height="62"/>
+                                                        <state key="normal" title="METRONOME">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="metronomeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crJ-7O-LtC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="6gT-W8-o2P" secondAttribute="trailing" id="3j1-Z9-Xc1"/>
+                                                    <constraint firstItem="dTz-Jd-Y0o" firstAttribute="top" secondItem="tTT-Jz-XPb" secondAttribute="top" id="42P-jw-veZ"/>
+                                                    <constraint firstItem="6gT-W8-o2P" firstAttribute="top" secondItem="tTT-Jz-XPb" secondAttribute="top" id="50J-DJ-4lI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6gT-W8-o2P" secondAttribute="bottom" id="Jo5-qd-GF7"/>
+                                                    <constraint firstItem="dTz-Jd-Y0o" firstAttribute="leading" secondItem="tTT-Jz-XPb" secondAttribute="leading" id="RJe-aa-7DB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dTz-Jd-Y0o" secondAttribute="bottom" id="bP1-lA-QIY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dTz-Jd-Y0o" secondAttribute="trailing" id="naM-qx-O4X"/>
+                                                    <constraint firstItem="6gT-W8-o2P" firstAttribute="leading" secondItem="tTT-Jz-XPb" secondAttribute="leading" id="wt8-Nf-Ekd"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-lE-o1i">
@@ -279,11 +298,12 @@
                         <outlet property="bpmSlider" destination="thP-s2-NVF" id="ea8-SL-eV6"/>
                         <outlet property="bpmValueLabel" destination="b7V-YI-ZRh" id="cPk-0z-4U0"/>
                         <outlet property="metronomeButton" destination="dTz-Jd-Y0o" id="OqJ-dU-iVE"/>
+                        <outlet property="metronomeButtonSubview" destination="6gT-W8-o2P" id="fYt-yv-V0T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511.59420289855075" y="679.89130434782612"/>
+            <point key="canvasLocation" x="511.19999999999999" y="679.61019490254876"/>
         </scene>
     </scenes>
 </document>

@@ -12,15 +12,14 @@ import AudioKit
 class ViewController: UIViewController, MetronomeButtonFlashDelegate {
     
     func metronomeButtonFlash() {
-        print("Blinking")
-        metronomeButtonSubView.blink()
+        metronomeButtonSubview.blink()
     }
     
     
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
-    var metronomeButtonSubView = UIView()
+    @IBOutlet weak var metronomeButtonSubview: UIView!
 
     let defaults = UserDefaults.standard
     
@@ -44,9 +43,6 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
         
         metronome.delegate = self
         
-        metronomeButtonSubView.backgroundColor = .yellow
-        metronomeButton.addSubview(metronomeButtonSubView)
-        metronomeButtonSubView.frame.equalTo(metronomeButton.frame)
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -62,6 +58,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
         if metronome.metronomeIsRunning {
             metronome.stopMetronome()
+
         } else {
             metronome.runMetronomeWith(BPM: bpmSlider.value)
         }
@@ -78,6 +75,6 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
 extension UIView{
     func blink() {
         self.alpha = 0.2
-        UIView.animate(withDuration: 1, delay: 0.0, options: [.curveLinear, .repeat, .autoreverse], animations: {self.alpha = 1.0}, completion: nil)
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveLinear], animations: {self.alpha = 1.0}, completion: nil)
     }
 }
