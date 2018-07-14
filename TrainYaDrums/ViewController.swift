@@ -82,16 +82,3 @@ extension UIView{
 @IBDesignable
 class RoundableView: UIView {}
 class RoundableButton: UIButton {}
-
-extension UIView {
-    
-    @IBInspectable
-    var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-        }
-    }
-}
