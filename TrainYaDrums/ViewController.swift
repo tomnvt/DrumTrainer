@@ -78,3 +78,20 @@ extension UIView{
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveLinear], animations: {self.alpha = 1.0}, completion: nil)
     }
 }
+
+@IBDesignable
+class RoundableView: UIView {}
+class RoundableButton: UIButton {}
+
+extension UIView {
+    
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+}
