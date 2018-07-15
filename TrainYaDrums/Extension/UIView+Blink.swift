@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView{
+extension UIView {
     func blink() {
         self.alpha = 0.2
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveLinear], animations: {self.alpha = 1.0}, completion: nil)
