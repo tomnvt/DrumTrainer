@@ -24,6 +24,7 @@ class Metronome {
     var player : AVAudioPlayer?
     
     func runMetronomeWith(BPM: Float) {
+        beatIndex = 0
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(BPM/60)),
                                      target: self, selector: #selector(self.playClick),
                                      userInfo: nil, repeats: true)

@@ -46,7 +46,6 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.white
         drums.play(note_tag: sender.tag)
         sender.blink()
     }
