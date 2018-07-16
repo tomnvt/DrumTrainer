@@ -94,67 +94,183 @@
                                             <stackView opaque="NO" tag="3" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sy4-Vi-YSX">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="67.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qaa-Bc-ZVU" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                    <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Cx-OII" customClass="RoundableView" customModule="DrumTrainer" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
-                                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHC-aM-Ozv" customClass="RoundableView" customModule="DrumTrainer" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
+                                                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qaa-Bc-ZVU" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="STP-XJ-kLs"/>
+                                                                    <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGU-a7-jqc"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="aHC-aM-Ozv" firstAttribute="top" secondItem="xN2-Cx-OII" secondAttribute="top" id="7d5-gm-1z0"/>
+                                                            <constraint firstItem="Qaa-Bc-ZVU" firstAttribute="leading" secondItem="xN2-Cx-OII" secondAttribute="leading" id="9yu-7E-d6t"/>
+                                                            <constraint firstAttribute="trailing" secondItem="aHC-aM-Ozv" secondAttribute="trailing" id="KAz-zW-4jc"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Qaa-Bc-ZVU" secondAttribute="trailing" id="KjP-ig-MS1"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Qaa-Bc-ZVU" secondAttribute="bottom" id="Mf2-VR-44J"/>
+                                                            <constraint firstItem="Qaa-Bc-ZVU" firstAttribute="top" secondItem="xN2-Cx-OII" secondAttribute="top" id="NLM-EH-U60"/>
+                                                            <constraint firstAttribute="bottom" secondItem="aHC-aM-Ozv" secondAttribute="bottom" id="h9B-h5-MSm"/>
+                                                            <constraint firstItem="aHC-aM-Ozv" firstAttribute="leading" secondItem="xN2-Cx-OII" secondAttribute="leading" id="rcD-sz-Uap"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="10"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="STP-XJ-kLs"/>
-                                                            <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGU-a7-jqc"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj1-tQ-Rhv" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                    </view>
+                                                    <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWb-op-NBa">
                                                         <rect key="frame" x="88.5" y="0.0" width="78" height="67.5"/>
-                                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWd-eW-3FG">
+                                                                <rect key="frame" x="-0.5" y="0.0" width="78.5" height="67.5"/>
+                                                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj1-tQ-Rhv" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="67.5"/>
+                                                                <state key="normal">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="jxf-Wh-juS"/>
+                                                                    <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28u-lb-A1Y"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Tj1-tQ-Rhv" secondAttribute="bottom" id="4g2-kx-cEE"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Tj1-tQ-Rhv" secondAttribute="trailing" id="9bO-Yr-6JF"/>
+                                                            <constraint firstItem="rWd-eW-3FG" firstAttribute="top" secondItem="WWb-op-NBa" secondAttribute="top" id="KCF-CA-ugW"/>
+                                                            <constraint firstItem="rWd-eW-3FG" firstAttribute="leading" secondItem="WWb-op-NBa" secondAttribute="leading" id="WEX-gG-kao"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rWd-eW-3FG" secondAttribute="bottom" id="rg3-J1-41w"/>
+                                                            <constraint firstItem="Tj1-tQ-Rhv" firstAttribute="leading" secondItem="WWb-op-NBa" secondAttribute="leading" id="sR2-or-4J6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="rWd-eW-3FG" secondAttribute="trailing" id="vEl-d5-mFT"/>
+                                                            <constraint firstItem="Tj1-tQ-Rhv" firstAttribute="top" secondItem="WWb-op-NBa" secondAttribute="top" id="wBU-Im-ZHD"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <integer key="value" value="10"/>
+                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="jxf-Wh-juS"/>
-                                                            <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28u-lb-A1Y"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-q7-mol" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                    </view>
+                                                    <view tag="14" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-6B-dxC">
                                                         <rect key="frame" x="176.5" y="0.0" width="78.5" height="67.5"/>
-                                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmI-IA-niK">
+                                                                <rect key="frame" x="-0.5" y="0.0" width="78.5" height="67.5"/>
+                                                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-q7-mol" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
+                                                                <state key="normal">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="x2D-cK-Kjf"/>
+                                                                    <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dfj-pw-rda"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="zmI-IA-niK" firstAttribute="top" secondItem="3IE-6B-dxC" secondAttribute="top" id="Dwc-EG-wKF"/>
+                                                            <constraint firstAttribute="bottom" secondItem="WUZ-q7-mol" secondAttribute="bottom" id="Ged-dX-UrW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zmI-IA-niK" secondAttribute="trailing" id="H6u-5T-FKx"/>
+                                                            <constraint firstAttribute="bottom" secondItem="zmI-IA-niK" secondAttribute="bottom" id="HMa-bE-QXr"/>
+                                                            <constraint firstItem="WUZ-q7-mol" firstAttribute="leading" secondItem="3IE-6B-dxC" secondAttribute="leading" id="jfR-gA-6k0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="WUZ-q7-mol" secondAttribute="trailing" id="khv-eP-Z1q"/>
+                                                            <constraint firstItem="WUZ-q7-mol" firstAttribute="top" secondItem="3IE-6B-dxC" secondAttribute="top" id="qZy-xk-6wT"/>
+                                                            <constraint firstItem="zmI-IA-niK" firstAttribute="leading" secondItem="3IE-6B-dxC" secondAttribute="leading" id="tp0-Ec-xIb"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="x2D-cK-Kjf"/>
-                                                            <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dfj-pw-rda"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcV-WN-CON" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                    </view>
+                                                    <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kR-fp-CxM">
                                                         <rect key="frame" x="265" y="0.0" width="78" height="67.5"/>
-                                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal">
-                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-ch-T2e">
+                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
+                                                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcV-WN-CON" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="67.5"/>
+                                                                <state key="normal">
+                                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="gny-d1-eXY"/>
+                                                                    <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tew-sP-nTC"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="AcV-WN-CON" firstAttribute="leading" secondItem="1kR-fp-CxM" secondAttribute="leading" id="GT2-b8-TkL"/>
+                                                            <constraint firstItem="XRM-ch-T2e" firstAttribute="leading" secondItem="1kR-fp-CxM" secondAttribute="leading" id="H2b-1v-Z5A"/>
+                                                            <constraint firstAttribute="bottom" secondItem="AcV-WN-CON" secondAttribute="bottom" id="Jt9-fS-Dti"/>
+                                                            <constraint firstAttribute="trailing" secondItem="XRM-ch-T2e" secondAttribute="trailing" id="eaB-5Q-pQQ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="AcV-WN-CON" secondAttribute="trailing" id="j3x-tR-88O"/>
+                                                            <constraint firstItem="XRM-ch-T2e" firstAttribute="top" secondItem="1kR-fp-CxM" secondAttribute="top" id="opy-24-SOd"/>
+                                                            <constraint firstItem="AcV-WN-CON" firstAttribute="top" secondItem="1kR-fp-CxM" secondAttribute="top" id="qbK-hl-QpE"/>
+                                                            <constraint firstAttribute="bottom" secondItem="XRM-ch-T2e" secondAttribute="bottom" id="voW-Vd-UJb"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="gny-d1-eXY"/>
-                                                            <action selector="buttonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tew-sP-nTC"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-3Y-KEl">

@@ -15,12 +15,11 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
         metronomeButtonSubview.blink()
     }
     
-    
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
     @IBOutlet weak var metronomeButtonSubview: UIView!
-
+    
     let defaults = UserDefaults.standard
     
     let drums = Drums()
@@ -47,9 +46,9 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         drums.play(note_tag: sender.tag)
-        sender.blink()
+//        sender.superview?.superview?.subviews[0].subviews[0].subviews[0].blink()
+//        print(sender.superview?.superview?.subviews)
     }
-    
     
     @IBAction func buttonReleased(_ sender: UIButton) {
         sender.backgroundColor = UIColor.yellow
