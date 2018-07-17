@@ -46,8 +46,21 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         drums.play(note_tag: sender.tag)
+        sender.blink()
+//        sender.superview?.subviews[1].blink()
+//        sender.superview?.superview?.viewWithTag(99)?.blink()
+        
 //        sender.superview?.superview?.subviews[0].subviews[0].subviews[0].blink()
 //        print(sender.superview?.superview?.subviews)
+//        print(sender.tag + 16)
+//        sender.superview?.superview?.viewWithTag(sender.tag)?.blink()
+//        sender.layer.backgroundColor = UIColor.yellow.cgColor
+//        UIView.animate(withDuration: 0.5,
+//                       delay: 0.0,
+//                       options: .allowUserInteraction,
+//                       animations: {
+//                        sender.layer.backgroundColor = secondColor },
+//                       completion: nil)
     }
     
     @IBAction func buttonReleased(_ sender: UIButton) {
