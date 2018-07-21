@@ -12,13 +12,12 @@ import AudioKit
 class ViewController: UIViewController, MetronomeButtonFlashDelegate {
     
     func metronomeButtonFlash() {
-        metronomeButtonSubview.orangeBlink()
+        metronomeButton.orangeBlink()
     }
     
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
-    @IBOutlet weak var metronomeButtonSubview: UIView!
     
     let defaults = UserDefaults.standard
     
@@ -37,11 +36,9 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
             print("Error while starting AudioKit.")
         }
         
-        bpmValueLabel.text = String(defaults.integer(forKey: "bpmValue")) + " BPM"
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
         
         metronome.delegate = self
-        
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -56,7 +53,6 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
         if metronome.metronomeIsRunning {
             metronome.stopMetronome()
-
         } else {
             metronome.runMetronomeWith(BPM: bpmSlider.value)
         }
@@ -64,12 +60,16 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
 
     @IBAction func sliderChanged(_ sender: UISlider) {
         metronome.changeMetronomeSpeed(toBPM: sender.value)
-        bpmValueLabel.text = String(Int(sender.value)) + " BPM"
+        bpmValueLabel.text = String(Int(sender.value))
         defaults.set(Int(sender.value), forKey: "bpmValue")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+                self.bpmValueLabel.text = "BPM"
+        }
     }
     
 }
 
 @IBDesignable
 class RoundableView: UIView {}
+class RoundableStackView: UIStackView {}
 class RoundableButton: UIButton {}
