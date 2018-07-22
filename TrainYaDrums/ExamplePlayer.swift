@@ -13,23 +13,29 @@ protocol ExamplePlayerDelegate {
 }
 
 class ExamplePlayer {
-    
+
     var timer = Timer()
     var examplePartIndex = 0
     let exampleBeatSequence = [0, 2, 1, 2, 0, 2, 1, 2]
     var delegate : ExamplePlayerDelegate?
-    
+    var drumExampleIsPlaying = false
+
     // MARK: - share BPM values with metronome (create separate BPM class)
     // MARK: - add delegation to play button through controller
-    
+
     func playExample() {
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(120/30.0)),
-                                     target: self, selector: #selector(playExamplePart),
-                                     userInfo: nil, repeats: true)
+        drumExampleIsPlaying = !drumExampleIsPlaying
+        if drumExampleIsPlaying {
+            timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(120/30.0)),
+                                         target: self, selector: #selector(playExamplePart),
+                                         userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            examplePartIndex = 0
+        }
     }
-    
+
     @objc func playExamplePart() {
-        print(exampleBeatSequence[examplePartIndex])
         delegate?.playDrum(beatpadNumber: exampleBeatSequence[examplePartIndex])
         if examplePartIndex < 7 {
             examplePartIndex += 1
@@ -37,5 +43,5 @@ class ExamplePlayer {
             examplePartIndex = 0
         }
     }
-    
+
 }
