@@ -9,7 +9,11 @@
 import UIKit
 import AudioKit
 
-class ViewController: UIViewController, MetronomeButtonFlashDelegate {
+class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePlayerDelegate {
+    
+    func playDrum(beatpadNumber: Int) {
+        drums.play(note_tag: beatpadNumber)
+    }
     
     func metronomeButtonFlash() {
         metronomeButton.orangeBlink()
@@ -40,6 +44,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
         
         metronome.delegate = self
+        examplePlayer.delegate = self
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
