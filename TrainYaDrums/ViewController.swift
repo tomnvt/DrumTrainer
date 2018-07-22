@@ -23,6 +23,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
     
     let drums = Drums()
     let metronome = Metronome()
+    let examplePlayer = ExamplePlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,10 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
                 self.bpmValueLabel.text = "BPM"
         }
+    }
+    
+    @IBAction func exampleButtonPressed(_ sender: UIButton) {
+        examplePlayer.playExample()
     }
     
 }

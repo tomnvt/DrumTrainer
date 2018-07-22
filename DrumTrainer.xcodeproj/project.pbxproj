@@ -13,6 +13,7 @@
 		E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */; };
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
 		E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D20F620FE573600796084 /* UIColor+HexColor.swift */; };
+		E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A338A210492C100309084 /* ExamplePlayer.swift */; };
 		E394A4B520F3D146002F2183 /* Metronom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394A4B420F3D146002F2183 /* Metronom.swift */; };
 		E3A8811F20E8B95A005E2361 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E3A8811E20E8B95A005E2361 /* Drums */; };
 		E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DF820E194DD0095856A /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+@IBInspectable.swift"; sourceTree = "<group>"; };
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
 		E37D20F620FE573600796084 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
+		E38A338A210492C100309084 /* ExamplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePlayer.swift; sourceTree = "<group>"; };
 		E394A4B420F3D146002F2183 /* Metronom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronom.swift; sourceTree = "<group>"; };
 		E3A8811E20E8B95A005E2361 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Drums; path = ../KeyboardDrummer/Drums; sourceTree = "<group>"; };
 		E3AA5DF520E194DC0095856A /* DrumTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 				E3AA5E0420E194DE0095856A /* Info.plist */,
 				E319501B20E82D6000A50A55 /* Drums.swift */,
 				E394A4B420F3D146002F2183 /* Metronom.swift */,
+				E38A338A210492C100309084 /* ExamplePlayer.swift */,
 			);
 			path = TrainYaDrums;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */,
 				E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */,
 				E319501C20E82D6000A50A55 /* Drums.swift in Sources */,
+				E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */,
 				E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */,
 				E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */,
 				E394A4B520F3D146002F2183 /* Metronom.swift in Sources */,

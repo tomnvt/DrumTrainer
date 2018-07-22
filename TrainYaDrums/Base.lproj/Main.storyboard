@@ -132,6 +132,9 @@
                                                         <real key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="exampleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PTX-xA-kq9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <userDefinedRuntimeAttributes>
