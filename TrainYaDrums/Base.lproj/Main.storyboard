@@ -527,6 +527,14 @@
                     <connections>
                         <outlet property="bpmSlider" destination="thP-s2-NVF" id="ea8-SL-eV6"/>
                         <outlet property="bpmValueLabel" destination="63G-o7-CQE" id="Imy-hR-tKP"/>
+                        <outlet property="drumPad1" destination="cqc-0d-qWk" id="Qhz-73-ur8"/>
+                        <outlet property="drumPad2" destination="ItB-jp-qVE" id="8H2-zr-BgP"/>
+                        <outlet property="drumPad3" destination="yLV-DH-r0k" id="jKl-X1-cU9"/>
+                        <outlet property="drumPad4" destination="eVI-e7-qSU" id="sZp-iL-HOa"/>
+                        <outlet property="drumPad5" destination="D4p-yG-PAx" id="Tau-fC-CDR"/>
+                        <outlet property="drumPad6" destination="6ib-9N-RGP" id="Pdh-kr-pdh"/>
+                        <outlet property="drumPad7" destination="53m-8T-iVo" id="hvg-Ug-ZOi"/>
+                        <outlet property="drumPad8" destination="ilc-UM-cQ9" id="ftR-al-XDI"/>
                         <outlet property="metronomeButton" destination="kSZ-iR-tiB" id="eRF-32-3Pk"/>
                     </connections>
                 </viewController>

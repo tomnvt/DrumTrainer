@@ -12,7 +12,7 @@ import AudioKit
 class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePlayerDelegate {
     
     func playDrum(beatpadNumber: Int) {
-        drums.play(note_tag: beatpadNumber)
+        drumPadArray[beatpadNumber].sendActions(for: .touchDown)
     }
     
     func metronomeButtonFlash() {
@@ -22,6 +22,16 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
+    @IBOutlet weak var drumPad1: RoundableButton!
+    @IBOutlet weak var drumPad2: RoundableButton!
+    @IBOutlet weak var drumPad3: RoundableButton!
+    @IBOutlet weak var drumPad4: RoundableButton!
+    @IBOutlet weak var drumPad5: RoundableButton!
+    @IBOutlet weak var drumPad6: RoundableButton!
+    @IBOutlet weak var drumPad7: RoundableButton!
+    @IBOutlet weak var drumPad8: RoundableButton!
+    
+    var drumPadArray : Array<RoundableButton> = []
     
     let defaults = UserDefaults.standard
     
@@ -45,6 +55,15 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         
         metronome.delegate = self
         examplePlayer.delegate = self
+        
+        drumPadArray.append(drumPad1)
+        drumPadArray.append(drumPad2)
+        drumPadArray.append(drumPad3)
+        drumPadArray.append(drumPad4)
+        drumPadArray.append(drumPad5)
+        drumPadArray.append(drumPad6)
+        drumPadArray.append(drumPad7)
+        drumPadArray.append(drumPad8)
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
