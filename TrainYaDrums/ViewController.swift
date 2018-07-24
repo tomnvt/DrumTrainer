@@ -11,8 +11,10 @@ import AudioKit
 
 class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePlayerDelegate {
     
-    func playDrum(beatpadNumber: Int) {
-        drumPadArray[beatpadNumber].sendActions(for: .touchDown)
+    func playDrum(beatpadNumber: [Int]) {
+        for drum in beatpadNumber {
+            drumPadArray[drum].sendActions(for: .touchDown)
+        }
     }
     
     func metronomeButtonFlash() {

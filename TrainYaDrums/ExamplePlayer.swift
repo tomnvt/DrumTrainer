@@ -9,19 +9,18 @@
 import Foundation
 
 protocol ExamplePlayerDelegate {
-    func playDrum(beatpadNumber: Int)
+    func playDrum(beatpadNumber: [Int])
 }
 
 class ExamplePlayer {
 
     var timer = Timer()
     var examplePartIndex = 0
-    let exampleBeatSequence = [0, 2, 1, 2, 0, 2, 1, 2]
+    let exampleBeatSequence = [[0], [2], [0, 1], [2], [0], [2], [0, 1], [2]]
     var delegate : ExamplePlayerDelegate?
     var drumExampleIsPlaying = false
 
     // MARK: - share BPM values with metronome (create separate BPM class)
-    // MARK: - add delegation to play button through controller
 
     func playExample() {
         drumExampleIsPlaying = !drumExampleIsPlaying
