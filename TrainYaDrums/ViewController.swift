@@ -39,7 +39,8 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     
     let drums = Drums()
     let metronome = Metronome()
-    let examplePlayer = ExamplePlayer()
+    var examplePlayer: ExamplePlayer?
+    let globalClock = GlobalCloss()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,8 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
         
         metronome.delegate = self
-        examplePlayer.delegate = self
+        examplePlayer = ExamplePlayer(metronome: metronome)
+        examplePlayer?.delegate = self
         
         drumPadArray.append(drumPad1)
         drumPadArray.append(drumPad2)
@@ -66,6 +68,8 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         drumPadArray.append(drumPad6)
         drumPadArray.append(drumPad7)
         drumPadArray.append(drumPad8)
+        
+        globalClock.runGlobalCLock()
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -92,10 +96,11 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
                 self.bpmValueLabel.text = "BPM"
         }
+        globalClock.changeMetronomeSpeed(toBPM: sender.value)
     }
     
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
-        examplePlayer.playExample()
+        examplePlayer?.playExample()
     }
     
 }
