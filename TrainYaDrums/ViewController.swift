@@ -38,9 +38,9 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     let defaults = UserDefaults.standard
     
     let drums = Drums()
-    let metronome = Metronome()
-    var examplePlayer: ExamplePlayer?
-    let globalClock = GlobalCloss()
+    var metronome : Metronome?
+//    var examplePlayer: ExamplePlayer?
+    let globalClock = GlobalClock()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +56,9 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
         
-        metronome.delegate = self
-        examplePlayer = ExamplePlayer(metronome: metronome)
-        examplePlayer?.delegate = self
+        metronome?.delegate = self
+//        examplePlayer = ExamplePlayer(metronome: globalClock)
+//        examplePlayer?.delegate = self
         
         drumPadArray.append(drumPad1)
         drumPadArray.append(drumPad2)
@@ -70,6 +70,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         drumPadArray.append(drumPad8)
         
         globalClock.runGlobalCLock()
+        metronome = Metronome(globalClock)
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -82,15 +83,15 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
     
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
-        if metronome.metronomeIsRunning {
-            metronome.stopMetronome()
+        if (metronome?.metronomeIsRunning)! {
+            metronome?.stopMetronome()
         } else {
-            metronome.runMetronomeWith(BPM: bpmSlider.value)
+            metronome?.runMetronomeWith(BPM: bpmSlider.value)
         }
     }
 
     @IBAction func sliderChanged(_ sender: UISlider) {
-        metronome.changeMetronomeSpeed(toBPM: sender.value)
+        metronome?.changeMetronomeSpeed(toBPM: sender.value)
         bpmValueLabel.text = String(Int(sender.value))
         defaults.set(Int(sender.value), forKey: "bpmValue")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
@@ -100,7 +101,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
     
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
-        examplePlayer?.playExample()
+//        examplePlayer?.playExample()
     }
     
 }
