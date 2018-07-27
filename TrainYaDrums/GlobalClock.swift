@@ -10,8 +10,6 @@ import Foundation
 
 class GlobalClock {
     
-    let beatStrings = [firstBeat, secondBeat, thirdBeat, fourthBeat]
-    
     var timer = Timer()
     var beatIndex : Int = 0
     var beats : [Int] = [1, 2, 3, 4]
@@ -31,9 +29,8 @@ class GlobalClock {
     }
     
     @IBAction func globalClockTest() {
-        let name = Notification.Name(rawValue: beatStrings[beatIndex])
+        let name = Notification.Name(rawValue: "globalClockBeat")
         NotificationCenter.default.post(name: name, object: nil)
-        print(beatStrings[beatIndex])
         if beatIndex == 3 {
             beatIndex = 0
         } else {
@@ -42,9 +39,3 @@ class GlobalClock {
     }
     
 }
-
-let firstBeat = "1"
-let secondBeat = "2"
-let thirdBeat = "3"
-let fourthBeat = "4"
-

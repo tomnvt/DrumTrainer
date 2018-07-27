@@ -20,26 +20,15 @@ class Metronome {
     var beatIndex : Int = 0
     var beats : [Int] = [1, 2, 3, 4]
     var delegate: MetronomeButtonFlashDelegate?
-    var globalClock : GlobalClock
     
-    let first = Notification.Name(rawValue: firstBeat)
-    let second = Notification.Name(rawValue: secondBeat)
-    let third = Notification.Name(rawValue: thirdBeat)
-    let fourth = Notification.Name(rawValue: fourthBeat)
+    let beat = Notification.Name(rawValue: "globalClockBeat")
     
     var player : AVAudioPlayer?
     
-    init(_ globalClock: GlobalClock) {
-        self.globalClock = globalClock
-        createObservers()
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: beat, object: nil)
     }
     
-    func createObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: first, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: second, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: third, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: fourth, object: nil)
-    }
     
     func runMetronomeWith(BPM: Float) {
 //        beatIndex = 0
@@ -47,8 +36,6 @@ class Metronome {
 //                                     target: self, selector: #selector(self.playClick),
 //                                     userInfo: nil, repeats: true)
 //        metronomeIsRunning = true
-        print("Global")
-        print(globalClock.beatIndex)
     }
     
     func stopMetronome() {

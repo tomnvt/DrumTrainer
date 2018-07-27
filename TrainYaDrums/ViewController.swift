@@ -70,7 +70,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         drumPadArray.append(drumPad8)
         
         globalClock.runGlobalCLock()
-        metronome = Metronome(globalClock)
+        metronome = Metronome()
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
