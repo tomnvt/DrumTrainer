@@ -29,25 +29,6 @@ class Metronome {
         NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: beat, object: nil)
     }
     
-    
-    func runMetronomeWith(BPM: Float) {
-//        beatIndex = 0
-//        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(BPM/60)),
-//                                     target: self, selector: #selector(self.playClick),
-//                                     userInfo: nil, repeats: true)
-//        metronomeIsRunning = true
-    }
-    
-    func stopMetronome() {
-        timer.invalidate()
-        metronomeIsRunning = false
-    }
-    
-    func changeMetronomeSpeed(toBPM: Float) {
-        stopMetronome()
-        runMetronomeWith(BPM: toBPM)
-    }
-    
     @objc func playClick() {
         guard metronomeIsRunning else {
             return

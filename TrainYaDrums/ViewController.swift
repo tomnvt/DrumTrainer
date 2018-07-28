@@ -39,7 +39,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     
     let drums = Drums()
     var metronome : Metronome?
-//    var examplePlayer: ExamplePlayer?
+    var examplePlayer: ExamplePlayer?
     let globalClock = GlobalClock()
     
     override func viewDidLoad() {
@@ -57,8 +57,8 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
         
         metronome?.delegate = self
-//        examplePlayer = ExamplePlayer(metronome: globalClock)
-//        examplePlayer?.delegate = self
+        examplePlayer = ExamplePlayer()
+        examplePlayer?.delegate = self
         
         drumPadArray.append(drumPad1)
         drumPadArray.append(drumPad2)
@@ -92,7 +92,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
     
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
-//        examplePlayer?.playExample()
+        examplePlayer?.drumExampleIsPlaying = !(examplePlayer?.drumExampleIsPlaying)!
     }
     
 }

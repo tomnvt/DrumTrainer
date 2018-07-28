@@ -19,28 +19,15 @@ class ExamplePlayer {
     let exampleBeatSequence = [[0], [2], [0, 1], [2], [0], [2], [0, 1], [2]]
     var delegate : ExamplePlayerDelegate?
     var drumExampleIsPlaying = false
-    let metronome : Metronome?
 
-    // MARK: - share BPM values with metronome (create separate BPM class)
-    init(metronome: Metronome) {
-        self.metronome = metronome
-    }
-
-    func playExample() {
-            if metronome?.beatIndex == 3 {
-                drumExampleIsPlaying = !drumExampleIsPlaying
-                if drumExampleIsPlaying {
-                    timer = Timer.scheduledTimer(timeInterval: TimeInterval(1/(120/30.0)),
-                                                 target: self, selector: #selector(playExamplePart),
-                                                 userInfo: nil, repeats: true)
-                } else {
-                    timer.invalidate()
-                    examplePartIndex = 0
-                }
-            }
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(playExamplePart), name: Notification.Name(rawValue: "globalClockBeat"), object: nil)
     }
 
     @objc func playExamplePart() {
+        guard drumExampleIsPlaying else {
+            return
+        }
         delegate?.playDrum(beatpadNumber: exampleBeatSequence[examplePartIndex])
         if examplePartIndex < 7 {
             examplePartIndex += 1
