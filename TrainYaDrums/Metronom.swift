@@ -49,6 +49,9 @@ class Metronome {
     }
     
     @objc func playClick() {
+        guard metronomeIsRunning else {
+            return
+        }
         beatIndex += 1
         if beatIndex == 1 {
             playMetronome(sound: "metronomeSound1")

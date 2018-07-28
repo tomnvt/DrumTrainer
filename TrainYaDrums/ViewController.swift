@@ -71,6 +71,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         
         globalClock.runGlobalCLock()
         metronome = Metronome()
+        metronome?.delegate = self
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -83,20 +84,10 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
     
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
-        if (metronome?.metronomeIsRunning)! {
-            metronome?.stopMetronome()
-        } else {
-            metronome?.runMetronomeWith(BPM: bpmSlider.value)
-        }
+        metronome?.metronomeIsRunning = !(metronome?.metronomeIsRunning)!
     }
 
     @IBAction func sliderChanged(_ sender: UISlider) {
-        metronome?.changeMetronomeSpeed(toBPM: sender.value)
-        bpmValueLabel.text = String(Int(sender.value))
-        defaults.set(Int(sender.value), forKey: "bpmValue")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-                self.bpmValueLabel.text = "BPM"
-        }
         globalClock.changeMetronomeSpeed(toBPM: sender.value)
     }
     
