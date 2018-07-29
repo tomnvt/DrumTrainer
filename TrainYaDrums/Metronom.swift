@@ -27,8 +27,9 @@ class Metronome {
     var player : AVAudioPlayer?
     
     init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: globalClockBeat, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setBeatIndexToZero), name: globalClockBar, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(synchronizeWithGlobalClock), name: Notification.Name(rawValue: "globalClockBeat"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: globalClockBeat, object: nil)
     }
     
     @objc func setBeatIndexToZero() {
@@ -39,14 +40,10 @@ class Metronome {
         guard metronomeIsRunning else {
             return
         }
-        beatIndex += 1
         if beatIndex == 1 {
             playMetronome(sound: "metronomeSound1")
         } else {
             playMetronome(sound: "metronomeSound2")
-        }
-        if beatIndex == 4 {
-            beatIndex = 0
         }
         delegate?.metronomeButtonFlash()
     }
@@ -67,6 +64,15 @@ class Metronome {
             
         } catch let error {
             print(error.localizedDescription)
+        }
+    }
+    
+    @objc func synchronizeWithGlobalClock() {
+        print("Metronome: " + String(beats[beatIndex]))
+        if beatIndex < 3 {
+            beatIndex += 1
+        } else {
+            beatIndex = 0
         }
     }
     
