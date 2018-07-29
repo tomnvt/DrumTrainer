@@ -33,7 +33,6 @@ class Metronome {
     
     @objc func setBeatIndexToZero() {
         beatIndex = 0
-        print("Metronome zero")
     }
     
     @objc func playClick() {
