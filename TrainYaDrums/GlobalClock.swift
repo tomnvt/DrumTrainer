@@ -29,6 +29,9 @@ class GlobalClock {
     }
     
     @IBAction func globalClockTest() {
+        if beatIndex == 0 {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "globalClockBar"), object: nil)
+        }
         let name = Notification.Name(rawValue: "globalClockBeat")
         NotificationCenter.default.post(name: name, object: nil)
         if beatIndex == 3 {

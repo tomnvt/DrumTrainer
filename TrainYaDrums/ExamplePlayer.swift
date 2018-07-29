@@ -22,8 +22,14 @@ class ExamplePlayer {
 
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(playExamplePart), name: Notification.Name(rawValue: "globalClockBeat"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setExamplePartIndexZero), name: Notification.Name(rawValue: "globalClockBar"), object: nil)
     }
 
+    @objc func setExamplePartIndexZero() {
+        examplePartIndex = 0
+        print("Example Player Zero")
+    }
+    
     @objc func playExamplePart() {
         guard drumExampleIsPlaying else {
             return

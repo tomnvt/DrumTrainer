@@ -21,12 +21,19 @@ class Metronome {
     var beats : [Int] = [1, 2, 3, 4]
     var delegate: MetronomeButtonFlashDelegate?
     
-    let beat = Notification.Name(rawValue: "globalClockBeat")
+    let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
+    let globalClockBar = Notification.Name(rawValue: "globalClockBar")
     
     var player : AVAudioPlayer?
     
     init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: beat, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playClick), name: globalClockBeat, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setBeatIndexToZero), name: globalClockBar, object: nil)
+    }
+    
+    @objc func setBeatIndexToZero() {
+        beatIndex = 0
+        print("Metronome zero")
     }
     
     @objc func playClick() {
