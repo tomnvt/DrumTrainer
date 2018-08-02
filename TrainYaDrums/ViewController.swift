@@ -38,28 +38,23 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     let defaults = UserDefaults.standard
     
     let drums = Drums()
-    var metronome : Metronome?
-    var examplePlayer: ExamplePlayer?
+    var metronome = Metronome()
+    var examplePlayer = ExamplePlayer()
     let globalClock = GlobalClock()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        metronome.delegate = self
+        examplePlayer.delegate = self
         drums.loadDrums()
-        
         AudioKit.output = drums.drums
-        
-        do {
-            try AudioKit.start()
-        } catch {
-            print("Error while starting AudioKit.")
-        }
-        
-        bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
-        
-        metronome?.delegate = self
-        examplePlayer = ExamplePlayer()
-        examplePlayer?.delegate = self
-        
+        tryToStartAudioKit()
+        setBpmSliderBySavedValue()
+        appendAllDrumPadsIntoDrumPadsArray()
+        globalClock.runGlobalCLock()
+    }
+    
+    func appendAllDrumPadsIntoDrumPadsArray() {
         drumPadArray.append(drumPad1)
         drumPadArray.append(drumPad2)
         drumPadArray.append(drumPad3)
@@ -68,10 +63,18 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         drumPadArray.append(drumPad6)
         drumPadArray.append(drumPad7)
         drumPadArray.append(drumPad8)
-        
-        globalClock.runGlobalCLock()
-        metronome = Metronome()
-        metronome?.delegate = self
+    }
+    
+    func setBpmSliderBySavedValue() {
+        bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
+    }
+    
+    func tryToStartAudioKit() {
+        do {
+            try AudioKit.start()
+        } catch {
+            print("Error while starting AudioKit.")
+        }
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -84,7 +87,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
     
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
-        metronome?.metronomeIsRunning = !(metronome?.metronomeIsRunning)!
+        metronome.metronomeIsRunning = !metronome.metronomeIsRunning
     }
 
     @IBAction func sliderChanged(_ sender: UISlider) {
@@ -92,7 +95,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
     
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
-        examplePlayer?.drumExampleIsPlaying = !(examplePlayer?.drumExampleIsPlaying)!
+        examplePlayer.drumExampleIsPlaying = !examplePlayer.drumExampleIsPlaying
     }
     
 }
