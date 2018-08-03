@@ -7,5 +7,6 @@ target 'DrumTrainer' do
 
   # Pods for DrumTrainer
 pod 'AudioKit'
+pod 'SwiftLint'
 
 end

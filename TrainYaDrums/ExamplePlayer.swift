@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ExamplePlayerDelegate {
+protocol ExamplePlayerDelegate: AnyObject {
     func playDrum(beatpadNumber: [Int])
 }
 
@@ -24,5 +24,5 @@ class ExamplePlayer : Synchronizable {
         }
         delegate?.playDrum(beatpadNumber: exampleBeatSequence[currentBeatIndex])
     }
-    
+
 }

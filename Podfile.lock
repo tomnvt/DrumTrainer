@@ -2,17 +2,21 @@ PODS:
   - AudioKit (4.2.4):
     - AudioKit/UI (= 4.2.4)
   - AudioKit/UI (4.2.4)
+  - SwiftLint (0.26.0)
 
 DEPENDENCIES:
   - AudioKit
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AudioKit
+    - SwiftLint
 
 SPEC CHECKSUMS:
   AudioKit: 90ed0de2bc50ab68306f4b424ae1622fc9149b8e
+  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: c5a639fe70fd865f6b7ef75d38b3c0c1dcbe2e1c
+PODFILE CHECKSUM: 0ffb61909e22c954e2a3629e45a618f5b776a855
 
 COCOAPODS: 1.5.3

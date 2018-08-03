@@ -10,7 +10,7 @@ import UIKit
 import AudioKit
 
 class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePlayerDelegate {
-    
+
     func playDrum(beatpadNumber: [Int]) {
         for drum in beatpadNumber {
             drumPadArray[drum].sendActions(for: .touchDown)
@@ -20,7 +20,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     func metronomeButtonFlash() {
         metronomeButton.orangeBlink()
     }
-    
+
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
@@ -32,16 +32,16 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     @IBOutlet weak var drumPad6: RoundableButton!
     @IBOutlet weak var drumPad7: RoundableButton!
     @IBOutlet weak var drumPad8: RoundableButton!
-    
-    var drumPadArray : Array<RoundableButton> = []
-    
+
+    var drumPadArray: [RoundableButton] = []
+
     let defaults = UserDefaults.standard
-    
+
     let drums = Drums()
     var metronome = Metronome()
     var examplePlayer = ExamplePlayer()
     let globalClock = GlobalClock()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         metronome.delegate = self
@@ -53,7 +53,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
     }
-    
+
     func appendAllDrumPadsIntoDrumPadsArray() {
         drumPadArray.append(drumPad1)
         drumPadArray.append(drumPad2)
@@ -64,11 +64,11 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         drumPadArray.append(drumPad7)
         drumPadArray.append(drumPad8)
     }
-    
+
     func setBpmSliderBySavedValue() {
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
     }
-    
+
     func tryToStartAudioKit() {
         do {
             try AudioKit.start()
@@ -78,14 +78,14 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        drums.play(note_tag: sender.tag)
+        drums.play(noteTag: sender.tag)
         sender.yellowBlink()
     }
-    
+
     @IBAction func buttonReleased(_ sender: UIButton) {
         sender.backgroundColor = UIColor.yellow
     }
-    
+
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
         metronome.metronomeIsRunning = !metronome.metronomeIsRunning
     }
@@ -93,11 +93,11 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     @IBAction func sliderChanged(_ sender: UISlider) {
         globalClock.changeMetronomeSpeed(toBPM: sender.value)
     }
-    
+
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
         examplePlayer.drumExampleIsPlaying = !examplePlayer.drumExampleIsPlaying
     }
-    
+
 }
 
 @IBDesignable

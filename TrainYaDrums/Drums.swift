@@ -65,8 +65,8 @@ class Drums {
         }
     }
     
-    func play(note_tag: Int) {
-        switch note_tag {
+    func play(noteTag: Int) {
+        switch noteTag {
         case 0:
             playDrum(note: 36)
         case 1:
