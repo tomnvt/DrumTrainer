@@ -12,11 +12,11 @@ protocol ExamplePlayerDelegate: AnyObject {
     func playDrum(beatpadNumber: [Int])
 }
 
-class ExamplePlayer : Synchronizable {
-    
+class ExamplePlayer: Synchronizable {
+
     var drumExampleIsPlaying = false
     let exampleBeatSequence = [[0], [2], [0, 1], [2], [0], [2], [0, 1], [2]]
-    var delegate : ExamplePlayerDelegate?
+    weak var delegate: ExamplePlayerDelegate?
 
     override func playSynchronized() {
         guard drumExampleIsPlaying else {

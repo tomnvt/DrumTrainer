@@ -9,25 +9,28 @@
 import Foundation
 
 class Synchronizable {
-    
+
     var beatIndices = [0, 1, 2, 3]
     var currentBeatIndex = 0
-    
+
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockBar = Notification.Name(rawValue: "globalClockBar")
 
     init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(playSynchronized), name: globalClockBeat, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setBeatIndexToZero), name: globalClockBar, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(synchronizeWithGlobalClock), name: globalClockBeat, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playSynchronized),
+                                               name: globalClockBeat, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setBeatIndexToZero),
+                                               name: globalClockBar, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(synchronizeWithGlobalClock),
+                                               name: globalClockBeat, object: nil)
     }
-    
+
     @objc func playSynchronized() {}
-    
+
     @objc func setBeatIndexToZero() {
         currentBeatIndex = 0
     }
-    
+
     @objc func synchronizeWithGlobalClock() {
         if currentBeatIndex < 3 {
             currentBeatIndex += 1
@@ -35,5 +38,5 @@ class Synchronizable {
             currentBeatIndex = 0
         }
     }
-    
+
 }

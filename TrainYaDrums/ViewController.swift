@@ -16,7 +16,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
             drumPadArray[drum].sendActions(for: .touchDown)
         }
     }
-    
+
     func metronomeButtonFlash() {
         metronomeButton.orangeBlink()
     }
