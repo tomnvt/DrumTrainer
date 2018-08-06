@@ -10,22 +10,23 @@ import Foundation
 import AudioKit
 
 class Drums {
-    
+
     let drums = AKAppleSampler()
-    
-    var drumFilesArray : [AKAudioFile?] = {
-        var bassDrumFile : AKAudioFile?
-        var snareDrumFile : AKAudioFile?
-        var closedHiHatFile : AKAudioFile?
-        var loTomFile : AKAudioFile?
-        var midTomFile : AKAudioFile?
-        var hiTomFile : AKAudioFile?
-        var openHiHatFile : AKAudioFile?
-        var clapFile : AKAudioFile?
-        let array = [bassDrumFile, clapFile, closedHiHatFile, loTomFile, midTomFile, hiTomFile, openHiHatFile, snareDrumFile]
+
+    var drumFilesArray: [AKAudioFile?] = {
+        var bassDrumFile: AKAudioFile?
+        var snareDrumFile: AKAudioFile?
+        var closedHiHatFile: AKAudioFile?
+        var loTomFile: AKAudioFile?
+        var midTomFile: AKAudioFile?
+        var hiTomFile: AKAudioFile?
+        var openHiHatFile: AKAudioFile?
+        var clapFile: AKAudioFile?
+        let array = [bassDrumFile, clapFile, closedHiHatFile, loTomFile,
+                     midTomFile, hiTomFile, openHiHatFile, snareDrumFile]
         return array
     }()
-    
+
     let drumFilesPartOne = ["Drums/bass_drum",
                             "Drums/snare",
                             "Drums/closed_hi_hat",
@@ -34,7 +35,7 @@ class Drums {
                             "Drums/mid_tom",
                             "Drums/hi_tom",
                             "Drums/clap"]
-    
+
     let drumFilesPartTwo = ["_C1.wav",
                             "_D1.wav",
                             "_F#1.wav",
@@ -47,13 +48,13 @@ class Drums {
     func loadDrums() {
         for index in 0..<drumFilesArray.count {
             do {
-                drumFilesArray[index] = try AKAudioFile(readFileName: drumFilesPartOne[index] + "" + drumFilesPartTwo[index])
-            }
-            catch {
+                drumFilesArray[index] = try AKAudioFile(readFileName: drumFilesPartOne[index]
+                    + "" + drumFilesPartTwo[index])
+            } catch {
                 print("Error while setting drum paths")
             }
         }
-        
+
         var drumFiles = [AKAudioFile]()
         for drum in drumFilesArray {
             if let drumFile = drum { drumFiles.append(drumFile) }
@@ -64,7 +65,7 @@ class Drums {
             print("Error while loading drums")
         }
     }
-    
+
     func play(noteTag: Int) {
         switch noteTag {
         case 0:
@@ -88,21 +89,19 @@ class Drums {
             break
         }
     }
-    
+
     func playDrum(note: Int) {
         do {
             try drums.play(noteNumber: MIDINoteNumber(note - 12))
-        }
-        catch {
+        } catch {
             print("Error while playing drums.")
         }
     }
-    
+
     func stopDrum(note: Int) {
         do {
             try drums.stop(noteNumber: MIDINoteNumber(note - 12))
-        }
-        catch {
+        } catch {
             print("Error while playing drums.")
         }
     }
