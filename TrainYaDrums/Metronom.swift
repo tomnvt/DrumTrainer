@@ -9,16 +9,16 @@
 import Foundation
 import AVFoundation
 
-protocol MetronomeButtonFlashDelegate {
+protocol MetronomeButtonFlashDelegate: AnyObject {
     func metronomeButtonFlash()
 }
 
-class Metronome : Synchronizable {
-    
-    var metronomeIsRunning : Bool = false
-    var delegate: MetronomeButtonFlashDelegate?
-    var player : AVAudioPlayer?
-    
+class Metronome: Synchronizable {
+
+    var metronomeIsRunning: Bool = false
+    weak var delegate: MetronomeButtonFlashDelegate?
+    var player: AVAudioPlayer?
+
     override func playSynchronized() {
         guard metronomeIsRunning else {
             return
@@ -30,25 +30,23 @@ class Metronome : Synchronizable {
         }
         delegate?.metronomeButtonFlash()
     }
-    
-    
-    @objc func playMetronome(sound : String) {
+
+    @objc func playMetronome(sound: String) {
         guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
-        
+
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
-            
+
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            
-            
+
             guard let player = player else { return }
-            
+
             player.play()
-            
+
         } catch let error {
             print(error.localizedDescription)
         }
     }
-    
+
 }
