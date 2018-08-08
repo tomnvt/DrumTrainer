@@ -18,6 +18,7 @@ class Metronome: Synchronizable {
     var metronomeIsRunning: Bool = false
     weak var delegate: MetronomeButtonFlashDelegate?
     var player: AVAudioPlayer?
+    var playerVolume : Float = 0.8
 
     override func playSynchronized() {
         guard metronomeIsRunning else {
@@ -39,6 +40,9 @@ class Metronome: Synchronizable {
             try AVAudioSession.sharedInstance().setActive(true)
 
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+
+            player?.setVolume(playerVolume, fadeDuration: 0.0)
+            print(player?.volume)
 
             guard let player = player else { return }
 

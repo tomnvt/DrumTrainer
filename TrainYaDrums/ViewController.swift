@@ -94,6 +94,10 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         globalClock.changeMetronomeSpeed(toBPM: sender.value)
     }
 
+    @IBAction func volumeSliderChanged(_ sender: UISlider) {
+        metronome.playerVolume = sender.value
+    }
+
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
         examplePlayer.drumExampleIsPlaying = !examplePlayer.drumExampleIsPlaying
     }

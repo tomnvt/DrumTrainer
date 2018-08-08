@@ -17,7 +17,7 @@
 		E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383EF14210E59C0004879D9 /* Synchronizable.swift */; };
 		E383EF17210E6444004879D9 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E383EF16210E6443004879D9 /* Drums */; };
 		E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A338A210492C100309084 /* ExamplePlayer.swift */; };
-		E394A4B520F3D146002F2183 /* Metronom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394A4B420F3D146002F2183 /* Metronom.swift */; };
+		E394A4B520F3D146002F2183 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394A4B420F3D146002F2183 /* Metronome.swift */; };
 		E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DF820E194DD0095856A /* AppDelegate.swift */; };
 		E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DFA20E194DD0095856A /* ViewController.swift */; };
 		E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5DFC20E194DD0095856A /* Main.storyboard */; };
@@ -44,7 +44,7 @@
 		E383EF14210E59C0004879D9 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
 		E383EF16210E6443004879D9 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Drums; sourceTree = "<group>"; };
 		E38A338A210492C100309084 /* ExamplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePlayer.swift; sourceTree = "<group>"; };
-		E394A4B420F3D146002F2183 /* Metronom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronom.swift; sourceTree = "<group>"; };
+		E394A4B420F3D146002F2183 /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
 		E3AA5DF520E194DC0095856A /* DrumTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5DF820E194DD0095856A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA5DFA20E194DD0095856A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				E3AA5E0120E194DE0095856A /* LaunchScreen.storyboard */,
 				E3AA5E0420E194DE0095856A /* Info.plist */,
 				E319501B20E82D6000A50A55 /* Drums.swift */,
-				E394A4B420F3D146002F2183 /* Metronom.swift */,
+				E394A4B420F3D146002F2183 /* Metronome.swift */,
 				E38A338A210492C100309084 /* ExamplePlayer.swift */,
 				E36F010E2109145900ACEB59 /* GlobalClock.swift */,
 				E383EF14210E59C0004879D9 /* Synchronizable.swift */,
@@ -273,7 +273,7 @@
 				E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */,
 				E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */,
 				E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */,
-				E394A4B520F3D146002F2183 /* Metronom.swift in Sources */,
+				E394A4B520F3D146002F2183 /* Metronome.swift in Sources */,
 				E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
