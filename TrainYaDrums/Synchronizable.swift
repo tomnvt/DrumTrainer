@@ -10,8 +10,8 @@ import Foundation
 
 class Synchronizable {
 
-    var beatIndices = [0, 1, 2, 3]
-    var currentBeatIndex = 0
+    var beatIndices: [Int] = [0, 1, 2, 3]
+    var currentBeatIndex: Int = 0
 
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockBar = Notification.Name(rawValue: "globalClockBar")

@@ -14,7 +14,7 @@ protocol ExamplePlayerDelegate: AnyObject {
 
 class ExamplePlayer: Synchronizable {
 
-    var drumExampleIsPlaying = false
+    var drumExampleIsPlaying: Bool = false
     let exampleBeatSequence = [[0], [2], [0, 1], [2], [0], [2], [0, 1], [2]]
     weak var delegate: ExamplePlayerDelegate?
 

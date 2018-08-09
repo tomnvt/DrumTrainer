@@ -35,12 +35,12 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
 
     var drumPadArray: [RoundableButton] = []
 
-    let defaults = UserDefaults.standard
+    let defaults: UserDefaults = UserDefaults.standard
 
-    let drums = Drums()
-    var metronome = Metronome()
-    var examplePlayer = ExamplePlayer()
-    let globalClock = GlobalClock()
+    let drums: Drums = Drums()
+    var metronome: Metronome = Metronome()
+    var examplePlayer: ExamplePlayer = ExamplePlayer()
+    let globalClock: GlobalClock = GlobalClock()
 
     override func viewDidLoad() {
         super.viewDidLoad()

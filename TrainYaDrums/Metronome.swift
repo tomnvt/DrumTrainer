@@ -16,9 +16,9 @@ protocol MetronomeButtonFlashDelegate: AnyObject {
 class Metronome: Synchronizable {
 
     var metronomeIsRunning: Bool = false
+    var playerVolume: Float = 0.8
     weak var delegate: MetronomeButtonFlashDelegate?
     var player: AVAudioPlayer?
-    var playerVolume : Float = 0.8
 
     override func playSynchronized() {
         guard metronomeIsRunning else {
@@ -32,6 +32,7 @@ class Metronome: Synchronizable {
         delegate?.metronomeButtonFlash()
     }
 
+    //- MARK: Add independent Player class
     @objc func playMetronome(sound: String) {
         guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else { return }
 
@@ -42,7 +43,6 @@ class Metronome: Synchronizable {
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
 
             player?.setVolume(playerVolume, fadeDuration: 0.0)
-            print(player?.volume)
 
             guard let player = player else { return }
 

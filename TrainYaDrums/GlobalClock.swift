@@ -10,7 +10,7 @@ import Foundation
 
 class GlobalClock {
 
-    var timer = Timer()
+    var timer: Timer = Timer()
     var beatIndex: Int = 0
     var beats: [Int] = [1, 2, 3, 4]
     var bpmValue: Int = 120
