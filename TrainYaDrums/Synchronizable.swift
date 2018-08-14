@@ -12,9 +12,11 @@ class Synchronizable {
 
     var beatIndices: [Int] = [0, 1, 2, 3]
     var currentBeatIndex: Int = 0
+    var eighthNoteIndex = 0
 
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockBar = Notification.Name(rawValue: "globalClockBar")
+    let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
 
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(playSynchronized),
@@ -23,12 +25,15 @@ class Synchronizable {
                                                name: globalClockBar, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(synchronizeWithGlobalClock),
                                                name: globalClockBeat, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(increaseEighthNoteIndex),
+                                               name: globalClockEighthNote, object: nil)
     }
 
     @objc func playSynchronized() {}
 
     @objc func setBeatIndexToZero() {
         currentBeatIndex = 0
+        eighthNoteIndex = 0
     }
 
     @objc func synchronizeWithGlobalClock() {
@@ -36,6 +41,17 @@ class Synchronizable {
             currentBeatIndex += 1
         } else {
             currentBeatIndex = 0
+        }
+    }
+
+    @objc func eighthNoteAction() {}
+
+    @objc func increaseEighthNoteIndex() {
+        eighthNoteAction()
+        if eighthNoteIndex < 31 {
+            eighthNoteIndex += 1
+        } else {
+            eighthNoteIndex = 0
         }
     }
 
