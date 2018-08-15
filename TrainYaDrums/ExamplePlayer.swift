@@ -9,20 +9,20 @@
 import Foundation
 
 protocol ExamplePlayerDelegate: AnyObject {
-    func playDrum(beatpadNumber: [Int])
+    func playDrum(drumPadIndex: [Int])
 }
 
 class ExamplePlayer: Synchronizable {
 
+    var exampleBeat = SimpleBrokenBeatExample()
     var drumExampleIsPlaying: Bool = false
-    let exampleBeatSequence = [[0], [2], [0, 1], [2], [0], [2], [0, 1], [2]]
     weak var delegate: ExamplePlayerDelegate?
 
-    override func playSynchronized() {
-        guard drumExampleIsPlaying else {
-            return
+    override func eighthNoteAction() {
+        guard drumExampleIsPlaying else { return }
+        for index in 0...15 where exampleBeat.firstBarDrumNotes[index][eighthNoteIndex] == 1 {
+            delegate?.playDrum(drumPadIndex: [index])
         }
-        delegate?.playDrum(beatpadNumber: exampleBeatSequence[currentBeatIndex])
     }
 
 }
