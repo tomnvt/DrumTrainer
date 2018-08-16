@@ -11,8 +11,8 @@ import AudioKit
 
 class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePlayerDelegate {
 
-    func playDrum(beatpadNumber: [Int]) {
-        for drum in beatpadNumber {
+    func playDrum(drumPadIndex: [Int]) {
+        for drum in drumPadIndex {
             drumPadArray[drum].sendActions(for: .touchDown)
         }
     }
@@ -87,11 +87,14 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
 
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
+        print("metronomeButtonPressed")
+        print(metronome.metronomeIsRunning)
         metronome.metronomeIsRunning = !metronome.metronomeIsRunning
+        print(metronome.metronomeIsRunning)
     }
 
-    @IBAction func sliderChanged(_ sender: UISlider) {
-        globalClock.changeMetronomeSpeed(toBPM: sender.value)
+    @IBAction func bpmSliderChanged(_ sender: UISlider) {
+        globalClock.changeBpmValue(toBPM: sender.value)
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {

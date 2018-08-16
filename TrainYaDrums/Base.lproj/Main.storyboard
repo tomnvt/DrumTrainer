@@ -76,7 +76,7 @@
                                                                         <rect key="frame" x="64" y="0.0" width="261" height="31"/>
                                                                         <color key="tintColor" red="1" green="0.88627450980392153" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <connections>
-                                                                            <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Txi-rZ-FrI"/>
+                                                                            <action selector="bpmSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Txi-rZ-FrI"/>
                                                                         </connections>
                                                                     </slider>
                                                                 </subviews>

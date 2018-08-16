@@ -10,6 +10,9 @@
 		8CF67967A9A5C7A54C1D8D5F /* Pods_DrumTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA496B5F714D32E2481B08 /* Pods_DrumTrainer.framework */; };
 		E319501C20E82D6000A50A55 /* Drums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319501B20E82D6000A50A55 /* Drums.swift */; };
 		E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */; };
+		E3307969211CF76600CCD037 /* BeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3307968211CF76600CCD037 /* BeatExample.swift */; };
+		E330796B211CFABB00CCD037 /* SimpleHouseBeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */; };
+		E330796E211CFD4800CCD037 /* SimpleBrokenBeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */; };
 		E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */; };
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
 		E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F010E2109145900ACEB59 /* GlobalClock.swift */; };
@@ -37,6 +40,9 @@
 		C4E6A2B472CB791D02837E95 /* Pods-DrumTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrumTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer.debug.xcconfig"; sourceTree = "<group>"; };
 		E319501B20E82D6000A50A55 /* Drums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drums.swift; sourceTree = "<group>"; };
 		E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		E3307968211CF76600CCD037 /* BeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatExample.swift; sourceTree = "<group>"; };
+		E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHouseBeatExample.swift; sourceTree = "<group>"; };
+		E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrokenBeatExample.swift; sourceTree = "<group>"; };
 		E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+@IBInspectable.swift"; sourceTree = "<group>"; };
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
 		E36F010E2109145900ACEB59 /* GlobalClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClock.swift; sourceTree = "<group>"; };
@@ -134,6 +140,9 @@
 				E3AA5E0420E194DE0095856A /* Info.plist */,
 				E319501B20E82D6000A50A55 /* Drums.swift */,
 				E394A4B420F3D146002F2183 /* Metronome.swift */,
+				E3307968211CF76600CCD037 /* BeatExample.swift */,
+				E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */,
+				E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */,
 				E38A338A210492C100309084 /* ExamplePlayer.swift */,
 				E36F010E2109145900ACEB59 /* GlobalClock.swift */,
 				E383EF14210E59C0004879D9 /* Synchronizable.swift */,
@@ -265,8 +274,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */,
+				E3307969211CF76600CCD037 /* BeatExample.swift in Sources */,
 				E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */,
+				E330796E211CFD4800CCD037 /* SimpleBrokenBeatExample.swift in Sources */,
 				E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */,
+				E330796B211CFABB00CCD037 /* SimpleHouseBeatExample.swift in Sources */,
 				E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */,
 				E319501C20E82D6000A50A55 /* Drums.swift in Sources */,
 				E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */,
