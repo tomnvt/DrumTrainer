@@ -13,11 +13,14 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
 
     func playDrum(drumPadIndex: [Int]) {
         for drum in drumPadIndex {
-            drumPadArray[drum].sendActions(for: .touchDown)
+            print("drum pad with index " + String(drumPadIndex[0]) + " is going to be pressed")
+            touchDownDrumPad[drum].sendActions(for: .touchDown)
+            print("drum pad with index " + String(drumPadIndex[0]) + " pressed")
         }
     }
 
     func metronomeButtonFlash() {
+        audioPlayer.playMetronomeSound()
         metronomeButton.orangeBlink()
     }
 
@@ -33,9 +36,11 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     @IBOutlet weak var drumPad7: RoundableButton!
     @IBOutlet weak var drumPad8: RoundableButton!
 
-    var drumPadArray: [RoundableButton] = []
+    var touchDownDrumPad: [RoundableButton] = []
 
     let defaults: UserDefaults = UserDefaults.standard
+
+    var audioPlayer = AudioPlayer()
 
     let drums: Drums = Drums()
     var metronome: Metronome = Metronome()
@@ -47,7 +52,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         metronome.delegate = self
         examplePlayer.delegate = self
         drums.loadDrums()
-        AudioKit.output = drums.drums
+        AudioKit.output = audioPlayer.output
         tryToStartAudioKit()
         setBpmSliderBySavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
@@ -55,14 +60,14 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
-        drumPadArray.append(drumPad1)
-        drumPadArray.append(drumPad2)
-        drumPadArray.append(drumPad3)
-        drumPadArray.append(drumPad4)
-        drumPadArray.append(drumPad5)
-        drumPadArray.append(drumPad6)
-        drumPadArray.append(drumPad7)
-        drumPadArray.append(drumPad8)
+        touchDownDrumPad.append(drumPad1)
+        touchDownDrumPad.append(drumPad2)
+        touchDownDrumPad.append(drumPad3)
+        touchDownDrumPad.append(drumPad4)
+        touchDownDrumPad.append(drumPad5)
+        touchDownDrumPad.append(drumPad6)
+        touchDownDrumPad.append(drumPad7)
+        touchDownDrumPad.append(drumPad8)
     }
 
     func setBpmSliderBySavedValue() {
@@ -78,7 +83,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        drums.play(noteTag: sender.tag)
+        audioPlayer.play(noteTag: sender.tag)
         sender.yellowBlink()
     }
 
