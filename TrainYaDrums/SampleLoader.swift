@@ -9,11 +9,10 @@
 import Foundation
 import AudioKit
 
-class AudioPlayerSampleLoader {
+class SampleLoader {
 
-    public let sampler = AKAppleSampler()
+    public let sampler: AKAppleSampler
 
-    private let midiNotes = [36, 38, 42, 46, 47, 41, 50, 39, 37, 60, 61]
     private var sampleFilesArray: [AKAudioFile?] = {
         var bassDrumFile: AKAudioFile?
         var snareDrumFile: AKAudioFile?
@@ -53,11 +52,12 @@ class AudioPlayerSampleLoader {
                                     "_C3.wav",
                                     "_C#3.mp3"]
 
-    init() {
-        loadDrums()
+    init(sampler: AKAppleSampler) {
+        self.sampler = sampler
+        loadSamples()
     }
 
-    public func loadDrums() {
+    public func loadSamples() {
         concatenateSampleFilePaths()
         let unwrapedSampleFilePaths = unwrapSampleFilePaths()
         do {
@@ -84,24 +84,6 @@ class AudioPlayerSampleLoader {
             if let drumFile = drum { unwrapedPaths.append(drumFile) }
         }
         return unwrapedPaths
-    }
-
-    public func playSample(note: Int) {
-        let midiNoteNumber = midiNotes[note] - 12
-        if note == 42 { stopSample(note: 46) }
-        do {
-            try sampler.play(noteNumber: MIDINoteNumber(midiNoteNumber))
-        } catch {
-            print("Error while playing drums.")
-        }
-    }
-
-    private func stopSample(note: Int) {
-        do {
-            try sampler.stop(noteNumber: MIDINoteNumber(note))
-        } catch {
-            print("Error while playing drums.")
-        }
     }
 
 }
