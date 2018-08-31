@@ -11,16 +11,19 @@ import AudioKit
 
 class AudioPlayer {
 
-    private let audioPlayerSampleLoader = AudioPlayerSampleLoader()
+    public let sampler = AKAppleSampler()
+    private let sampleLoader: SampleLoader
     private var metronomeIndex = 0
     public var output: AKAppleSampler
+    private let midiNotes = [36, 38, 42, 46, 47, 41, 50, 39, 37, 60, 61]
 
     init() {
-        output = audioPlayerSampleLoader.sampler
+        sampleLoader = SampleLoader(sampler: sampler)
+        output = sampler
     }
 
     func play(noteTag: Int) {
-        audioPlayerSampleLoader.playSample(note: noteTag)
+        playSample(note: noteTag)
     }
 
     public func playMetronomeSound() {
@@ -37,6 +40,24 @@ class AudioPlayer {
             metronomeIndex += 1
         } else {
             metronomeIndex = 0
+        }
+    }
+
+    public func playSample(note: Int) {
+        let midiNoteNumber = midiNotes[note] - 12
+        if note == 42 { stopSample(note: 46) }
+        do {
+            try sampler.play(noteNumber: MIDINoteNumber(midiNoteNumber))
+        } catch {
+            print("Error while playing drums.")
+        }
+    }
+
+    private func stopSample(note: Int) {
+        do {
+            try sampler.stop(noteNumber: MIDINoteNumber(note))
+        } catch {
+            print("Error while playing drums.")
         }
     }
 
