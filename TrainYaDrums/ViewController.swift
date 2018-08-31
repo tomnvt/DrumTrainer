@@ -9,7 +9,7 @@
 import UIKit
 import AudioKit
 
-class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePlayerDelegate {
+class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate {
 
     func playDrum(drumPadIndex: [Int]) {
         for drum in drumPadIndex {
@@ -19,7 +19,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         }
     }
 
-    func metronomeButtonFlash() {
+    func metronomeClickAndFlash() {
         audioPlayer.playMetronomeSound()
         metronomeButton.orangeBlink()
     }
@@ -42,7 +42,6 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
 
     var audioPlayer = AudioPlayer()
 
-    let drums: Drums = Drums()
     var metronome: Metronome = Metronome()
     var examplePlayer: ExamplePlayer = ExamplePlayer()
     let globalClock: GlobalClock = GlobalClock()
@@ -51,7 +50,6 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
         super.viewDidLoad()
         metronome.delegate = self
         examplePlayer.delegate = self
-        drums.loadDrums()
         AudioKit.output = audioPlayer.output
         tryToStartAudioKit()
         setBpmSliderBySavedValue()
@@ -103,7 +101,7 @@ class ViewController: UIViewController, MetronomeButtonFlashDelegate, ExamplePla
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
-        metronome.playerVolume = sender.value
+        // TODO: change metronome sounds volume
     }
 
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
