@@ -11,10 +11,12 @@ import AVFoundation
 import AudioKit
 
 protocol MetronomeDelegate: AnyObject {
-    func metronomeClickAndFlash()
+    func metronomeClickAndFlash(beatIndex: Int)
 }
 
 class Metronome: Synchronizable {
+
+    var beatIndex = 0
 
     var metronomeIsRunning: Bool = false
     weak var delegate: MetronomeDelegate?
@@ -27,7 +29,20 @@ class Metronome: Synchronizable {
         guard metronomeIsRunning else {
             return
         }
-        delegate?.metronomeClickAndFlash()
+        delegate?.metronomeClickAndFlash(beatIndex: beatIndex)
+        increaseBeatIndex()
+    }
+
+    private func increaseBeatIndex() {
+        if beatIndex < 3 {
+            beatIndex += 1
+        } else {
+            beatIndex = 0
+        }
+    }
+
+    override func firstBeatAction() {
+        beatIndex = 0
     }
 
 }

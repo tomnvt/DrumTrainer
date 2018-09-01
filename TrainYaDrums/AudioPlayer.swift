@@ -26,20 +26,11 @@ class AudioPlayer {
         playSample(note: noteTag)
     }
 
-    public func playMetronomeSound() {
-        if metronomeIndex == 0 {
+    public func playMetronomeSound(beatIndex: Int) {
+        if beatIndex == 0 {
             play(noteTag: 9)
         } else {
             play(noteTag: 10)
-        }
-        increaseMetronomeIndex()
-    }
-
-    private func increaseMetronomeIndex() {
-        if metronomeIndex < 3 {
-            metronomeIndex += 1
-        } else {
-            metronomeIndex = 0
         }
     }
 
