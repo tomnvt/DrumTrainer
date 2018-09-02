@@ -19,8 +19,8 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         }
     }
 
-    func metronomeClickAndFlash() {
-        audioPlayer.playMetronomeSound()
+    func metronomeClickAndFlash(beatIndex: Int) {
+        audioPlayer.playMetronomeSound(beatIndex: beatIndex)
         metronomeButton.orangeBlink()
     }
 
@@ -101,7 +101,8 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
-        // TODO: change metronome sounds volume
+        print("Slider changed to value \(sender.value)")
+        audioPlayer.changeMetronomeVolume(toValue: Double(sender.value))
     }
 
     @IBAction func exampleButtonPressed(_ sender: UIButton) {
