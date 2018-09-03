@@ -7,22 +7,8 @@
 //
 
 import UIKit
-import AudioKit
 
 class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate {
-
-    func playDrum(drumPadIndex: [Int]) {
-        for drum in drumPadIndex {
-            print("drum pad with index " + String(drumPadIndex[0]) + " is going to be pressed")
-            touchDownDrumPad[drum].sendActions(for: .touchDown)
-            print("drum pad with index " + String(drumPadIndex[0]) + " pressed")
-        }
-    }
-
-    func metronomeClickAndFlash(beatIndex: Int) {
-        audioPlayer.playMetronomeSound(beatIndex: beatIndex)
-        metronomeButton.orangeBlink()
-    }
 
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
@@ -36,12 +22,9 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
     @IBOutlet weak var drumPad7: RoundableButton!
     @IBOutlet weak var drumPad8: RoundableButton!
 
-    var touchDownDrumPad: [RoundableButton] = []
-
+    var drumPads: [RoundableButton] = []
     let defaults: UserDefaults = UserDefaults.standard
-
     var audioPlayer = AudioPlayer()
-
     var metronome: Metronome = Metronome()
     var examplePlayer: ExamplePlayer = ExamplePlayer()
     let globalClock: GlobalClock = GlobalClock()
@@ -50,38 +33,28 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         super.viewDidLoad()
         metronome.delegate = self
         examplePlayer.delegate = self
-        AudioKit.output = audioPlayer.output
-        tryToStartAudioKit()
         setBpmSliderBySavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
-        touchDownDrumPad.append(drumPad1)
-        touchDownDrumPad.append(drumPad2)
-        touchDownDrumPad.append(drumPad3)
-        touchDownDrumPad.append(drumPad4)
-        touchDownDrumPad.append(drumPad5)
-        touchDownDrumPad.append(drumPad6)
-        touchDownDrumPad.append(drumPad7)
-        touchDownDrumPad.append(drumPad8)
+        drumPads.append(drumPad1)
+        drumPads.append(drumPad2)
+        drumPads.append(drumPad3)
+        drumPads.append(drumPad4)
+        drumPads.append(drumPad5)
+        drumPads.append(drumPad6)
+        drumPads.append(drumPad7)
+        drumPads.append(drumPad8)
     }
 
     func setBpmSliderBySavedValue() {
         bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
     }
 
-    func tryToStartAudioKit() {
-        do {
-            try AudioKit.start()
-        } catch {
-            print("Error while starting AudioKit.")
-        }
-    }
-
     @IBAction func buttonPressed(_ sender: UIButton) {
-        audioPlayer.play(noteTag: sender.tag)
+        audioPlayer.playDrumSample(note: sender.tag)
         sender.yellowBlink()
     }
 
@@ -90,7 +63,6 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
     }
 
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
-        print("metronomeButtonPressed")
         print(metronome.metronomeIsRunning)
         metronome.metronomeIsRunning = !metronome.metronomeIsRunning
         print(metronome.metronomeIsRunning)
@@ -101,7 +73,6 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
-        print("Slider changed to value \(sender.value)")
         audioPlayer.changeMetronomeVolume(toValue: Double(sender.value))
     }
 
@@ -109,9 +80,15 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         examplePlayer.drumExampleIsPlaying = !examplePlayer.drumExampleIsPlaying
     }
 
-}
+    func touchDownDrumPad(drumPadIndexes: [Int]) {
+        for drum in drumPadIndexes {
+            drumPads[drum].sendActions(for: .touchDown)
+        }
+    }
 
-@IBDesignable
-class RoundableView: UIView {}
-class RoundableStackView: UIStackView {}
-class RoundableButton: UIButton {}
+    func metronomeClickAndFlash(beatIndex: Int) {
+        audioPlayer.playMetronomeSample(beatIndex: beatIndex)
+        metronomeButton.orangeBlink()
+    }
+
+}
