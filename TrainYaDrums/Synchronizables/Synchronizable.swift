@@ -44,6 +44,8 @@ class Synchronizable {
         }
     }
 
+    @objc func firstBeatAction() {}
+
     @objc func eighthNoteAction() {}
 
     @objc func increaseEighthNoteIndex() {
@@ -52,6 +54,7 @@ class Synchronizable {
             eighthNoteIndex += 1
         } else {
             eighthNoteIndex = 0
+            firstBeatAction()
         }
     }
 

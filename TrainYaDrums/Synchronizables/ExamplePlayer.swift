@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ExamplePlayerDelegate: AnyObject {
-    func playDrum(drumPadIndex: [Int])
+    func touchDownDrumPad(drumPadIndexes: [Int])
 }
 
 class ExamplePlayer: Synchronizable {
@@ -21,7 +21,7 @@ class ExamplePlayer: Synchronizable {
     override func eighthNoteAction() {
         guard drumExampleIsPlaying else { return }
         for index in 0...15 where exampleBeat.firstBarDrumNotes[index][eighthNoteIndex] == 1 {
-            delegate?.playDrum(drumPadIndex: [index])
+            delegate?.touchDownDrumPad(drumPadIndexes: [index])
         }
     }
 

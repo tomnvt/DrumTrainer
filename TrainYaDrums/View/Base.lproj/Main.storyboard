@@ -93,9 +93,12 @@
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-8a-9Qz">
+                                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-8a-9Qz">
                                                                         <rect key="frame" x="64" y="0.0" width="261" height="31"/>
                                                                         <color key="tintColor" red="1" green="0.8862745098" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <connections>
+                                                                            <action selector="volumeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ARb-d7-xvl"/>
+                                                                        </connections>
                                                                     </slider>
                                                                 </subviews>
                                                             </stackView>
