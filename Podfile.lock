@@ -2,21 +2,31 @@ PODS:
   - AudioKit (4.2.4):
     - AudioKit/UI (= 4.2.4)
   - AudioKit/UI (4.2.4)
+  - Realm (3.7.6):
+    - Realm/Headers (= 3.7.6)
+  - Realm/Headers (3.7.6)
+  - RealmSwift (3.7.6):
+    - Realm (= 3.7.6)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
   - AudioKit
+  - RealmSwift
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AudioKit
+    - Realm
+    - RealmSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
   AudioKit: 90ed0de2bc50ab68306f4b424ae1622fc9149b8e
+  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
+  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: 0ffb61909e22c954e2a3629e45a618f5b776a855
+PODFILE CHECKSUM: 3294628f6a8facda4e1b3d50ff468830d8a7df94
 
 COCOAPODS: 1.5.3

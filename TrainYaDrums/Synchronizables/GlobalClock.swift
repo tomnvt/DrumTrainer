@@ -23,10 +23,6 @@ class GlobalClock {
                                                block: {_ in self.eighthBeatNotification()})
     }
 
-    func calculateBeatPerSecondValue() -> Double {
-        return 1/(Double(bpmValue)/60.0)
-    }
-
     func calculateEighthIntervalPerSecond() -> Double {
         return (1/(Double(bpmValue)/60.0))/8
     }

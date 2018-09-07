@@ -1,0 +1,43 @@
+//
+//  BeatLoader.swift
+//  DrumTrainer
+//
+//  Created by NVT on 06.09.18.
+//  Copyright © 2018 NVT. All rights reserved.
+//
+
+import Foundation
+import RealmSwift
+
+class BeatLoader {
+
+    static let realm = try! Realm()
+
+    static func getNotesFor(exampleBeatName: String, beatIndex: Int, drumPadIndex: Int) -> [Int] {
+        let theObject = realm.object(ofType: ExampleBeat.self, forPrimaryKey: exampleBeatName)
+        let oneBeatEighthNotesList = Array(theObject!.oneBeatEighthNotesList)[beatIndex].notesList
+        let drumPadEighthNotes = Array(Array(oneBeatEighthNotesList)[drumPadIndex].notes)
+        return drumPadEighthNotes
+    }
+
+    static func getNotesFor(exampleBeatObject: ExampleBeat, beatIndex: Int, drumPadIndex: Int) -> [Int] {
+        let oneBeatEighthNotesList = Array(exampleBeatObject.oneBeatEighthNotesList)[beatIndex].notesList
+        let drumPadEighthNotes = Array(Array(oneBeatEighthNotesList)[drumPadIndex].notes)
+        return drumPadEighthNotes
+    }
+
+    static func setNotesFor(exampleBeatName: String, beatIndex: Int, drumPadIndex: Int, eighthNotes: [Int]) {
+        var notes = getNotesFor(exampleBeatName: exampleBeatName, beatIndex: beatIndex, drumPadIndex: drumPadIndex)
+        for index in 0..<eighthNotes.count {
+            notes[index] = eighthNotes[index]
+        }
+    }
+
+    static func setNotesFor(exampleBeatObject: ExampleBeat, beatIndex: Int, drumPadIndex: Int, eighthNotes: [Int]) {
+        var notes = getNotesFor(exampleBeatObject: exampleBeatObject, beatIndex: beatIndex, drumPadIndex: drumPadIndex)
+        for index in 0..<eighthNotes.count {
+            notes[index] = eighthNotes[index]
+        }
+    }
+
+}

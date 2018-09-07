@@ -11,12 +11,6 @@ import RealmSwift
 
 class DrumpadEighthNotes: Object {
 
-    var notes: List<Int> = {
-        var theNotes = List<Int>()
-        for index in 0...32 {
-            theNotes.append(0)
-        }
-        return theNotes
-    }()
+    var notes = List<Int>()
 
 }

@@ -36,6 +36,7 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         setBpmSliderBySavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
+        let emptyBeatExample = EmptyBeatExample()
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {

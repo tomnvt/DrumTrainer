@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8CF67967A9A5C7A54C1D8D5F /* Pods_DrumTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA496B5F714D32E2481B08 /* Pods_DrumTrainer.framework */; };
+		E319CC482141A41300E1FF52 /* ExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC472141A41300E1FF52 /* ExampleBeat.swift */; };
+		E319CC4A2141A49C00E1FF52 /* SimpleHouseExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */; };
+		E319CC4C2141CDB300E1FF52 /* BeatLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */; };
 		E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */; };
 		E32B4A1F213DB75D009F3089 /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B4A1E213DB75D009F3089 /* IBDesignable.swift */; };
 		E3307969211CF76600CCD037 /* BeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3307968211CF76600CCD037 /* BeatExample.swift */; };
@@ -34,8 +37,12 @@
 		E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5DFC20E194DD0095856A /* Main.storyboard */; };
 		E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5DFF20E194DE0095856A /* Assets.xcassets */; };
 		E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5E0120E194DE0095856A /* LaunchScreen.storyboard */; };
+		E3BA034C214061ED00DB3023 /* DrumpadEighthNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */; };
+		E3BA0350214068CE00DB3023 /* OneBeatEighthNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */; };
+		E3BA035221407D3400DB3023 /* EmptyBeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA035121407D3400DB3023 /* EmptyBeatExample.swift */; };
 		E3BCDDF8213C224E00063B5D /* SamplerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF7213C224E00063B5D /* SamplerFactory.swift */; };
 		E3BCDDFA213C22A000063B5D /* SampleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF9213C22A000063B5D /* SampleType.swift */; };
+		E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */; };
 		E3E63C3B20F53F2200006BA1 /* metronomeSound3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */; };
 		E3E63C3C20F53F2200006BA1 /* metronomeSound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3820F53F2200006BA1 /* metronomeSound2.wav */; };
 		E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */; };
@@ -49,6 +56,9 @@
 		7FAA496B5F714D32E2481B08 /* Pods_DrumTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrumTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F097722D340F067E7E22152 /* Pods-DrumTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrumTrainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer.release.xcconfig"; sourceTree = "<group>"; };
 		C4E6A2B472CB791D02837E95 /* Pods-DrumTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrumTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer.debug.xcconfig"; sourceTree = "<group>"; };
+		E319CC472141A41300E1FF52 /* ExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBeat.swift; sourceTree = "<group>"; };
+		E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHouseExampleBeat.swift; sourceTree = "<group>"; };
+		E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatLoader.swift; sourceTree = "<group>"; };
 		E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		E32B4A1E213DB75D009F3089 /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
 		E3307968211CF76600CCD037 /* BeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatExample.swift; sourceTree = "<group>"; };
@@ -77,8 +87,12 @@
 		E3AA5DFF20E194DE0095856A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AA5E0220E194DE0095856A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AA5E0420E194DE0095856A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumpadEighthNotes.swift; sourceTree = "<group>"; };
+		E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneBeatEighthNotes.swift; sourceTree = "<group>"; };
+		E3BA035121407D3400DB3023 /* EmptyBeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBeatExample.swift; sourceTree = "<group>"; };
 		E3BCDDF7213C224E00063B5D /* SamplerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerFactory.swift; sourceTree = "<group>"; };
 		E3BCDDF9213C22A000063B5D /* SampleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleType.swift; sourceTree = "<group>"; };
+		E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleLibrary.swift; sourceTree = "<group>"; };
 		E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound3.wav; sourceTree = "<group>"; };
 		E3E63C3820F53F2200006BA1 /* metronomeSound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound2.wav; sourceTree = "<group>"; };
 		E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound4.wav; sourceTree = "<group>"; };
@@ -150,10 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				E394A4B420F3D146002F2183 /* Metronome.swift */,
-				E3307968211CF76600CCD037 /* BeatExample.swift */,
-				E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */,
-				E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */,
-				E38A338A210492C100309084 /* ExamplePlayer.swift */,
 				E36F010E2109145900ACEB59 /* GlobalClock.swift */,
 				E383EF14210E59C0004879D9 /* Synchronizable.swift */,
 			);
@@ -210,6 +220,7 @@
 		E3AA5DF720E194DC0095856A /* TrainYaDrums */ = {
 			isa = PBXGroup;
 			children = (
+				E3B6E0E9213F2C0F00EA9620 /* Example Player */,
 				E3667BE4213C9253004A1E14 /* Audio */,
 				E3667BE5213C929A004A1E14 /* Synchronizables */,
 				E3667BE8213C92C6004A1E14 /* Controller */,
@@ -220,6 +231,24 @@
 				E383EF16210E6443004879D9 /* Drums */,
 			);
 			path = TrainYaDrums;
+			sourceTree = "<group>";
+		};
+		E3B6E0E9213F2C0F00EA9620 /* Example Player */ = {
+			isa = PBXGroup;
+			children = (
+				E3307968211CF76600CCD037 /* BeatExample.swift */,
+				E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */,
+				E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */,
+				E38A338A210492C100309084 /* ExamplePlayer.swift */,
+				E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */,
+				E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */,
+				E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */,
+				E3BA035121407D3400DB3023 /* EmptyBeatExample.swift */,
+				E319CC472141A41300E1FF52 /* ExampleBeat.swift */,
+				E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */,
+				E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */,
+			);
+			path = "Example Player";
 			sourceTree = "<group>";
 		};
 		E3E63C2E20F53ECB00006BA1 /* MetronomeSounds */ = {
@@ -241,11 +270,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3AA5E0720E194DE0095856A /* Build configuration list for PBXNativeTarget "DrumTrainer" */;
 			buildPhases = (
-				E34D62062114B2B100147A32 /* ShellScript */,
 				A782C4D7024C419832B932D8 /* [CP] Check Pods Manifest.lock */,
+				E34D62062114B2B100147A32 /* ShellScript */,
 				E3AA5DF120E194DC0095856A /* Sources */,
 				E3AA5DF220E194DC0095856A /* Frameworks */,
 				E3AA5DF320E194DC0095856A /* Resources */,
+				72B301C9FE5C9C063D589B10 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +340,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		72B301C9FE5C9C063D589B10 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A782C4D7024C419832B932D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +398,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E319CC482141A41300E1FF52 /* ExampleBeat.swift in Sources */,
+				E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */,
+				E319CC4C2141CDB300E1FF52 /* BeatLoader.swift in Sources */,
 				E351E6C2213AA6B500B4CF53 /* DrumSampler.swift in Sources */,
 				E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */,
 				E3307969211CF76600CCD037 /* BeatExample.swift in Sources */,
@@ -355,11 +408,13 @@
 				E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */,
 				E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */,
 				E3BCDDF8213C224E00063B5D /* SamplerFactory.swift in Sources */,
+				E3BA034C214061ED00DB3023 /* DrumpadEighthNotes.swift in Sources */,
 				E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */,
 				E330796E211CFD4800CCD037 /* SimpleBrokenBeatExample.swift in Sources */,
 				E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */,
 				E330796B211CFABB00CCD037 /* SimpleHouseBeatExample.swift in Sources */,
 				E3BCDDFA213C22A000063B5D /* SampleType.swift in Sources */,
+				E3BA0350214068CE00DB3023 /* OneBeatEighthNotes.swift in Sources */,
 				E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */,
 				E393E7B2213998B600D10CAE /* Sample.swift in Sources */,
 				E3FE3BFD2130A11100F0FEAB /* SampleLoader.swift in Sources */,
@@ -369,8 +424,10 @@
 				E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */,
 				E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */,
 				E394A4B520F3D146002F2183 /* Metronome.swift in Sources */,
+				E3BA035221407D3400DB3023 /* EmptyBeatExample.swift in Sources */,
 				E351E6C0213AA69F00B4CF53 /* MetronomeSampler.swift in Sources */,
 				E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */,
+				E319CC4A2141A49C00E1FF52 /* SimpleHouseExampleBeat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
