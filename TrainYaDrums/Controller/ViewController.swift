@@ -36,7 +36,6 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         setBpmSliderBySavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
-        let emptyBeatExample = EmptyBeatExample()
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -64,9 +63,7 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
     }
 
     @IBAction func metronomeButtonPressed(_ sender: UIButton) {
-        print(metronome.metronomeIsRunning)
         metronome.metronomeIsRunning = !metronome.metronomeIsRunning
-        print(metronome.metronomeIsRunning)
     }
 
     @IBAction func bpmSliderChanged(_ sender: UISlider) {

@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class SimpleHouseBeatExample: BeatExample {
+class SimpleHouseBeatExample: ExampleBeatNotes {
 
     let exampleNotes = { () -> [[Int]] in
         var drumPadNotes: [[Int]] = [[]]
@@ -47,7 +47,5 @@ class SimpleHouseBeatExample: BeatExample {
 //        print(theNotes)
 //        return theNotes
 //    }()
-
-    
 
 }

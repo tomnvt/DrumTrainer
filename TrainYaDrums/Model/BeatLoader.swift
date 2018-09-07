@@ -13,6 +13,16 @@ class BeatLoader {
 
     static let realm = try! Realm()
 
+    static func getNotesFor(exampleBeatName: String, beatIndex: Int) -> [[Int]] {
+        let theObject = realm.object(ofType: ExampleBeat.self, forPrimaryKey: exampleBeatName)
+        let oneBeatEighthNotesList = Array(theObject!.oneBeatEighthNotesList)[beatIndex].notesList
+        var notesArray: [[Int]] = []
+        for index in 0...15 {
+            notesArray.append(Array(Array(oneBeatEighthNotesList)[index].notes))
+        }
+        return notesArray
+    }
+
     static func getNotesFor(exampleBeatName: String, beatIndex: Int, drumPadIndex: Int) -> [Int] {
         let theObject = realm.object(ofType: ExampleBeat.self, forPrimaryKey: exampleBeatName)
         let oneBeatEighthNotesList = Array(theObject!.oneBeatEighthNotesList)[beatIndex].notesList
@@ -38,6 +48,15 @@ class BeatLoader {
         for index in 0..<eighthNotes.count {
             notes[index] = eighthNotes[index]
         }
+    }
+    
+    static func getBeatNames() -> [String] {
+        let savedBeats = realm.objects(ExampleBeat.self)
+        var names: [String] = []
+        for savedBeat in savedBeats {
+            names.append(savedBeat.name)
+        }
+        return names
     }
 
 }

@@ -22,7 +22,7 @@ class SampleLoader {
         do {
             try sampler.loadAudioFiles(audioFiles)
         } catch {
-            print("Error while loading drums")
+            print("Error while loading drums: \(error)")
         }
     }
 

@@ -16,7 +16,7 @@ protocol ExamplePlayerDelegate: AnyObject {
 class ExamplePlayer: Synchronizable {
 
     let exampleLibrary = ExampleLibrary()
-    var exampleBeat = SimpleBrokenBeatExample()
+    var exampleBeat: ExampleBeatNotes
 
     var beatExample: ExampleBeat? {
         didSet {
@@ -29,9 +29,10 @@ class ExamplePlayer: Synchronizable {
     //- MARK: Add didSet when exampleBeatIsChanged
 
     override init() {
+        exampleBeat = exampleLibrary.exampleBeats[0]
+        print(BeatLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
+        dump(BeatLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
         super.init()
-        exampleBeat = SimpleBrokenBeatExample()
-        print(BeatLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0, drumPadIndex: 0))
     }
 
     override func eighthNoteAction() {

@@ -1,16 +1,17 @@
 //
-//  SimpleBrokenBeatExample.swift
+//  SimpleHouseExampleBeat.swift
 //  DrumTrainer
 //
-//  Created by NVT on 10.08.18.
+//  Created by NVT on 06.09.18.
 //  Copyright © 2018 NVT. All rights reserved.
 //
 
 import Foundation
+import RealmSwift
 
-class SimpleBrokenBeatExample: BeatExample {
+class SimpleHouseExampleBeat: ExampleBeatNotes {
 
-     var exampleNotes = { () -> [[Int]] in
+    let exampleBeatNotes = { () -> [[Int]] in
         var drumPadNotes: [[Int]] = [[]]
         let eighthsArray = [0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
@@ -20,23 +21,24 @@ class SimpleBrokenBeatExample: BeatExample {
             drumPadNotes.append(eighthsArray)
         }
         drumPadNotes[0] = [1, 0, 0, 0, 0, 0, 0, 0,
-                           0, 0, 0, 0, 0, 0, 0, 0,
-                           1, 0, 1, 0, 0, 0, 0, 0,
-                           0, 0, 0, 0, 0, 0, 1, 0]
+                           1, 0, 0, 0, 0, 0, 0, 0,
+                           1, 0, 0, 0, 0, 0, 0, 0,
+                           1, 0, 0, 0, 0, 0, 0, 0]
         drumPadNotes[1] = [0, 0, 0, 0, 0, 0, 0, 0,
                            1, 0, 0, 0, 0, 0, 0, 0,
                            0, 0, 0, 0, 0, 0, 0, 0,
                            1, 0, 0, 0, 0, 0, 0, 0]
-        drumPadNotes[2] = [1, 0, 0, 0, 1, 0, 0, 0,
-                           1, 0, 0, 0, 1, 0, 0, 0,
-                           1, 0, 0, 0, 1, 0, 0, 0,
-                           1, 0, 0, 0, 1, 0, 0, 0]
+        drumPadNotes[2] = [0, 0, 0, 0, 1, 0, 0, 0,
+                           0, 0, 0, 0, 1, 0, 0, 0,
+                           0, 0, 0, 0, 1, 0, 0, 0,
+                           0, 0, 0, 0, 1, 0, 0, 0]
         return drumPadNotes
     }()
 
     override init() {
         super.init()
-        self.firstBarDrumNotes = exampleNotes
+        saveExampleBeatToRealm(beatNotes: exampleBeatNotes, beatName: "Simple House")
+        firstBarDrumNotes = exampleBeatNotes
     }
 
 }

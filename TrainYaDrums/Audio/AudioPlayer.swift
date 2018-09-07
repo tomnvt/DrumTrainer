@@ -52,7 +52,7 @@ class AudioPlayer {
 
     public func playSample(sampler: AKAppleSampler, note: Int) {
         let midiNoteNumber = midiNotes[note] - 12
-        if note == 42 { stopSample(note: 46) }
+        if note == 42 { stopSample(sampler: drumSampler, note: 46) }
         do {
             try sampler.play(noteNumber: MIDINoteNumber(midiNoteNumber))
         } catch {
@@ -60,9 +60,9 @@ class AudioPlayer {
         }
     }
 
-    private func stopSample(note: Int) {
+    private func stopSample(sampler: AKAppleSampler, note: Int) {
         do {
-            try drumSampler.stop(noteNumber: MIDINoteNumber(note))
+            try sampler.stop(noteNumber: MIDINoteNumber(note))
         } catch {
             print("Error while stopping sample!")
         }
