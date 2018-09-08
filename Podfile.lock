@@ -2,6 +2,7 @@ PODS:
   - AudioKit (4.2.4):
     - AudioKit/UI (= 4.2.4)
   - AudioKit/UI (4.2.4)
+  - CollectionViewGridLayout (2.0.0)
   - Realm (3.7.6):
     - Realm/Headers (= 3.7.6)
   - Realm/Headers (3.7.6)
@@ -11,22 +12,25 @@ PODS:
 
 DEPENDENCIES:
   - AudioKit
+  - CollectionViewGridLayout
   - RealmSwift
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AudioKit
+    - CollectionViewGridLayout
     - Realm
     - RealmSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
   AudioKit: 90ed0de2bc50ab68306f4b424ae1622fc9149b8e
+  CollectionViewGridLayout: b00ad1b8a2cfb472062bc7a69e6522cc30ca49e7
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: 3294628f6a8facda4e1b3d50ff468830d8a7df94
+PODFILE CHECKSUM: 002595cedc91b07fa6b17475338d7b2779fe6362
 
 COCOAPODS: 1.5.3

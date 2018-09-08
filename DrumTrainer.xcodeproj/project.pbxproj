@@ -14,8 +14,6 @@
 		E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */; };
 		E32B4A1F213DB75D009F3089 /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B4A1E213DB75D009F3089 /* IBDesignable.swift */; };
 		E3307969211CF76600CCD037 /* ExampleBeatNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3307968211CF76600CCD037 /* ExampleBeatNotes.swift */; };
-		E330796B211CFABB00CCD037 /* SimpleHouseBeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */; };
-		E330796E211CFD4800CCD037 /* SimpleBrokenBeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */; };
 		E351E6BE213AA42600B4CF53 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351E6BD213AA42600B4CF53 /* Sampler.swift */; };
 		E351E6C0213AA69F00B4CF53 /* MetronomeSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351E6BF213AA69F00B4CF53 /* MetronomeSampler.swift */; };
 		E351E6C2213AA6B500B4CF53 /* DrumSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351E6C1213AA6B500B4CF53 /* DrumSampler.swift */; };
@@ -23,7 +21,6 @@
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
 		E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3622C9D212874390053F190 /* AudioPlayer.swift */; };
 		E3622CA0212885B30053F190 /* metronomeSound1_C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3622C9F212885B30053F190 /* metronomeSound1_C1.wav */; };
-		E3667BEA213C93B4004A1E14 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3667BE9213C93B4004A1E14 /* Default-568h@2x.png */; };
 		E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F010E2109145900ACEB59 /* GlobalClock.swift */; };
 		E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D20F620FE573600796084 /* UIColor+HexColor.swift */; };
 		E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383EF14210E59C0004879D9 /* Synchronizable.swift */; };
@@ -39,7 +36,6 @@
 		E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5E0120E194DE0095856A /* LaunchScreen.storyboard */; };
 		E3BA034C214061ED00DB3023 /* DrumpadEighthNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */; };
 		E3BA0350214068CE00DB3023 /* OneBeatEighthNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */; };
-		E3BA035221407D3400DB3023 /* EmptyBeatExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA035121407D3400DB3023 /* EmptyBeatExample.swift */; };
 		E3BCDDF8213C224E00063B5D /* SamplerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF7213C224E00063B5D /* SamplerFactory.swift */; };
 		E3BCDDFA213C22A000063B5D /* SampleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF9213C22A000063B5D /* SampleType.swift */; };
 		E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */; };
@@ -48,6 +44,13 @@
 		E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */; };
 		E3E63C3E20F53F2200006BA1 /* metronomeSound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */; };
 		E3E8DB6421430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */; };
+		E3F7F3452143BC8000264873 /* ExampleEditingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7F3442143BC8000264873 /* ExampleEditingPageViewController.swift */; };
+		E3F7F3472143BDBF00264873 /* BeatBarEditViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7F3462143BDBF00264873 /* BeatBarEditViewContoller.swift */; };
+		E3FD46B7214409CD006CC917 /* PathCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */; };
+		E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */; };
+		E3FD46BB21440A3F006CC917 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD46B921440A3F006CC917 /* CollectionReusableView.swift */; };
+		E3FD46BC21440A3F006CC917 /* CollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FD46BA21440A3F006CC917 /* CollectionReusableView.xib */; };
+		E3FD46BE21440E6F006CC917 /* BeatEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD46BD21440E6F006CC917 /* BeatEditViewController.swift */; };
 		E3FE3BFD2130A11100F0FEAB /* SampleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FE3BFC2130A11100F0FEAB /* SampleLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +66,6 @@
 		E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		E32B4A1E213DB75D009F3089 /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
 		E3307968211CF76600CCD037 /* ExampleBeatNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBeatNotes.swift; sourceTree = "<group>"; };
-		E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHouseBeatExample.swift; sourceTree = "<group>"; };
-		E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrokenBeatExample.swift; sourceTree = "<group>"; };
 		E351E6BD213AA42600B4CF53 /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		E351E6BF213AA69F00B4CF53 /* MetronomeSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeSampler.swift; sourceTree = "<group>"; };
 		E351E6C1213AA6B500B4CF53 /* DrumSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumSampler.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
 		E3622C9D212874390053F190 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E3622C9F212885B30053F190 /* metronomeSound1_C1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound1_C1.wav; sourceTree = "<group>"; };
-		E3667BE9213C93B4004A1E14 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E36F010E2109145900ACEB59 /* GlobalClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClock.swift; sourceTree = "<group>"; };
 		E37D20F620FE573600796084 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		E383EF14210E59C0004879D9 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
@@ -90,7 +90,6 @@
 		E3AA5E0420E194DE0095856A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumpadEighthNotes.swift; sourceTree = "<group>"; };
 		E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneBeatEighthNotes.swift; sourceTree = "<group>"; };
-		E3BA035121407D3400DB3023 /* EmptyBeatExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBeatExample.swift; sourceTree = "<group>"; };
 		E3BCDDF7213C224E00063B5D /* SamplerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerFactory.swift; sourceTree = "<group>"; };
 		E3BCDDF9213C22A000063B5D /* SampleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleType.swift; sourceTree = "<group>"; };
 		E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleLibrary.swift; sourceTree = "<group>"; };
@@ -99,6 +98,13 @@
 		E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound4.wav; sourceTree = "<group>"; };
 		E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound1.wav; sourceTree = "<group>"; };
 		E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrokenBeatExampleBeat.swift; sourceTree = "<group>"; };
+		E3F7F3442143BC8000264873 /* ExampleEditingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEditingPageViewController.swift; sourceTree = "<group>"; };
+		E3F7F3462143BDBF00264873 /* BeatBarEditViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatBarEditViewContoller.swift; sourceTree = "<group>"; };
+		E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathCollectionViewCell.xib; sourceTree = "<group>"; };
+		E3FD46B921440A3F006CC917 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
+		E3FD46BA21440A3F006CC917 /* CollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionReusableView.xib; sourceTree = "<group>"; };
+		E3FD46BD21440E6F006CC917 /* BeatEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatEditViewController.swift; sourceTree = "<group>"; };
 		E3FE3BFC2130A11100F0FEAB /* SampleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLoader.swift; sourceTree = "<group>"; };
 		EBE5BEDD681DB24D8BAEBC44 /* Pods-TrainYaDrums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainYaDrums.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainYaDrums/Pods-TrainYaDrums.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +186,10 @@
 				E3AA5DFF20E194DE0095856A /* Assets.xcassets */,
 				E3AA5E0120E194DE0095856A /* LaunchScreen.storyboard */,
 				E32B4A1E213DB75D009F3089 /* IBDesignable.swift */,
+				E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */,
+				E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */,
+				E3FD46B921440A3F006CC917 /* CollectionReusableView.swift */,
+				E3FD46BA21440A3F006CC917 /* CollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				E3AA5DFA20E194DD0095856A /* ViewController.swift */,
+				E3F7F3442143BC8000264873 /* ExampleEditingPageViewController.swift */,
+				E3F7F3462143BDBF00264873 /* BeatBarEditViewContoller.swift */,
+				E3FD46BD21440E6F006CC917 /* BeatEditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,7 +217,6 @@
 		E3AA5DEC20E194DC0095856A = {
 			isa = PBXGroup;
 			children = (
-				E3667BE9213C93B4004A1E14 /* Default-568h@2x.png */,
 				E3AA5DF720E194DC0095856A /* TrainYaDrums */,
 				E3AA5DF620E194DC0095856A /* Products */,
 				0DDCEF75F2DD83673E9D3C2A /* Pods */,
@@ -252,15 +264,12 @@
 			isa = PBXGroup;
 			children = (
 				E3307968211CF76600CCD037 /* ExampleBeatNotes.swift */,
-				E330796A211CFABB00CCD037 /* SimpleHouseBeatExample.swift */,
-				E330796D211CFD4800CCD037 /* SimpleBrokenBeatExample.swift */,
 				E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */,
 				E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */,
 				E319CC472141A41300E1FF52 /* ExampleBeat.swift */,
 				E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */,
 				E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */,
 				E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */,
-				E3BA035121407D3400DB3023 /* EmptyBeatExample.swift */,
 				E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */,
 			);
 			path = Model;
@@ -301,6 +310,11 @@
 				TargetAttributes = {
 					E3AA5DF420E194DC0095856A = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -330,7 +344,8 @@
 				E383EF17210E6444004879D9 /* Drums in Resources */,
 				E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */,
 				E3E63C3C20F53F2200006BA1 /* metronomeSound2.wav in Resources */,
-				E3667BEA213C93B4004A1E14 /* Default-568h@2x.png in Resources */,
+				E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */,
+				E3FD46BC21440A3F006CC917 /* CollectionReusableView.xib in Resources */,
 				E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */,
 				E3622CA0212885B30053F190 /* metronomeSound1_C1.wav in Resources */,
 				E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */,
@@ -350,11 +365,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CollectionViewGridLayout/CollectionViewGridLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewGridLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -402,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E319CC482141A41300E1FF52 /* ExampleBeat.swift in Sources */,
+				E3F7F3472143BDBF00264873 /* BeatBarEditViewContoller.swift in Sources */,
 				E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */,
 				E319CC4C2141CDB300E1FF52 /* BeatLoader.swift in Sources */,
 				E351E6C2213AA6B500B4CF53 /* DrumSampler.swift in Sources */,
@@ -409,14 +427,16 @@
 				E3307969211CF76600CCD037 /* ExampleBeatNotes.swift in Sources */,
 				E351E6BE213AA42600B4CF53 /* Sampler.swift in Sources */,
 				E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */,
+				E3FD46BE21440E6F006CC917 /* BeatEditViewController.swift in Sources */,
 				E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */,
+				E3FD46B7214409CD006CC917 /* PathCollectionViewCell.swift in Sources */,
+				E3FD46BB21440A3F006CC917 /* CollectionReusableView.swift in Sources */,
+				E3F7F3452143BC8000264873 /* ExampleEditingPageViewController.swift in Sources */,
 				E3BCDDF8213C224E00063B5D /* SamplerFactory.swift in Sources */,
 				E3BA034C214061ED00DB3023 /* DrumpadEighthNotes.swift in Sources */,
 				E3E8DB6421430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift in Sources */,
 				E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */,
-				E330796E211CFD4800CCD037 /* SimpleBrokenBeatExample.swift in Sources */,
 				E3AA5DFB20E194DD0095856A /* ViewController.swift in Sources */,
-				E330796B211CFABB00CCD037 /* SimpleHouseBeatExample.swift in Sources */,
 				E3BCDDFA213C22A000063B5D /* SampleType.swift in Sources */,
 				E3BA0350214068CE00DB3023 /* OneBeatEighthNotes.swift in Sources */,
 				E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */,
@@ -428,7 +448,6 @@
 				E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */,
 				E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */,
 				E394A4B520F3D146002F2183 /* Metronome.swift in Sources */,
-				E3BA035221407D3400DB3023 /* EmptyBeatExample.swift in Sources */,
 				E351E6C0213AA69F00B4CF53 /* MetronomeSampler.swift in Sources */,
 				E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */,
 				E319CC4A2141A49C00E1FF52 /* SimpleHouseExampleBeat.swift in Sources */,

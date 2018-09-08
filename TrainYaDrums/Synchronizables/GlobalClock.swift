@@ -18,9 +18,10 @@ class GlobalClock {
 
     func runGlobalCLock() {
         beatIndex = 0
-        eighthBeatTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(calculateEighthIntervalPerSecond()),
-                                               repeats: true,
-                                               block: {_ in self.eighthBeatNotification()})
+        let timeInterval = TimeInterval(calculateEighthIntervalPerSecond())
+        self.eighthBeatTimer = Timer.scheduledTimer(withTimeInterval: timeInterval,
+                                                    repeats: true,
+                                                    block: {_ in self.eighthBeatNotification()})
     }
 
     func calculateEighthIntervalPerSecond() -> Double {

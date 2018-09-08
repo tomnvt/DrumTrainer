@@ -9,5 +9,6 @@ target 'DrumTrainer' do
 pod 'AudioKit'
 pod 'SwiftLint'
 pod 'RealmSwift'
+pod 'CollectionViewGridLayout'
 
 end

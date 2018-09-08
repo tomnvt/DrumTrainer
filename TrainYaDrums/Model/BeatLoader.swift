@@ -49,7 +49,7 @@ class BeatLoader {
             notes[index] = eighthNotes[index]
         }
     }
-    
+
     static func getBeatNames() -> [String] {
         let savedBeats = realm.objects(ExampleBeat.self)
         var names: [String] = []
