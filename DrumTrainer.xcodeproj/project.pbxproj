@@ -44,8 +44,6 @@
 		E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */; };
 		E3E63C3E20F53F2200006BA1 /* metronomeSound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */; };
 		E3E8DB6421430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */; };
-		E3F7F3452143BC8000264873 /* ExampleEditingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7F3442143BC8000264873 /* ExampleEditingPageViewController.swift */; };
-		E3F7F3472143BDBF00264873 /* BeatBarEditViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7F3462143BDBF00264873 /* BeatBarEditViewContoller.swift */; };
 		E3FD46B7214409CD006CC917 /* PathCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */; };
 		E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */; };
 		E3FD46BB21440A3F006CC917 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD46B921440A3F006CC917 /* CollectionReusableView.swift */; };
@@ -98,8 +96,6 @@
 		E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound4.wav; sourceTree = "<group>"; };
 		E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound1.wav; sourceTree = "<group>"; };
 		E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrokenBeatExampleBeat.swift; sourceTree = "<group>"; };
-		E3F7F3442143BC8000264873 /* ExampleEditingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEditingPageViewController.swift; sourceTree = "<group>"; };
-		E3F7F3462143BDBF00264873 /* BeatBarEditViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatBarEditViewContoller.swift; sourceTree = "<group>"; };
 		E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathCollectionViewCell.xib; sourceTree = "<group>"; };
 		E3FD46B921440A3F006CC917 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
@@ -207,8 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				E3AA5DFA20E194DD0095856A /* ViewController.swift */,
-				E3F7F3442143BC8000264873 /* ExampleEditingPageViewController.swift */,
-				E3F7F3462143BDBF00264873 /* BeatBarEditViewContoller.swift */,
 				E3FD46BD21440E6F006CC917 /* BeatEditViewController.swift */,
 			);
 			path = Controller;
@@ -419,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E319CC482141A41300E1FF52 /* ExampleBeat.swift in Sources */,
-				E3F7F3472143BDBF00264873 /* BeatBarEditViewContoller.swift in Sources */,
 				E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */,
 				E319CC4C2141CDB300E1FF52 /* BeatLoader.swift in Sources */,
 				E351E6C2213AA6B500B4CF53 /* DrumSampler.swift in Sources */,
@@ -431,7 +424,6 @@
 				E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */,
 				E3FD46B7214409CD006CC917 /* PathCollectionViewCell.swift in Sources */,
 				E3FD46BB21440A3F006CC917 /* CollectionReusableView.swift in Sources */,
-				E3F7F3452143BC8000264873 /* ExampleEditingPageViewController.swift in Sources */,
 				E3BCDDF8213C224E00063B5D /* SamplerFactory.swift in Sources */,
 				E3BA034C214061ED00DB3023 /* DrumpadEighthNotes.swift in Sources */,
 				E3E8DB6421430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift in Sources */,

@@ -13,6 +13,11 @@ class BeatEditViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     public var numberOfRows: Int = 16
+    var currentBarIndex = 1
+    var eighthNoteIndex = 0
+
+    let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
+    let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,24 @@ class BeatEditViewController: UIViewController {
         self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self), bundle: nil),
                                      forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
                                      withReuseIdentifier: CollectionReusableView.identifier)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetEighthNoteIndex),
+                                               name: globalClockBeat, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(animateLoopProgress),
+                                               name: globalClockEighthNote, object: nil)
+    }
+
+    @objc func animateLoopProgress() {
+        collectionView.cellForItem(at: IndexPath.init(row: (16*eighthNoteIndex),
+                                                      section: 0))?.yellowBlink()
+        if eighthNoteIndex < 31 {
+            eighthNoteIndex += 1
+        } else {
+            eighthNoteIndex = 0
+        }
+    }
+
+    @objc func resetEighthNoteIndex() {
+        eighthNoteIndex = 0
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -72,6 +95,7 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Select [\(indexPath.section), \(indexPath.row)]")
     }
+
 }
 
 extension BeatEditViewController: UICollectionViewDataSource {
@@ -82,10 +106,15 @@ extension BeatEditViewController: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
         -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PathCollectionViewCell.identifier,
-                                                            for: indexPath) as? PathCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PathCollectionViewCell.identifier, for: indexPath) as? PathCollectionViewCell else {
             fatalError("Cannot retrieve PathCollectionViewCell")
         }
+//        var selectedIndex = Int ()
+//        if selectedIndex == indexPath.row {
+//            cell.backgroundColor = UIColor.green
+//        } else {
+//            cell.backgroundColor = UIColor.red
+//        }
         cell.setIndexPath(indexPath)
         return cell
     }

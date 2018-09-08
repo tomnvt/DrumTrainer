@@ -18,35 +18,14 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-rx-L9N">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" red="0.99924844499999999" green="0.94599455600000004" blue="0.48229259250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="0.0"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </label>
-                </subviews>
             </view>
-            <color key="backgroundColor" red="0.43944481019999998" green="0.69767647980000003" blue="0.71377152200000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <constraints>
-                <constraint firstItem="lHR-rx-L9N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="86H-dU-p9E"/>
-                <constraint firstAttribute="bottom" secondItem="lHR-rx-L9N" secondAttribute="bottom" id="aLA-zS-chJ"/>
-                <constraint firstItem="lHR-rx-L9N" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="e5h-kY-qKa"/>
-                <constraint firstAttribute="trailing" secondItem="lHR-rx-L9N" secondAttribute="trailing" id="ghp-Hw-60O"/>
-            </constraints>
+            <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <connections>
-                <outlet property="textLabel" destination="lHR-rx-L9N" id="10F-i5-d2E"/>
-            </connections>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
         </collectionViewCell>
     </objects>
 </document>

@@ -49,7 +49,7 @@ class GlobalClock {
     }
 
     func eighthBeatNotification() {
-        print("eighth note: " + String(eighthBeatIndex))
+//        print("eighth note: " + String(eighthBeatIndex))
         let notificationName = Notification.Name(rawValue: "eighthNote")
         NotificationCenter.default.post(name: notificationName, object: nil)
         switch eighthBeatIndex {
