@@ -12,6 +12,7 @@ import RealmSwift
 class ExampleLibrary {
 
     let realm = try! Realm()
+    var currentLoadedBeatIndex: Int = 0
 
     var exampleBeats: [ExampleBeatNotes] = {
         var array: [ExampleBeatNotes] = []

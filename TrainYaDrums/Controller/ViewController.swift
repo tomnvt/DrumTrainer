@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate {
+class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate, NoteChangerDelegate {
 
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
@@ -36,6 +36,7 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         setBpmSliderBySavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
+        defaults.set(0, forKey: "currentlySelectedBeat")
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -87,6 +88,24 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
     func metronomeClickAndFlash(beatIndex: Int) {
         audioPlayer.playMetronomeSample(beatIndex: beatIndex)
         metronomeButton.orangeBlink()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? BeatEditViewController {
+           viewController.delegate = self
+            viewController.notes = examplePlayer.exampleBeatNotes
+        }
+    }
+
+    func changeNote(drumPadIndex: Int, noteIndex: Int) {
+        var currentNote = examplePlayer.exampleBeatNotes[drumPadIndex][noteIndex]
+        if currentNote == 0 {
+            currentNote = 1
+        } else if currentNote == 1 {
+            currentNote = 0
+        }
+        examplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
+        dump(examplePlayer.exampleBeatNotes)
     }
 
 }

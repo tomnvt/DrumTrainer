@@ -23,6 +23,16 @@ class BeatNotesLoader {
         return notesArray
     }
 
+    static func getNotesFor(exampleIndex: Int, beatIndex: Int) -> [[Int]] {
+        let theObject = realm.objects(ExampleBeat.self)[exampleIndex]
+        let oneBeatEighthNotesList = Array(theObject.oneBeatEighthNotesList)[beatIndex].notesList
+        var notesArray: [[Int]] = []
+        for index in 0...15 {
+            notesArray.append(Array(Array(oneBeatEighthNotesList)[index].notes))
+        }
+        return notesArray
+    }
+
     static func getNotesFor(exampleBeatName: String, beatIndex: Int, drumPadIndex: Int) -> [Int] {
         let theObject = realm.object(ofType: ExampleBeat.self, forPrimaryKey: exampleBeatName)
         let oneBeatEighthNotesList = Array(theObject!.oneBeatEighthNotesList)[beatIndex].notesList

@@ -17,7 +17,7 @@ class BeatEditViewController: UIViewController {
     var eighthNoteIndex = 0
     var currentBarEighthNoteIndex = 0
     var sectionIndex = 0
-    var notes = BeatNotesLoader.getNotesFor(exampleBeatName: "Simple Broken Beat", beatIndex: 0)
+    var notes: [[Int]] = []
     let notesListPointers: [[Int]] = {
         var array: [[Int]] = []
         let firstDrumPadNotesIndices = [0, 16, 32, 48, 64, 80, 96, 112]
@@ -25,15 +25,17 @@ class BeatEditViewController: UIViewController {
             var multiplicatedFirstDrumPadNotesIndices: [Int] = firstDrumPadNotesIndices.map { $0 + index }
             array.append(multiplicatedFirstDrumPadNotesIndices)
         }
-        dump(array)
         return array
     }()
+    let defaults = UserDefaults.standard
+    weak var delegate: NoteChangerDelegate?
 
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+//        notes = BeatNotesLoader.getNotesFor(exampleIndex: defaults.integer(forKey: "currentlySelectedBeat"), beatIndex: 0)
         self.collectionView.register(UINib(nibName: String(describing: PathCollectionViewCell.self), bundle: nil),
                                      forCellWithReuseIdentifier: PathCollectionViewCell.identifier)
 
@@ -122,13 +124,27 @@ class BeatEditViewController: UIViewController {
         print(indexPath.row)
         print(indexPath.section)
         var drumPadIndex = 0
+        var drumPadNoteIndex = 0
         for index in 0..<notesListPointers.count {
+            print("index: \(index)")
+            print("notesListPointers[index: \(notesListPointers[index])")
+            print("indexPath.row: \(indexPath.row)")
             if notesListPointers[index].contains(indexPath.row) {
                 drumPadIndex = index
+                if let noteIndex = notesListPointers[index].index(of: indexPath.row) {
+                    drumPadNoteIndex = noteIndex
+                }
                 break
             }
         }
         print("Drumpad index: \(drumPadIndex)")
+        print("Drum pad note index: \(drumPadNoteIndex)")
+        var currentNoteValue = notes[drumPadIndex][drumPadNoteIndex]
+        print("currentNoteValue: \(currentNoteValue)")
+        notes[drumPadIndex][drumPadNoteIndex] = (currentNoteValue == 1) ? 0 : 1
+        currentNoteValue = notes[drumPadIndex][drumPadNoteIndex]
+        print("currentNoteValue: \(currentNoteValue)")
+        delegate?.changeNote(drumPadIndex: drumPadIndex, noteIndex: (drumPadNoteIndex + (8 * indexPath.section)))
     }
 }
 
@@ -151,12 +167,12 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                                widthForItemAt indexPath: IndexPath, rowHeight columnHeight: CGFloat) -> CGFloat {
-        return 80
+        return 50
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                                widthForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 30
     }
 
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -177,6 +193,7 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath)
+        changeNoteForCell(indexPath: indexPath)
         selectedCell?.backgroundColor = UIColor.yellow
     }
 
@@ -216,4 +233,8 @@ extension BeatEditViewController: UICollectionViewDataSource {
         return view
     }
 
+}
+
+protocol NoteChangerDelegate: AnyObject {
+    func changeNote(drumPadIndex: Int, noteIndex: Int)
 }

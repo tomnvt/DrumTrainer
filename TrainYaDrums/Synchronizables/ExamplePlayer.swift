@@ -16,30 +16,30 @@ protocol ExamplePlayerDelegate: AnyObject {
 class ExamplePlayer: Synchronizable {
 
     let exampleLibrary = ExampleLibrary()
-    var exampleBeat: ExampleBeatNotes
+//    var exampleBeat: ExampleBeatNotes
+    var exampleBeatNotes: [[Int]] = []
+    var currentLoaddedBeatIndex: Int = 0
+    let defaults = UserDefaults.standard
 
-    var beatExample: ExampleBeat? {
-        didSet {
-            BeatNotesLoader.getNotesFor(exampleBeatObject: beatExample!, beatIndex: 0, drumPadIndex: 0)
-        }
-    }
     var drumExampleIsPlaying: Bool = false
     weak var delegate: ExamplePlayerDelegate?
 
-    //- MARK: Add didSet when exampleBeatIsChanged
-
     override init() {
-        exampleBeat = exampleLibrary.exampleBeats[0]
-        print(BeatNotesLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
-        dump(BeatNotesLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
+//        exampleBeat = BeatNotesLoader.getNotesFor(exampleIndex: 0, beatIndex: 0)
+        let currentlySelectedBeatIndex = defaults.integer(forKey: "currentlySelectedBeat")
+        exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: currentlySelectedBeatIndex, beatIndex: 0)
         super.init()
     }
 
     override func eighthNoteAction() {
         guard drumExampleIsPlaying else { return }
-        for index in 0...15 where exampleBeat.firstBarDrumNotes[index][eighthNoteIndex] == 1 {
+        for index in 0...15 where exampleBeatNotes[index][eighthNoteIndex] == 1 {
             delegate?.touchDownDrumPad(drumPadIndexes: [index])
         }
+    }
+
+    func loadExamplebeat(beatExampleIndex: Int) {
+        exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: beatExampleIndex, beatIndex: 0)
     }
 
 }

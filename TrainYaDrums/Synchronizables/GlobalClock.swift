@@ -15,13 +15,16 @@ class GlobalClock {
     var quaterBeatIndex: Int = 0
     var eighthBeatIndex: Int = 0
     var bpmValue: Int = 120
+    var timer = Timer()
 
     func runGlobalCLock() {
+        print("RUNNING")
         beatIndex = 0
         let timeInterval = TimeInterval(calculateEighthIntervalPerSecond())
-        self.eighthBeatTimer = Timer.scheduledTimer(withTimeInterval: timeInterval,
-                                                    repeats: true,
-                                                    block: {_ in self.eighthBeatNotification()})
+        timer = Timer(timeInterval: timeInterval, repeats: true) { _ in
+            self.eighthBeatNotification()
+        }
+        RunLoop.current.add(timer, forMode: .commonModes)
     }
 
     func calculateEighthIntervalPerSecond() -> Double {
@@ -29,9 +32,12 @@ class GlobalClock {
     }
 
     func changeBpmValue(toBPM: Float) {
-        eighthBeatTimer.invalidate()
+        timer.invalidate()
         bpmValue = Int(toBPM)
         runGlobalCLock()
+//        bpmValue = Int(toBPM)
+//        let newBpmValue = calculateEighthIntervalPerSecond()
+//        timer.timeInterval
     }
 
     func globalClockNotification() {
