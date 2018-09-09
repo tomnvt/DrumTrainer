@@ -38,7 +38,7 @@ class ExampleBeatNotes {
     }
 
     func checkThatBeatWithCurrentNameIsNotAlreadySaved(name: String) -> Bool {
-        let savedBeatsNames = BeatLoader.getBeatNames()
+        let savedBeatsNames = BeatNotesLoader.getBeatNames()
         if savedBeatsNames.contains(name) {
             return false
         }

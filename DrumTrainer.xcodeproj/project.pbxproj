@@ -10,7 +10,7 @@
 		8CF67967A9A5C7A54C1D8D5F /* Pods_DrumTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAA496B5F714D32E2481B08 /* Pods_DrumTrainer.framework */; };
 		E319CC482141A41300E1FF52 /* ExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC472141A41300E1FF52 /* ExampleBeat.swift */; };
 		E319CC4A2141A49C00E1FF52 /* SimpleHouseExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */; };
-		E319CC4C2141CDB300E1FF52 /* BeatLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */; };
+		E319CC4C2141CDB300E1FF52 /* BeatNotesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319CC4B2141CDB200E1FF52 /* BeatNotesLoader.swift */; };
 		E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */; };
 		E32B4A1F213DB75D009F3089 /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32B4A1E213DB75D009F3089 /* IBDesignable.swift */; };
 		E3307969211CF76600CCD037 /* ExampleBeatNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3307968211CF76600CCD037 /* ExampleBeatNotes.swift */; };
@@ -60,7 +60,7 @@
 		C4E6A2B472CB791D02837E95 /* Pods-DrumTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrumTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer.debug.xcconfig"; sourceTree = "<group>"; };
 		E319CC472141A41300E1FF52 /* ExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBeat.swift; sourceTree = "<group>"; };
 		E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHouseExampleBeat.swift; sourceTree = "<group>"; };
-		E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatLoader.swift; sourceTree = "<group>"; };
+		E319CC4B2141CDB200E1FF52 /* BeatNotesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatNotesLoader.swift; sourceTree = "<group>"; };
 		E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		E32B4A1E213DB75D009F3089 /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
 		E3307968211CF76600CCD037 /* ExampleBeatNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBeatNotes.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 				E3BA034B214061ED00DB3023 /* DrumpadEighthNotes.swift */,
 				E3BA034F214068CE00DB3023 /* OneBeatEighthNotes.swift */,
 				E319CC472141A41300E1FF52 /* ExampleBeat.swift */,
-				E319CC4B2141CDB200E1FF52 /* BeatLoader.swift */,
+				E319CC4B2141CDB200E1FF52 /* BeatNotesLoader.swift */,
 				E319CC492141A49C00E1FF52 /* SimpleHouseExampleBeat.swift */,
 				E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */,
 				E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */,
@@ -414,7 +414,7 @@
 			files = (
 				E319CC482141A41300E1FF52 /* ExampleBeat.swift in Sources */,
 				E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */,
-				E319CC4C2141CDB300E1FF52 /* BeatLoader.swift in Sources */,
+				E319CC4C2141CDB300E1FF52 /* BeatNotesLoader.swift in Sources */,
 				E351E6C2213AA6B500B4CF53 /* DrumSampler.swift in Sources */,
 				E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */,
 				E3307969211CF76600CCD037 /* ExampleBeatNotes.swift in Sources */,

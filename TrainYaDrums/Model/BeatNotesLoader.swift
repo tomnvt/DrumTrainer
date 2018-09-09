@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class BeatLoader {
+class BeatNotesLoader {
 
     static let realm = try! Realm()
 

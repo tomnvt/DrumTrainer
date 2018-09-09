@@ -20,7 +20,7 @@ class ExamplePlayer: Synchronizable {
 
     var beatExample: ExampleBeat? {
         didSet {
-            BeatLoader.getNotesFor(exampleBeatObject: beatExample!, beatIndex: 0, drumPadIndex: 0)
+            BeatNotesLoader.getNotesFor(exampleBeatObject: beatExample!, beatIndex: 0, drumPadIndex: 0)
         }
     }
     var drumExampleIsPlaying: Bool = false
@@ -30,8 +30,8 @@ class ExamplePlayer: Synchronizable {
 
     override init() {
         exampleBeat = exampleLibrary.exampleBeats[0]
-        print(BeatLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
-        dump(BeatLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
+        print(BeatNotesLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
+        dump(BeatNotesLoader.getNotesFor(exampleBeatName: "Simple House", beatIndex: 0))
         super.init()
     }
 

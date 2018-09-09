@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIView {
+
     func yellowBlink() {
         blink(fromColor: UIColor(rgb: 0xFFFECD), toColor: .yellow)
     }
@@ -22,4 +23,5 @@ extension UIView {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction, .curveLinear],
                        animations: {self.backgroundColor = toColor}, completion: nil)
     }
+
 }
