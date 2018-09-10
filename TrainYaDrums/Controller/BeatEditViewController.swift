@@ -36,7 +36,6 @@ class BeatEditViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-//        notes = BeatNotesLoader.getNotesFor(exampleIndex: defaults.integer(forKey: "currentlySelectedBeat"), beatIndex: 0)
         self.collectionView.register(UINib(nibName: String(describing: PathCollectionViewCell.self), bundle: nil),
                                      forCellWithReuseIdentifier: PathCollectionViewCell.identifier)
 
@@ -219,11 +218,11 @@ extension BeatEditViewController: UICollectionViewDataSource {
                                  for: indexPath) as? PathCollectionViewCell else {
             fatalError("Cannot retrieve PathCollectionViewCell")
         }
-            if cell.isSelected {
-                cell.backgroundColor = UIColor.white
-            } else {
-                cell.backgroundColor = UIColor.yellow
-            }
+        if cell.isSelected {
+            cell.backgroundColor = UIColor.white
+        } else {
+            cell.backgroundColor = UIColor.yellow
+        }
         cell.setIndexPath(indexPath)
         return cell
     }

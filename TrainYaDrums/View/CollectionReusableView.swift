@@ -15,7 +15,7 @@ public class CollectionReusableView: UICollectionReusableView {
     public static let identifier = "CRVRI"
 
     public func setIndexPath(_ indexPath: IndexPath, kind: String) {
-        self.textLabel.text = "\(indexPath.section + 1) / 4"
+        self.textLabel.text = "\(indexPath.section + 1)\n/\n4"
     }
 
 }

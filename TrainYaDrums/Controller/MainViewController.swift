@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate, NoteChangerDelegate {
+class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate, NoteChangerDelegate {
 
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
