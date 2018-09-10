@@ -36,6 +36,7 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         setBpmSliderBySavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
+        defaults.set("Simple House", forKey: "currentlySelectedBeatName")
         defaults.set(0, forKey: "currentlySelectedBeat")
     }
 
@@ -94,6 +95,7 @@ class ViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate
         if let viewController = segue.destination as? BeatEditViewController {
            viewController.delegate = self
             viewController.notes = examplePlayer.exampleBeatNotes
+            viewController.beatNotesSaverDelegate = examplePlayer
         }
     }
 

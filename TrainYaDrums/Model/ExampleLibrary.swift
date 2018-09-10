@@ -18,8 +18,8 @@ class ExampleLibrary {
         var array: [ExampleBeatNotes] = []
         let simpleBrokenBeatExample = SimpleBrokenBeatExampleBeat()
         let simpleHouseExampleBeat = SimpleHouseExampleBeat()
-        array.append(simpleBrokenBeatExample)
         array.append(simpleHouseExampleBeat)
+        array.append(simpleBrokenBeatExample)
         return array
     }()
 

@@ -29,6 +29,7 @@ class BeatEditViewController: UIViewController {
     }()
     let defaults = UserDefaults.standard
     weak var delegate: NoteChangerDelegate?
+    weak var beatNotesSaverDelegate: BeatNotesSaverDelegate?
 
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
@@ -146,6 +147,12 @@ class BeatEditViewController: UIViewController {
         print("currentNoteValue: \(currentNoteValue)")
         delegate?.changeNote(drumPadIndex: drumPadIndex, noteIndex: (drumPadNoteIndex + (8 * indexPath.section)))
     }
+
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        print("Saving")
+        beatNotesSaverDelegate?.saveBeatNotes()
+    }
+
 }
 
 extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
@@ -237,4 +244,8 @@ extension BeatEditViewController: UICollectionViewDataSource {
 
 protocol NoteChangerDelegate: AnyObject {
     func changeNote(drumPadIndex: Int, noteIndex: Int)
+}
+
+protocol BeatNotesSaverDelegate: AnyObject {
+    func saveBeatNotes()
 }

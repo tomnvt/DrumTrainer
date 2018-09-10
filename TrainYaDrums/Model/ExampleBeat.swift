@@ -12,7 +12,7 @@ import RealmSwift
 class ExampleBeat: Object {
 
     @objc dynamic var name: String = ""
-    let oneBeatEighthNotesList = List<OneBeatEighthNotes>()
+    var oneBeatEighthNotesList = List<OneBeatEighthNotes>()
 
     override static func primaryKey() -> String {
         return "name"

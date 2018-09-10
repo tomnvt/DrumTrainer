@@ -13,21 +13,27 @@ protocol ExamplePlayerDelegate: AnyObject {
     func touchDownDrumPad(drumPadIndexes: [Int])
 }
 
-class ExamplePlayer: Synchronizable {
+class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
 
     let exampleLibrary = ExampleLibrary()
 //    var exampleBeat: ExampleBeatNotes
     var exampleBeatNotes: [[Int]] = []
     var currentLoaddedBeatIndex: Int = 0
     let defaults = UserDefaults.standard
+    let realm = try! Realm()
 
     var drumExampleIsPlaying: Bool = false
     weak var delegate: ExamplePlayerDelegate?
 
     override init() {
-//        exampleBeat = BeatNotesLoader.getNotesFor(exampleIndex: 0, beatIndex: 0)
-        let currentlySelectedBeatIndex = defaults.integer(forKey: "currentlySelectedBeat")
-        exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: currentlySelectedBeatIndex, beatIndex: 0)
+//        let currentlySelectedBeatIndex = defaults.integer(forKey: "currentlySelectedBeat")
+        let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")
+//        exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: currentlySelectedBeatIndex, beatIndex: 0)
+        if let unwrapedBeatName = currentlySelectedBeatName {
+            exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: currentlySelectedBeatName!, beatIndex: 0)
+        } else {
+            print("Beat with name \(currentlySelectedBeatName) not found :-(")
+        }
         super.init()
     }
 
@@ -40,6 +46,12 @@ class ExamplePlayer: Synchronizable {
 
     func loadExamplebeat(beatExampleIndex: Int) {
         exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: beatExampleIndex, beatIndex: 0)
+    }
+
+    func saveBeatNotes() {
+        let beatNotesSaver = BeatNotesSaver()
+        beatNotesSaver.save(beatNotes: exampleBeatNotes)
+        print("Save process done.")
     }
 
 }
