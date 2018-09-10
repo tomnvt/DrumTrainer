@@ -35,7 +35,8 @@ class AudioPlayer {
     }
 
     public func changeMetronomeVolume(toValue: Double) {
-        metronomeSampler.volume = toValue
+        let metronomeVolumeValue = toValue / 100
+        metronomeSampler.volume = metronomeVolumeValue
     }
 
     public func playMetronomeSample(beatIndex: Int) {

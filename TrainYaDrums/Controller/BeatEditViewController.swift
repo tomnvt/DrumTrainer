@@ -13,10 +13,11 @@ class BeatEditViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     public var numberOfRows: Int = 16
-    var currentBarIndex = 1
+
     var eighthNoteIndex = 0
     var currentBarEighthNoteIndex = 0
     var sectionIndex = 0
+
     var notes: [[Int]] = []
     let notesListPointers: [[Int]] = {
         var array: [[Int]] = []
@@ -27,7 +28,9 @@ class BeatEditViewController: UIViewController {
         }
         return array
     }()
+
     let defaults = UserDefaults.standard
+
     weak var delegate: NoteChangerDelegate?
     weak var beatNotesSaverDelegate: BeatNotesSaverDelegate?
 
@@ -109,7 +112,6 @@ class BeatEditViewController: UIViewController {
                 if currentSection == 4 {
                     currentSection = 0
                 }
-                print(note)
                 if note == 1 {
                     selectPlayingCell(currentSection, currentDrumPad, currentNote)
                 }
@@ -120,15 +122,9 @@ class BeatEditViewController: UIViewController {
     }
 
     func changeNoteForCell(indexPath: IndexPath) {
-        print(indexPath)
-        print(indexPath.row)
-        print(indexPath.section)
         var drumPadIndex = 0
         var drumPadNoteIndex = 0
         for index in 0..<notesListPointers.count {
-            print("index: \(index)")
-            print("notesListPointers[index: \(notesListPointers[index])")
-            print("indexPath.row: \(indexPath.row)")
             if notesListPointers[index].contains(indexPath.row) {
                 drumPadIndex = index
                 if let noteIndex = notesListPointers[index].index(of: indexPath.row) {
@@ -137,13 +133,9 @@ class BeatEditViewController: UIViewController {
                 break
             }
         }
-        print("Drumpad index: \(drumPadIndex)")
-        print("Drum pad note index: \(drumPadNoteIndex)")
         var currentNoteValue = notes[drumPadIndex][drumPadNoteIndex]
-        print("currentNoteValue: \(currentNoteValue)")
         notes[drumPadIndex][drumPadNoteIndex] = (currentNoteValue == 1) ? 0 : 1
         currentNoteValue = notes[drumPadIndex][drumPadNoteIndex]
-        print("currentNoteValue: \(currentNoteValue)")
         delegate?.changeNote(drumPadIndex: drumPadIndex, noteIndex: (drumPadNoteIndex + (8 * indexPath.section)))
     }
 

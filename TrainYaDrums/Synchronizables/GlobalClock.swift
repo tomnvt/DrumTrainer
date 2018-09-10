@@ -18,7 +18,6 @@ class GlobalClock {
     var timer = Timer()
 
     func runGlobalCLock() {
-        print("RUNNING")
         beatIndex = 0
         let timeInterval = TimeInterval(calculateEighthIntervalPerSecond())
         timer = Timer(timeInterval: timeInterval, repeats: true) { _ in
@@ -35,9 +34,6 @@ class GlobalClock {
         timer.invalidate()
         bpmValue = Int(toBPM)
         runGlobalCLock()
-//        bpmValue = Int(toBPM)
-//        let newBpmValue = calculateEighthIntervalPerSecond()
-//        timer.timeInterval
     }
 
     func globalClockNotification() {
@@ -55,7 +51,6 @@ class GlobalClock {
     }
 
     func eighthBeatNotification() {
-//        print("eighth note: " + String(eighthBeatIndex))
         let notificationName = Notification.Name(rawValue: "eighthNote")
         NotificationCenter.default.post(name: notificationName, object: nil)
         switch eighthBeatIndex {

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,17 +16,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="DrumTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aOF-jH-tCw">
-                                <rect key="frame" x="16" y="36" width="568" height="548"/>
+                                <rect key="frame" x="16" y="36" width="343" height="615"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="left" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c7h-2Q-QH0" customClass="RoundableStackView" customModule="DrumTrainer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="568" height="266.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRUM TRAINER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaK-tG-V33">
-                                                <rect key="frame" x="0.0" y="0.0" width="568" height="88"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="88"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="88" id="oCL-t8-lJa"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uoX-cD-gEk"/>
@@ -32,16 +36,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2Y-Mw-MxO" customClass="RoundableView" customModule="DrumTrainer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="103" width="568" height="118.5"/>
+                                                <rect key="frame" x="0.0" y="103" width="343" height="120"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ia9-eJ-b48">
-                                                        <rect key="frame" x="10" y="10" width="548" height="98.5"/>
+                                                        <rect key="frame" x="10" y="10" width="323" height="100"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvY-SO-S2K">
-                                                                <rect key="frame" x="0.0" y="0.0" width="548" height="29.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSZ-iR-tiB">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="548" height="29.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                                                         <color key="backgroundColor" red="1" green="0.88510277280000005" blue="0.32760448599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <state key="normal" title="Metronome">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,10 +62,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oQs-vz-3Ky">
-                                                                <rect key="frame" x="0.0" y="34.5" width="548" height="29.5"/>
+                                                                <rect key="frame" x="0.0" y="35" width="323" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-o7-CQE">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="29.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="50" id="YRu-p9-l2a"/>
                                                                         </constraints>
@@ -70,7 +74,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="120" minValue="20" maxValue="220" translatesAutoresizingMaskIntoConstraints="NO" id="thP-s2-NVF">
-                                                                        <rect key="frame" x="64" y="0.0" width="486" height="30.5"/>
+                                                                        <rect key="frame" x="64" y="0.0" width="261" height="31"/>
                                                                         <color key="tintColor" red="1" green="0.88627450980392153" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <connections>
                                                                             <action selector="bpmSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Txi-rZ-FrI"/>
@@ -79,10 +83,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-N3-wpy">
-                                                                <rect key="frame" x="0.0" y="69" width="548" height="29.5"/>
+                                                                <rect key="frame" x="0.0" y="70" width="323" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkv-16-2f0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="29.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="50" id="zFe-ad-cYc"/>
                                                                         </constraints>
@@ -90,8 +94,8 @@
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-8a-9Qz">
-                                                                        <rect key="frame" x="64" y="0.0" width="486" height="30.5"/>
+                                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-8a-9Qz">
+                                                                        <rect key="frame" x="64" y="0.0" width="261" height="31"/>
                                                                         <color key="tintColor" red="1" green="0.8862745098" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <connections>
                                                                             <action selector="volumeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ARb-d7-xvl"/>
@@ -122,10 +126,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="htb-bm-RDd">
-                                                <rect key="frame" x="0.0" y="236.5" width="568" height="30"/>
+                                                <rect key="frame" x="0.0" y="238" width="343" height="62"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pa-Xv-Peh" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="62"/>
                                                         <color key="backgroundColor" red="1" green="0.88627450980392153" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Example">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +144,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-LM-mBr">
-                                                        <rect key="frame" x="359" y="0.0" width="209" height="30"/>
+                                                        <rect key="frame" x="219" y="0.0" width="124" height="62"/>
                                                         <color key="backgroundColor" red="1" green="0.94509803920000002" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Edit">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -170,16 +174,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-lE-o1i">
-                                        <rect key="frame" x="0.0" y="281.5" width="568" height="266.5"/>
+                                        <rect key="frame" x="0.0" y="315" width="343" height="300"/>
                                         <subviews>
                                             <stackView opaque="NO" tag="3" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sy4-Vi-YSX">
-                                                <rect key="frame" x="0.0" y="0.0" width="568" height="59"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="67.5"/>
                                                 <subviews>
                                                     <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Cx-OII" customClass="RoundableView" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="59"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qaa-Bc-ZVU" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="59"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
                                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -206,10 +210,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view tag="13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWb-op-NBa" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="144.5" y="0.0" width="134.5" height="59"/>
+                                                        <rect key="frame" x="88.5" y="0.0" width="78" height="67.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tj1-tQ-Rhv" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="59"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="67.5"/>
                                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal">
                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -239,10 +243,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view tag="14" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-6B-dxC">
-                                                        <rect key="frame" x="289" y="0.0" width="134.5" height="59"/>
+                                                        <rect key="frame" x="176.5" y="0.0" width="78.5" height="67.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-q7-mol" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="59"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="78.5" height="67.5"/>
                                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal">
                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -272,10 +276,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view tag="15" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kR-fp-CxM">
-                                                        <rect key="frame" x="433.5" y="0.0" width="134.5" height="59"/>
+                                                        <rect key="frame" x="265" y="0.0" width="78" height="67.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-ch-T2e">
-                                                                <rect key="frame" x="0.0" y="0.0" width="134" height="59"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -284,7 +288,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcV-WN-CON" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="59"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="67.5"/>
                                                                 <state key="normal">
                                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
@@ -319,10 +323,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-3Y-KEl">
-                                                <rect key="frame" x="0.0" y="69" width="568" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="77.5" width="343" height="67.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1v-Su-TQM" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -338,7 +342,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wl-9b-bzg" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="145" y="0.0" width="133.5" height="59.5"/>
+                                                        <rect key="frame" x="88.5" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -354,7 +358,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-d2-1xd" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="289.5" y="0.0" width="134" height="59.5"/>
+                                                        <rect key="frame" x="177" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -370,7 +374,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8p-sl-Roi" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="434.5" y="0.0" width="133.5" height="59.5"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -388,10 +392,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ral-2v-Qgl">
-                                                <rect key="frame" x="0.0" y="138.5" width="568" height="59"/>
+                                                <rect key="frame" x="0.0" y="155" width="343" height="67.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4p-yG-PAx" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134" height="59"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -407,7 +411,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-9N-RGP" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="145" y="0.0" width="133.5" height="59"/>
+                                                        <rect key="frame" x="88.5" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -423,7 +427,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53m-8T-iVo" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="289.5" y="0.0" width="134" height="59"/>
+                                                        <rect key="frame" x="177" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -439,7 +443,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilc-UM-cQ9" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="434.5" y="0.0" width="133.5" height="59"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -457,10 +461,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="G9k-WN-5Ba">
-                                                <rect key="frame" x="0.0" y="207.5" width="568" height="59"/>
+                                                <rect key="frame" x="0.0" y="232.5" width="343" height="67.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqc-0d-qWk" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134" height="59"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -476,7 +480,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItB-jp-qVE" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="145" y="0.0" width="133.5" height="59"/>
+                                                        <rect key="frame" x="88.5" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -492,7 +496,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLV-DH-r0k" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="289.5" y="0.0" width="134" height="59"/>
+                                                        <rect key="frame" x="177" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -508,7 +512,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVI-e7-qSU" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="434.5" y="0.0" width="133.5" height="59"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="77.5" height="67.5"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -559,6 +563,7 @@
                         <outlet property="drumPad7" destination="53m-8T-iVo" id="hvg-Ug-ZOi"/>
                         <outlet property="drumPad8" destination="ilc-UM-cQ9" id="ftR-al-XDI"/>
                         <outlet property="metronomeButton" destination="kSZ-iR-tiB" id="eRF-32-3Pk"/>
+                        <outlet property="volumeSlider" destination="vKP-8a-9Qz" id="v3E-Ds-sDP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -574,11 +579,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xJs-y4-hwi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KoB-Ft-qtD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-0R-mwi">
-                                <rect key="frame" x="0.0" y="24" width="600" height="528"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="595"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="dI2-lK-Ex6" customClass="CollectionViewHorizontalGridLayout" customModule="CollectionViewGridLayout"/>
                                 <cells/>

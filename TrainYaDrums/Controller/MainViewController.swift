@@ -13,6 +13,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
+    @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var drumPad1: RoundableButton!
     @IBOutlet weak var drumPad2: RoundableButton!
     @IBOutlet weak var drumPad3: RoundableButton!
@@ -34,10 +35,10 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         metronome.delegate = self
         examplePlayer.delegate = self
         setBpmSliderBySavedValue()
+        setVolumeSliderSavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
-        defaults.set("Simple House", forKey: "currentlySelectedBeatName")
-        defaults.set(0, forKey: "currentlySelectedBeat")
+        setDefaultBeatIfNotSelected()
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -49,6 +50,17 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         drumPads.append(drumPad6)
         drumPads.append(drumPad7)
         drumPads.append(drumPad8)
+    }
+
+    func setDefaultBeatIfNotSelected() {
+        if defaults.string(forKey: "currentlySelectedBeatName") == nil {
+            defaults.set("Simple House", forKey: "currentlySelectedBeatName")
+        }
+    }
+
+    func setVolumeSliderSavedValue() {
+        let currentMetronomeVolumeValue = defaults.float(forKey: "metronomeVolume")
+        volumeSlider.setValue(currentMetronomeVolumeValue, animated: false)
     }
 
     func setBpmSliderBySavedValue() {
@@ -70,10 +82,12 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
 
     @IBAction func bpmSliderChanged(_ sender: UISlider) {
         globalClock.changeBpmValue(toBPM: sender.value)
+        defaults.set(Int(sender.value), forKey: "bpmValue")
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
         audioPlayer.changeMetronomeVolume(toValue: Double(sender.value))
+        defaults.set(sender.value, forKey: "metronomeVolume")
     }
 
     @IBAction func exampleButtonPressed(_ sender: UIButton) {

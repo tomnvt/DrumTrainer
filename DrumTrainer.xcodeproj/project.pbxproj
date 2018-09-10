@@ -41,7 +41,6 @@
 		E3BCDDFA213C22A000063B5D /* SampleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF9213C22A000063B5D /* SampleType.swift */; };
 		E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */; };
 		E3E63C3B20F53F2200006BA1 /* metronomeSound3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */; };
-		E3E63C3C20F53F2200006BA1 /* metronomeSound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3820F53F2200006BA1 /* metronomeSound2.wav */; };
 		E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */; };
 		E3E63C3E20F53F2200006BA1 /* metronomeSound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */; };
 		E3E8DB6421430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */; };
@@ -94,7 +93,6 @@
 		E3BCDDF9213C22A000063B5D /* SampleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleType.swift; sourceTree = "<group>"; };
 		E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleLibrary.swift; sourceTree = "<group>"; };
 		E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound3.wav; sourceTree = "<group>"; };
-		E3E63C3820F53F2200006BA1 /* metronomeSound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound2.wav; sourceTree = "<group>"; };
 		E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound4.wav; sourceTree = "<group>"; };
 		E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound1.wav; sourceTree = "<group>"; };
 		E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrokenBeatExampleBeat.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			children = (
 				E3622C9F212885B30053F190 /* metronomeSound1_C1.wav */,
 				E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */,
-				E3E63C3820F53F2200006BA1 /* metronomeSound2.wav */,
 				E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */,
 				E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */,
 			);
@@ -340,7 +337,6 @@
 			files = (
 				E383EF17210E6444004879D9 /* Drums in Resources */,
 				E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */,
-				E3E63C3C20F53F2200006BA1 /* metronomeSound2.wav in Resources */,
 				E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */,
 				E3FD46BC21440A3F006CC917 /* CollectionReusableView.xib in Resources */,
 				E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */,

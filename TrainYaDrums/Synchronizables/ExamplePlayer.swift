@@ -16,7 +16,6 @@ protocol ExamplePlayerDelegate: AnyObject {
 class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
 
     let exampleLibrary = ExampleLibrary()
-//    var exampleBeat: ExampleBeatNotes
     var exampleBeatNotes: [[Int]] = []
     var currentLoaddedBeatIndex: Int = 0
     let defaults = UserDefaults.standard
@@ -26,9 +25,7 @@ class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
     weak var delegate: ExamplePlayerDelegate?
 
     override init() {
-//        let currentlySelectedBeatIndex = defaults.integer(forKey: "currentlySelectedBeat")
         let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")
-//        exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: currentlySelectedBeatIndex, beatIndex: 0)
         if let unwrapedBeatName = currentlySelectedBeatName {
             exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: currentlySelectedBeatName!, beatIndex: 0)
         } else {
