@@ -140,10 +140,14 @@ class BeatEditViewController: UIViewController {
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        print("Saving")
         beatNotesSaverDelegate?.saveBeatNotes()
+        let alert = UIAlertController(title: "SAVED :-)", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: nil)
+        let deadline = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            alert.dismiss(animated: true, completion: nil)
+        }
     }
-
 }
 
 extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
