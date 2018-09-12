@@ -16,7 +16,7 @@ protocol ExamplePlayerDelegate: AnyObject {
 class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
 
     let exampleLibrary = ExampleLibrary()
-    var exampleBeatNotes: [[Int]] = []
+    static var exampleBeatNotes: [[Int]] = []
     var currentLoaddedBeatIndex: Int = 0
     let defaults = UserDefaults.standard
     let realm = try! Realm()
@@ -26,29 +26,31 @@ class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
 
     override init() {
         let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")
-        if let unwrapedBeatName = currentlySelectedBeatName {
-            exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: currentlySelectedBeatName!, beatIndex: 0)
-        } else {
-            print("Beat with name \(currentlySelectedBeatName) not found :-(")
-        }
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader
+            .getNotesFor(exampleBeatName: currentlySelectedBeatName!, beatIndex: 0)
         super.init()
     }
 
     override func eighthNoteAction() {
         guard drumExampleIsPlaying else { return }
-        for index in 0...15 where exampleBeatNotes[index][eighthNoteIndex] == 1 {
+        for index in 0...15 where ExamplePlayer.exampleBeatNotes[index][eighthNoteIndex] == 1 {
             delegate?.touchDownDrumPad(drumPadIndexes: [index])
         }
     }
 
     func loadExamplebeat(beatExampleIndex: Int) {
-        exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: beatExampleIndex, beatIndex: 0)
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: beatExampleIndex, beatIndex: 0)
     }
 
     func saveBeatNotes() {
         let beatNotesSaver = BeatNotesSaver()
-        beatNotesSaver.save(beatNotes: exampleBeatNotes)
+        beatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
         print("Save process done.")
+    }
+
+    static func reloadBeatNotes(beatName: String) {
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader
+            .getNotesFor(exampleBeatName: beatName, beatIndex: 0)
     }
 
 }
