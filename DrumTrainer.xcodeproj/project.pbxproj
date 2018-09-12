@@ -17,6 +17,7 @@
 		E351E6BE213AA42600B4CF53 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351E6BD213AA42600B4CF53 /* Sampler.swift */; };
 		E351E6C0213AA69F00B4CF53 /* MetronomeSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351E6BF213AA69F00B4CF53 /* MetronomeSampler.swift */; };
 		E351E6C2213AA6B500B4CF53 /* DrumSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E351E6C1213AA6B500B4CF53 /* DrumSampler.swift */; };
+		E35FC4762148601D0092018F /* SelectBeatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FC4752148601D0092018F /* SelectBeatTableViewController.swift */; };
 		E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */; };
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
 		E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3622C9D212874390053F190 /* AudioPlayer.swift */; };
@@ -67,6 +68,7 @@
 		E351E6BD213AA42600B4CF53 /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		E351E6BF213AA69F00B4CF53 /* MetronomeSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeSampler.swift; sourceTree = "<group>"; };
 		E351E6C1213AA6B500B4CF53 /* DrumSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumSampler.swift; sourceTree = "<group>"; };
+		E35FC4752148601D0092018F /* SelectBeatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeatTableViewController.swift; sourceTree = "<group>"; };
 		E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+@IBInspectable.swift"; sourceTree = "<group>"; };
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
 		E3622C9D212874390053F190 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				E3AA5DFA20E194DD0095856A /* MainViewController.swift */,
 				E3FD46BD21440E6F006CC917 /* BeatEditViewController.swift */,
+				E35FC4752148601D0092018F /* SelectBeatTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */,
 				E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */,
 				E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */,
+				E35FC4762148601D0092018F /* SelectBeatTableViewController.swift in Sources */,
 				E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */,
 				E394A4B520F3D146002F2183 /* Metronome.swift in Sources */,
 				E351E6C0213AA69F00B4CF53 /* MetronomeSampler.swift in Sources */,

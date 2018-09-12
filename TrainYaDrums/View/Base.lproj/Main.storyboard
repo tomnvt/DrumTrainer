@@ -592,32 +592,52 @@
                                     <outlet property="delegate" destination="HXt-lm-VEs" id="Y7B-aS-IgP"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqU-KA-Aeo">
-                                <rect key="frame" x="15" y="623" width="56" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="HXt-lm-VEs" eventType="touchUpInside" id="zi8-MQ-ppH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDG-qP-rPH">
-                                <rect key="frame" x="303" y="623" width="56" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="HXt-lm-VEs" eventType="touchUpInside" id="CGX-qP-2AC"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VvB-gA-kH4">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqU-KA-Aeo">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="m04-Ui-60T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="HXt-lm-VEs" eventType="touchUpInside" id="zi8-MQ-ppH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiJ-qx-g74">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Beats">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="h77-YF-9SI" kind="show" id="Okf-gI-Adk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDG-qP-rPH">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="HXt-lm-VEs" eventType="touchUpInside" id="CGX-qP-2AC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="VvB-gA-kH4" firstAttribute="top" secondItem="F8f-0R-mwi" secondAttribute="bottom" id="6Xa-aA-ZXz"/>
                             <constraint firstItem="xJs-y4-hwi" firstAttribute="top" secondItem="F8f-0R-mwi" secondAttribute="bottom" constant="48" id="9KJ-qa-aI8"/>
+                            <constraint firstItem="VvB-gA-kH4" firstAttribute="leading" secondItem="Is0-fu-T4V" secondAttribute="leading" id="Ann-UQ-9uV"/>
+                            <constraint firstItem="Is0-fu-T4V" firstAttribute="trailing" secondItem="VvB-gA-kH4" secondAttribute="trailing" id="IEr-w7-A2v"/>
+                            <constraint firstItem="xJs-y4-hwi" firstAttribute="top" secondItem="VvB-gA-kH4" secondAttribute="bottom" id="Otz-jA-zh2"/>
                             <constraint firstItem="F8f-0R-mwi" firstAttribute="trailing" secondItem="Is0-fu-T4V" secondAttribute="trailing" id="Xhy-Ck-uD2"/>
                             <constraint firstItem="F8f-0R-mwi" firstAttribute="leading" secondItem="Is0-fu-T4V" secondAttribute="leading" id="cFH-XW-6Te"/>
                             <constraint firstItem="F8f-0R-mwi" firstAttribute="top" secondItem="KoB-Ft-qtD" secondAttribute="top" constant="24" id="dpe-ZN-UOl"/>
@@ -645,6 +665,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKn-7g-fxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="511" y="1428"/>
+        </scene>
+        <!--Select Beat Table View Controller-->
+        <scene sceneID="2Ss-tq-vfc">
+            <objects>
+                <viewController id="h77-YF-9SI" customClass="SelectBeatTableViewController" customModule="DrumTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KoC-Rn-prj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhD-Ob-Ecm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BHy-ZV-LHQ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BHy-ZV-LHQ" id="yx7-WJ-Fag">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TKQ-3y-wn9">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mor-yt-Cev">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="h77-YF-9SI" eventType="touchUpInside" id="tGe-dq-sP2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfF-69-X54">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2B-Ce-Thd">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Choose">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LJl-5j-4DF" firstAttribute="bottom" secondItem="dhD-Ob-Ecm" secondAttribute="bottom" constant="48" id="3rb-TR-8de"/>
+                            <constraint firstItem="dhD-Ob-Ecm" firstAttribute="top" secondItem="LJl-5j-4DF" secondAttribute="top" constant="24" id="B9C-4w-sx5"/>
+                            <constraint firstItem="TKQ-3y-wn9" firstAttribute="leading" secondItem="LJl-5j-4DF" secondAttribute="leading" id="C0u-UP-r6a"/>
+                            <constraint firstItem="TKQ-3y-wn9" firstAttribute="top" secondItem="dhD-Ob-Ecm" secondAttribute="bottom" id="Flr-OG-cmQ"/>
+                            <constraint firstItem="dhD-Ob-Ecm" firstAttribute="trailing" secondItem="LJl-5j-4DF" secondAttribute="trailing" id="M2Y-ns-8Xi"/>
+                            <constraint firstItem="TKQ-3y-wn9" firstAttribute="trailing" secondItem="LJl-5j-4DF" secondAttribute="trailing" id="Rnt-BR-zt7"/>
+                            <constraint firstItem="LJl-5j-4DF" firstAttribute="bottom" secondItem="TKQ-3y-wn9" secondAttribute="bottom" id="YXq-AQ-Fmu"/>
+                            <constraint firstItem="TKQ-3y-wn9" firstAttribute="bottom" secondItem="LJl-5j-4DF" secondAttribute="bottom" id="b2l-Gj-wrS"/>
+                            <constraint firstItem="LJl-5j-4DF" firstAttribute="trailing" secondItem="TKQ-3y-wn9" secondAttribute="trailing" id="cgh-Bg-pK2"/>
+                            <constraint firstItem="dhD-Ob-Ecm" firstAttribute="leading" secondItem="LJl-5j-4DF" secondAttribute="leading" id="qc4-QV-Yfr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LJl-5j-4DF"/>
+                    </view>
+                    <connections>
+                        <outlet property="beatsTableView" destination="dhD-Ob-Ecm" id="3Qw-ka-pa9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BP5-OD-YCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509.60000000000002" y="2144.9775112443781"/>
         </scene>
     </scenes>
 </document>

@@ -121,7 +121,6 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
             currentNote = 0
         }
         examplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
-        dump(examplePlayer.exampleBeatNotes)
     }
 
 }
