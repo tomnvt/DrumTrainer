@@ -108,19 +108,19 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? BeatEditViewController {
            viewController.delegate = self
-            viewController.notes = examplePlayer.exampleBeatNotes
+            viewController.notes = ExamplePlayer.exampleBeatNotes
             viewController.beatNotesSaverDelegate = examplePlayer
         }
     }
 
     func changeNote(drumPadIndex: Int, noteIndex: Int) {
-        var currentNote = examplePlayer.exampleBeatNotes[drumPadIndex][noteIndex]
+        var currentNote = ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex]
         if currentNote == 0 {
             currentNote = 1
         } else if currentNote == 1 {
             currentNote = 0
         }
-        examplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
+        ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
     }
 
 }
