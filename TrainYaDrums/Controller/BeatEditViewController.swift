@@ -190,7 +190,6 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
         let selectedCell = collectionView.cellForItem(at: indexPath)
         selectedCell?.backgroundColor = UIColor.white
         changeNoteForCell(indexPath: indexPath)
-        print("Select cell [\(indexPath.section), \(indexPath.row)]")
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

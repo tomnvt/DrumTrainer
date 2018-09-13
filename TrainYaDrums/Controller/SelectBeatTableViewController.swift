@@ -42,6 +42,8 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Beat with name '\(savedBeatsNames[indexPath.row])' selected.")
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row],
+                                                                     beatIndex: 0)
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {

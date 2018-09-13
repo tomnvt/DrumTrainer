@@ -12,7 +12,6 @@ public class PathCollectionViewCell: UICollectionViewCell {
 
     public static let identifier: String = "PCVCRI"
 
-    public func setIndexPath(_ indexPath: IndexPath) {
-    }
+    public func setIndexPath(_ indexPath: IndexPath) {}
 
 }
