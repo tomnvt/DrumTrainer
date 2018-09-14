@@ -12,7 +12,7 @@ import RealmSwift
 class SimpleBrokenBeatExampleBeat: ExampleBeatNotes {
 
     var exampleBeatNotes = { () -> [[Int]] in
-        var drumPadNotes: [[Int]] = [[]]
+        var drumPadNotes: [[Int]] = []
         let eighthsArray = [0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0, 0, 0, 0,

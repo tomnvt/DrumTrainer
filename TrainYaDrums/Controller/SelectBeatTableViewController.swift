@@ -15,6 +15,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
 
     let realm = try! Realm()
     var savedBeatsNames: [String] = []
+    weak var delegate: EmptyBeatCreatorDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,4 +51,32 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Add new beat",
+                                      message: "Do you want to duplicate current beat or create an empty one?",
+                                      preferredStyle: .alert)
+        let duplicate = UIAlertAction(title: "Duplicate", style: .default, handler: nil)
+        let createEmpty = UIAlertAction(title: "Empty beat", style: .default, handler: { action in
+            self.delegate?.createEmptyBeat()
+            self.dismiss(animated: true, completion: nil)
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
+        alert.addAction(duplicate)
+        alert.addAction(createEmpty)
+        alert.addAction(cancel)
+        self.show(alert, sender: nil)
+    }
+
+    func createEmptyBeat() {
+        delegate?.createEmptyBeat()
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func chooseButtonPressed(_ sender: UIButton) {
+    }
+
+}
+
+protocol EmptyBeatCreatorDelegate: AnyObject {
+    func createEmptyBeat()
 }

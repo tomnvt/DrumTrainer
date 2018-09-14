@@ -9,7 +9,7 @@
 import UIKit
 import CollectionViewGridLayout
 
-class BeatEditViewController: UIViewController {
+class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
     public var numberOfRows: Int = 16
@@ -99,6 +99,13 @@ class BeatEditViewController: UIViewController {
         collectionView.selectItem(at: indexPathToCell, animated: false, scrollPosition: .left)
     }
 
+    func deselectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
+        let indexPathSection = currentSection
+        let indexPathRow = notesListPointers[currentDrumPad][currentNote]
+        let indexPathToCell = IndexPath.init(row: indexPathRow, section: indexPathSection)
+        collectionView.deselectItem(at: indexPathToCell, animated: false)
+    }
+
     func selectCollectionCellsForPlayingNotes() {
         var currentDrumPad = 0
         var currentSection = 0
@@ -114,6 +121,8 @@ class BeatEditViewController: UIViewController {
                 }
                 if note == 1 {
                     selectPlayingCell(currentSection, currentDrumPad, currentNote)
+                } else if note == 0 {
+                    deselectPlayingCell(currentSection, currentDrumPad, currentNote)
                 }
                 currentNote += 1
             }
@@ -148,6 +157,31 @@ class BeatEditViewController: UIViewController {
             alert.dismiss(animated: true, completion: nil)
         }
     }
+
+    func createEmptyBeat() {
+        ExamplePlayer.exampleBeatNotes = EmptyExampleBeat.exampleBeatNotes
+        notes = ExamplePlayer.exampleBeatNotes
+        selectCollectionCellsForPlayingNotes()
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath)
+        selectedCell?.backgroundColor = UIColor.white
+        changeNoteForCell(indexPath: indexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath)
+        changeNoteForCell(indexPath: indexPath)
+        selectedCell?.backgroundColor = UIColor.yellow
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? SelectBeatTableViewController {
+            viewController.delegate = self
+        }
+    }
+
 }
 
 extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
@@ -184,18 +218,6 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                                numberOfRowsForSection section: Int) -> Int {
         return self.numberOfRows
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCell = collectionView.cellForItem(at: indexPath)
-        selectedCell?.backgroundColor = UIColor.white
-        changeNoteForCell(indexPath: indexPath)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let selectedCell = collectionView.cellForItem(at: indexPath)
-        changeNoteForCell(indexPath: indexPath)
-        selectedCell?.backgroundColor = UIColor.yellow
     }
 
 }
