@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        print("In AppDelegate")
         UIApplication.shared.statusBarStyle = .lightContent
 
         print(Realm.Configuration.defaultConfiguration.fileURL)

@@ -31,6 +31,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     let globalClock: GlobalClock = GlobalClock()
 
     override func viewDidLoad() {
+        print("In MainViewConroller")
         super.viewDidLoad()
         metronome.delegate = self
         examplePlayer.delegate = self

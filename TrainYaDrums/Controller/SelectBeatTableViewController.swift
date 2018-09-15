@@ -23,6 +23,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         beatsTableView.dataSource = self
         beatsTableView.delegate = self
         getBeatsNames()
+        beatsTableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .middle)
     }
 
     func getBeatsNames() {
@@ -36,10 +37,37 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         return savedBeatsNames.count
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return " Beats"
+    }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.black
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = savedBeatsNames[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 255, green: 226, blue: 84)
+        cell.selectedBackgroundView = bgColorView
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

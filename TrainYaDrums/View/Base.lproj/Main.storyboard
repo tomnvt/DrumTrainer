@@ -158,7 +158,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="HXt-lm-VEs" kind="show" identifier="goToBeatEditView" id="FoV-bn-vzl"/>
+                                                            <segue destination="HXt-lm-VEs" kind="presentation" identifier="goToBeatEditView" modalTransitionStyle="flipHorizontal" id="FoV-bn-vzl"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -615,7 +615,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="h77-YF-9SI" kind="show" id="Okf-gI-Adk"/>
+                                            <segue destination="h77-YF-9SI" kind="presentation" modalTransitionStyle="crossDissolve" id="Okf-gI-Adk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDG-qP-rPH">
@@ -674,17 +674,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhD-Ob-Ecm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="575"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dhD-Ob-Ecm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="591"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BHy-ZV-LHQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="BHy-ZV-LHQ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BHy-ZV-LHQ" id="yx7-WJ-Fag">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BHy-ZV-LHQ" id="yx7-WJ-Fag">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -731,7 +736,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LJl-5j-4DF" firstAttribute="bottom" secondItem="dhD-Ob-Ecm" secondAttribute="bottom" constant="48" id="3rb-TR-8de"/>
-                            <constraint firstItem="dhD-Ob-Ecm" firstAttribute="top" secondItem="LJl-5j-4DF" secondAttribute="top" constant="24" id="B9C-4w-sx5"/>
+                            <constraint firstItem="dhD-Ob-Ecm" firstAttribute="top" secondItem="LJl-5j-4DF" secondAttribute="top" constant="8" id="B9C-4w-sx5"/>
                             <constraint firstItem="TKQ-3y-wn9" firstAttribute="leading" secondItem="LJl-5j-4DF" secondAttribute="leading" id="C0u-UP-r6a"/>
                             <constraint firstItem="TKQ-3y-wn9" firstAttribute="top" secondItem="dhD-Ob-Ecm" secondAttribute="bottom" id="Flr-OG-cmQ"/>
                             <constraint firstItem="dhD-Ob-Ecm" firstAttribute="trailing" secondItem="LJl-5j-4DF" secondAttribute="trailing" id="M2Y-ns-8Xi"/>
