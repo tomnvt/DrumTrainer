@@ -13,6 +13,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
     public var numberOfRows: Int = 16
+    private var editingNewBeat: Bool = false
 
     var eighthNoteIndex = 0
     var currentBarEighthNoteIndex = 0
@@ -54,6 +55,10 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(animateLoopProgress),
                                                name: globalClockEighthNote, object: nil)
         self.collectionView.allowsMultipleSelection = true
+        selectCollectionCellsForPlayingNotes()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         selectCollectionCellsForPlayingNotes()
     }
 
@@ -149,8 +154,20 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        if editingNewBeat {
+            askForNewBeatName()
+        } else {
+            saveCurrentBeat()
+        }
+    }
+
+    func saveCurrentBeat() {
         beatNotesSaverDelegate?.saveBeatNotes()
-        let alert = UIAlertController(title: "SAVED :-)", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        showAlertWithMessageSaved()
+    }
+
+    func showAlertWithMessageSaved() {
+        let alert = UIAlertController(title: "SAVED :-)", message: "", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         let deadline = DispatchTime.now() + 1
         DispatchQueue.main.asyncAfter(deadline: deadline) {
@@ -158,10 +175,52 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         }
     }
 
+    func showABeatAlreadyExistsAlert(beatName: String) {
+        let alert = UIAlertController(title: "Can't save :-(",
+            message: "Beat with name:\n\n\(beatName)\n\nalready exists.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            self.askForNewBeatName()
+        })
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func askForNewBeatName() {
+        let alert = UIAlertController(title: "Save beat",
+                                      message: "Please enter new beat name:",
+                                      preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            let textField = alert.textFields![0] as UITextField
+            if let newBeatName = textField.text {
+                if ExampleBeatNotes.saveExampleBeatToRealm(beatNotes: self.notes, beatName: newBeatName) {
+                    self.showAlertWithMessageSaved()
+                    self.editingNewBeat = false
+                    self.defaults.set(newBeatName, forKey: "currentlySelectedBeatName")
+                } else {
+                    self.showABeatAlreadyExistsAlert(beatName: newBeatName)
+                }
+            }
+        }
+        alert.addTextField(configurationHandler: { (textField) in
+            textField.text = ""
+            saveAction.isEnabled = false
+            _ = NotificationCenter.default
+                .addObserver(forName: NSNotification.Name.UITextFieldTextDidChange,
+                             object: textField,
+                             queue: OperationQueue.main) { _ in
+                                saveAction.isEnabled = textField.text!.count > 0
+            }
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(saveAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
     func createEmptyBeat() {
-        ExamplePlayer.exampleBeatNotes = EmptyExampleBeat.exampleBeatNotes
+        editingNewBeat = true
         notes = ExamplePlayer.exampleBeatNotes
-        selectCollectionCellsForPlayingNotes()
+        collectionView.reloadData()
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

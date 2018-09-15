@@ -11,12 +11,12 @@ import RealmSwift
 
 class ExampleBeatNotes {
 
-    let realm = try! Realm()
+    static let realm = try! Realm()
 
     var firstBarDrumNotes: [[Int]] = []
 
-    func saveExampleBeatToRealm(beatNotes: [[Int]], beatName: String) {
-        guard checkThatBeatWithCurrentNameIsNotAlreadySaved(name: beatName) else { return }
+    static func saveExampleBeatToRealm(beatNotes: [[Int]], beatName: String) -> Bool {
+        guard checkThatBeatWithCurrentNameIsNotAlreadySaved(name: beatName) else { return false }
         let oneBeatEighthNotes = OneBeatEighthNotes()
         for indexOne in 0..<beatNotes.count {
             let drumPadEighthNotes = DrumpadEighthNotes()
@@ -34,10 +34,12 @@ class ExampleBeatNotes {
             }
         } catch {
             print("Realm error: \(error)")
+            return false
         }
+        return true
     }
 
-    func checkThatBeatWithCurrentNameIsNotAlreadySaved(name: String) -> Bool {
+    static func checkThatBeatWithCurrentNameIsNotAlreadySaved(name: String) -> Bool {
         let savedBeatsNames = BeatNotesLoader.getBeatNames()
         if savedBeatsNames.contains(name) {
             return false

@@ -16,6 +16,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     let realm = try! Realm()
     var savedBeatsNames: [String] = []
     weak var delegate: EmptyBeatCreatorDelegate?
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         print("Beat with name '\(savedBeatsNames[indexPath.row])' selected.")
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row],
                                                                      beatIndex: 0)
+        defaults.set(savedBeatsNames[indexPath.row], forKey: "currentlySelectedBeatName")
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -56,7 +58,8 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
                                       message: "Do you want to duplicate current beat or create an empty one?",
                                       preferredStyle: .alert)
         let duplicate = UIAlertAction(title: "Duplicate", style: .default, handler: nil)
-        let createEmpty = UIAlertAction(title: "Empty beat", style: .default, handler: { action in
+        let createEmpty = UIAlertAction(title: "Empty beat", style: .default, handler: { _ in
+            ExamplePlayer.exampleBeatNotes = EmptyExampleBeat.exampleBeatNotes
             self.delegate?.createEmptyBeat()
             self.dismiss(animated: true, completion: nil)
         })

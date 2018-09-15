@@ -37,7 +37,7 @@ class SimpleBrokenBeatExampleBeat: ExampleBeatNotes {
 
     override init() {
         super.init()
-        saveExampleBeatToRealm(beatNotes: exampleBeatNotes, beatName: "Simple Broken Beat")
+        ExampleBeatNotes.saveExampleBeatToRealm(beatNotes: exampleBeatNotes, beatName: "Simple Broken Beat")
         firstBarDrumNotes = exampleBeatNotes
     }
 
