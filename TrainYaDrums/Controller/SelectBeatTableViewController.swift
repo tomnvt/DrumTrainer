@@ -60,9 +60,9 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = savedBeatsNames[indexPath.row]
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red: 255, green: 226, blue: 84)
-        cell.selectedBackgroundView = bgColorView
+        let backgroundColorView = UIView()
+        backgroundColorView.backgroundColor = UIColor(red: 255, green: 226, blue: 84)
+        cell.selectedBackgroundView = backgroundColorView
         return cell
     }
 

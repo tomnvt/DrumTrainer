@@ -55,7 +55,6 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(animateLoopProgress),
                                                name: globalClockEighthNote, object: nil)
         self.collectionView.allowsMultipleSelection = true
-        selectCollectionCellsForPlayingNotes()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -112,6 +111,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     func selectCollectionCellsForPlayingNotes() {
+        notes = ExamplePlayer.exampleBeatNotes
         var currentDrumPad = 0
         var currentSection = 0
         var currentNote = 0
@@ -155,7 +155,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
-            askForNewBeatName()
+            askForNewBeatNameAndSave()
         } else {
             saveCurrentBeat()
         }
@@ -179,13 +179,13 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         let alert = UIAlertController(title: "Can't save :-(",
             message: "Beat with name:\n\n\(beatName)\n\nalready exists.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-            self.askForNewBeatName()
+            self.askForNewBeatNameAndSave()
         })
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
 
-    func askForNewBeatName() {
+    func askForNewBeatNameAndSave() {
         let alert = UIAlertController(title: "Save beat",
                                       message: "Please enter new beat name:",
                                       preferredStyle: .alert)
@@ -193,7 +193,10 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             let textField = alert.textFields![0] as UITextField
             if let newBeatName = textField.text {
-                if ExampleBeatNotes.saveExampleBeatToRealm(beatNotes: self.notes, beatName: newBeatName) {
+                print("self.notes")
+                print(self.notes)
+                if ExampleBeatNotes.saveExampleBeatToRealm(beatNotes: ExamplePlayer.exampleBeatNotes,
+                                                           beatName: newBeatName) {
                     self.showAlertWithMessageSaved()
                     self.editingNewBeat = false
                     self.defaults.set(newBeatName, forKey: "currentlySelectedBeatName")

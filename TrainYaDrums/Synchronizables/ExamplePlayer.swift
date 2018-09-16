@@ -51,7 +51,6 @@ class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
     func saveBeatNotes() {
         let beatNotesSaver = BeatNotesSaver()
         beatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
-        print("Save process done.")
     }
 
     static func reloadBeatNotes(beatName: String) {
