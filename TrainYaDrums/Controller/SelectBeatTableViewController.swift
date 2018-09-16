@@ -23,7 +23,15 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         beatsTableView.dataSource = self
         beatsTableView.delegate = self
         getBeatsNames()
-        beatsTableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .middle)
+        selectCurrentlySelectedBeat()
+    }
+
+    func selectCurrentlySelectedBeat() {
+        let currentlySelectedBeatIndex = BeatNotesLoader.getIndexOfCurrentlySelectedBeat()
+        beatsTableView.selectRow(at: IndexPath.init(row: currentlySelectedBeatIndex,
+                                                    section: 0),
+                                                    animated: true,
+                                                    scrollPosition: .middle)
     }
 
     func getBeatsNames() {

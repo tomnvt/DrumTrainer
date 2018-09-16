@@ -60,6 +60,15 @@ class BeatNotesLoader {
         }
     }
 
+    static func getIndexOfCurrentlySelectedBeat() -> Int {
+        let defaults = UserDefaults.standard
+        let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")
+        let currentlySelectedBeat = realm.object(ofType: ExampleBeat.self, forPrimaryKey: currentlySelectedBeatName)
+        let allBeats = realm.objects(ExampleBeat.self)
+        let indexOfCurrentlySelectedBeat = allBeats.index(of: currentlySelectedBeat!)
+        return indexOfCurrentlySelectedBeat!
+    }
+
     static func getBeatNames() -> [String] {
         let savedBeats = realm.objects(ExampleBeat.self)
         var names: [String] = []
