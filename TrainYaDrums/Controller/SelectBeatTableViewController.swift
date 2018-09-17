@@ -17,18 +17,23 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     var savedBeatsNames: [String] = []
     weak var delegate: EmptyBeatCreatorDelegate?
     let defaults = UserDefaults.standard
+    var indexOfOrinallySelectedBeat: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         beatsTableView.dataSource = self
         beatsTableView.delegate = self
         getBeatsNames()
+        getIndexOfOrinallySelectedBeat()
         selectCurrentlySelectedBeat()
     }
 
+    func getIndexOfOrinallySelectedBeat() {
+        indexOfOrinallySelectedBeat = BeatNotesLoader.getIndexOfCurrentlySelectedBeat()
+    }
+
     func selectCurrentlySelectedBeat() {
-        let currentlySelectedBeatIndex = BeatNotesLoader.getIndexOfCurrentlySelectedBeat()
-        beatsTableView.selectRow(at: IndexPath.init(row: currentlySelectedBeatIndex,
+        beatsTableView.selectRow(at: IndexPath.init(row: indexOfOrinallySelectedBeat,
                                                     section: 0),
                                                     animated: true,
                                                     scrollPosition: .middle)
@@ -61,7 +66,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
+        return 90.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,13 +84,15 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Beat with name '\(savedBeatsNames[indexPath.row])' selected.")
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row],
                                                                      beatIndex: 0)
         defaults.set(savedBeatsNames[indexPath.row], forKey: "currentlySelectedBeatName")
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: indexOfOrinallySelectedBeat,
+                                                                     beatIndex: 0)
+        defaults.set(savedBeatsNames[indexOfOrinallySelectedBeat], forKey: "currentlySelectedBeatName")
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -112,6 +119,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     @IBAction func chooseButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
