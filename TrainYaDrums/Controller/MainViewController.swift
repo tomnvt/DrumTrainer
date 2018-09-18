@@ -35,11 +35,13 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         super.viewDidLoad()
         metronome.delegate = self
         examplePlayer.delegate = self
-        setBpmSliderBySavedValue()
-        setVolumeSliderSavedValue()
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
         setDefaultBeatIfNotSelected()
+        setDefaultBpmValueIfNotSet()
+        setDefaultMetronomeVolumeIfNotSet()
+        setBpmSliderBySavedValue()
+        setVolumeSliderSavedValue()
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -56,6 +58,18 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     func setDefaultBeatIfNotSelected() {
         if defaults.string(forKey: "currentlySelectedBeatName") == nil {
             defaults.set("Simple House", forKey: "currentlySelectedBeatName")
+        }
+    }
+
+    func setDefaultBpmValueIfNotSet() {
+        if defaults.integer(forKey: "bpmValue") == 0 {
+            defaults.set(120, forKey: "bpmValue")
+        }
+    }
+
+    func setDefaultMetronomeVolumeIfNotSet() {
+        if defaults.float(forKey: "metronomeVolume") == 0 {
+            defaults.set(100, forKey: "metronomeVolume")
         }
     }
 
