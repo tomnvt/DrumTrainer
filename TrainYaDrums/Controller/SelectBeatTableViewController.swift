@@ -25,15 +25,15 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         beatsTableView.delegate = self
         getBeatsNames()
         getIndexOfOrinallySelectedBeat()
-        selectCurrentlySelectedBeat()
+        selectCellForBeat(withBeatIndex: indexOfOrinallySelectedBeat)
     }
 
     func getIndexOfOrinallySelectedBeat() {
         indexOfOrinallySelectedBeat = BeatNotesLoader.getIndexOfCurrentlySelectedBeat()
     }
 
-    func selectCurrentlySelectedBeat() {
-        beatsTableView.selectRow(at: IndexPath.init(row: indexOfOrinallySelectedBeat,
+    func selectCellForBeat(withBeatIndex: Int) {
+        beatsTableView.selectRow(at: IndexPath.init(row: withBeatIndex,
                                                     section: 0),
                                                     animated: true,
                                                     scrollPosition: .middle)
@@ -55,27 +55,27 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return " Beats"
+        return "\tBeats"
     }
 
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.black
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.white
-        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 50)
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 90.0
+        return 120.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = savedBeatsNames[indexPath.row]
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
-        let backgroundColorView = UIView()
-        backgroundColorView.backgroundColor = UIColor(red: 255, green: 226, blue: 84)
-        cell.selectedBackgroundView = backgroundColorView
+        if cell.isSelected {
+            cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+        }
         return cell
     }
 
@@ -87,6 +87,9 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row],
                                                                      beatIndex: 0)
         defaults.set(savedBeatsNames[indexPath.row], forKey: "currentlySelectedBeatName")
+        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.reloadData()
+        beatsTableView.cellForRow(at: indexPath)?.textLabel?.font = .boldSystemFont(ofSize: 15)
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
