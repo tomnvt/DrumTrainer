@@ -93,7 +93,11 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        if editingNewBeat {
+            askIfUserWantToSaveCurrentlyEditedBeat()
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
      func selectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
@@ -193,8 +197,6 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             let textField = alert.textFields![0] as UITextField
             if let newBeatName = textField.text {
-                print("self.notes")
-                print(self.notes)
                 if ExampleBeatNotes.saveExampleBeatToRealm(beatNotes: ExamplePlayer.exampleBeatNotes,
                                                            beatName: newBeatName) {
                     self.showAlertWithMessageSaved()
@@ -242,6 +244,19 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         if let viewController = segue.destination as? SelectBeatTableViewController {
             viewController.delegate = self
         }
+    }
+
+    func askIfUserWantToSaveCurrentlyEditedBeat() {
+        let alert = UIAlertController(title: "Save beat",
+                                      message: "Do you want to save current beat?",
+                                      preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        let noAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            self.askForNewBeatNameAndSave()
+        }
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

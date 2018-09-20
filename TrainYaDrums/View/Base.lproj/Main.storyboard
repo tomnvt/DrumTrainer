@@ -128,8 +128,20 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="htb-bm-RDd">
                                                 <rect key="frame" x="0.0" y="238" width="343" height="62"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-cw-Vb8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="62"/>
+                                                        <color key="backgroundColor" red="0.99607843137254903" green="0.96470588235294119" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Train">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pa-Xv-Peh" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="62"/>
+                                                        <rect key="frame" x="93.5" y="0.0" width="150.5" height="62"/>
                                                         <color key="backgroundColor" red="1" green="0.88627450980392153" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Example">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -144,8 +156,8 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-LM-mBr">
-                                                        <rect key="frame" x="219" y="0.0" width="124" height="62"/>
-                                                        <color key="backgroundColor" red="1" green="0.94509803920000002" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="249" y="0.0" width="94" height="62"/>
+                                                        <color key="backgroundColor" red="0.99607843137254903" green="0.96470588235294119" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Edit">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -615,7 +627,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="h77-YF-9SI" kind="presentation" modalTransitionStyle="crossDissolve" id="Okf-gI-Adk"/>
+                                            <segue destination="h77-YF-9SI" kind="presentation" identifier="goToBeatsTableView" modalTransitionStyle="crossDissolve" id="Okf-gI-Adk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDG-qP-rPH">
