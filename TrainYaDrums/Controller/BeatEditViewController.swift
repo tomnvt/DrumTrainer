@@ -100,6 +100,12 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         }
     }
 
+    @IBAction func beatsButtonPressed(_ sender: UIButton) {
+        if editingNewBeat {
+            askIfUserWantToSaveCurrentlyEditedBeat()
+        }
+    }
+
      func selectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
         let indexPathSection = currentSection
         let indexPathRow = notesListPointers[currentDrumPad][currentNote]
