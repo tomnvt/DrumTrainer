@@ -94,7 +94,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
-            askIfUserWantToSaveCurrentlyEditedBeat()
+            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: "back")
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -102,7 +102,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBAction func beatsButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
-            askIfUserWantToSaveCurrentlyEditedBeat()
+            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: "beats")
         }
     }
 
@@ -252,11 +252,17 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         }
     }
 
-    func askIfUserWantToSaveCurrentlyEditedBeat() {
+    func askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: String) {
         let alert = UIAlertController(title: "Save beat",
                                       message: "Do you want to save current beat?",
                                       preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        let yesAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            if callerButtonTitle == "back" {
+                self.dismiss(animated: true, completion: nil)
+            } else if callerButtonTitle ==  "beats" {
+                self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
+            }
+        })
         let noAction = UIAlertAction(title: "Yes", style: .default) { _ in
             self.askForNewBeatNameAndSave()
         }
