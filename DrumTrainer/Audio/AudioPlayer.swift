@@ -14,7 +14,10 @@ class AudioPlayer {
     private let metronomeSampler: Sampler
     private let audioMixer = AKMixer()
     private var metronomeIndex = 0
-    private let midiNotes = [36, 38, 42, 46, 47, 41, 50, 39, 37, 60, 61]
+    private let midiNotes = [36, 38, 42, 46, 47,
+                             41, 50, 39, 37, 60,
+                             61, 62, 63, 64, 65,
+                             66, 67, 68, 69, 70]
 
     init() {
         let samplerFactory = SamplerFactory()

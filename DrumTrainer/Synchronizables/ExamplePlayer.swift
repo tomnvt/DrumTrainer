@@ -25,7 +25,6 @@ class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
     weak var delegate: ExamplePlayerDelegate?
 
     override init() {
-        print("In ExamplePlayer")
         let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")
         if currentlySelectedBeatName == nil {
             ExamplePlayer.exampleBeatNotes = BeatNotesLoader
