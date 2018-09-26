@@ -109,6 +109,10 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         examplePlayer.drumExampleIsPlaying = !examplePlayer.drumExampleIsPlaying
     }
 
+    @IBAction func trainButtonPressed(_ sender: UIButton) {
+        print("Gonna enter training mode")
+    }
+
     func touchDownDrumPad(drumPadIndexes: [Int]) {
         for drum in drumPadIndexes {
             drumPads[drum].sendActions(for: .touchDown)

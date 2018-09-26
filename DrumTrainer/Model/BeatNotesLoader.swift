@@ -53,13 +53,6 @@ class BeatNotesLoader {
         }
     }
 
-    static func setNotesFor(exampleBeatObject: ExampleBeat, beatIndex: Int, drumPadIndex: Int, eighthNotes: [Int]) {
-        var notes = getNotesFor(exampleBeatObject: exampleBeatObject, beatIndex: beatIndex, drumPadIndex: drumPadIndex)
-        for index in 0..<eighthNotes.count {
-            notes[index] = eighthNotes[index]
-        }
-    }
-
     static func getIndexOfCurrentlySelectedBeat() -> Int {
         let defaults = UserDefaults.standard
         let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")

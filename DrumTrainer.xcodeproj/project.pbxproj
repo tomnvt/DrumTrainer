@@ -21,13 +21,12 @@
 		E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */; };
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
 		E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3622C9D212874390053F190 /* AudioPlayer.swift */; };
-		E3622CA0212885B30053F190 /* metronomeSound1_C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3622C9F212885B30053F190 /* metronomeSound1_C1.wav */; };
 		E36D628A214C38CC00E33221 /* EmptyExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */; };
 		E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F010E2109145900ACEB59 /* GlobalClock.swift */; };
 		E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D20F620FE573600796084 /* UIColor+HexColor.swift */; };
 		E38356FB2145C0280001582F /* BeatNotesSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38356FA2145C0280001582F /* BeatNotesSaver.swift */; };
 		E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383EF14210E59C0004879D9 /* Synchronizable.swift */; };
-		E383EF17210E6444004879D9 /* Drums in Resources */ = {isa = PBXBuildFile; fileRef = E383EF16210E6443004879D9 /* Drums */; };
+		E383EF17210E6444004879D9 /* AudioFiles in Resources */ = {isa = PBXBuildFile; fileRef = E383EF16210E6443004879D9 /* AudioFiles */; };
 		E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A338A210492C100309084 /* ExamplePlayer.swift */; };
 		E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393E7AE213997E100D10CAE /* SampleLibrary.swift */; };
 		E393E7B2213998B600D10CAE /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393E7B1213998B600D10CAE /* Sample.swift */; };
@@ -42,9 +41,6 @@
 		E3BCDDF8213C224E00063B5D /* SamplerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF7213C224E00063B5D /* SamplerFactory.swift */; };
 		E3BCDDFA213C22A000063B5D /* SampleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BCDDF9213C22A000063B5D /* SampleType.swift */; };
 		E3CD7804213F3C8D00014681 /* ExampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */; };
-		E3E63C3B20F53F2200006BA1 /* metronomeSound3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */; };
-		E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */; };
-		E3E63C3E20F53F2200006BA1 /* metronomeSound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */; };
 		E3E8DB6421430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */; };
 		E3FD46B7214409CD006CC917 /* PathCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */; };
 		E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */; };
@@ -73,13 +69,12 @@
 		E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+@IBInspectable.swift"; sourceTree = "<group>"; };
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
 		E3622C9D212874390053F190 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		E3622C9F212885B30053F190 /* metronomeSound1_C1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound1_C1.wav; sourceTree = "<group>"; };
 		E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExampleBeat.swift; sourceTree = "<group>"; };
 		E36F010E2109145900ACEB59 /* GlobalClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClock.swift; sourceTree = "<group>"; };
 		E37D20F620FE573600796084 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		E38356FA2145C0280001582F /* BeatNotesSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatNotesSaver.swift; sourceTree = "<group>"; };
 		E383EF14210E59C0004879D9 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
-		E383EF16210E6443004879D9 /* Drums */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Drums; sourceTree = "<group>"; };
+		E383EF16210E6443004879D9 /* AudioFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AudioFiles; sourceTree = "<group>"; };
 		E38A338A210492C100309084 /* ExamplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePlayer.swift; sourceTree = "<group>"; };
 		E393E7AE213997E100D10CAE /* SampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLibrary.swift; sourceTree = "<group>"; };
 		E393E7B1213998B600D10CAE /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
@@ -96,9 +91,6 @@
 		E3BCDDF7213C224E00063B5D /* SamplerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerFactory.swift; sourceTree = "<group>"; };
 		E3BCDDF9213C22A000063B5D /* SampleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleType.swift; sourceTree = "<group>"; };
 		E3CD7803213F3C8D00014681 /* ExampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleLibrary.swift; sourceTree = "<group>"; };
-		E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound3.wav; sourceTree = "<group>"; };
-		E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound4.wav; sourceTree = "<group>"; };
-		E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronomeSound1.wav; sourceTree = "<group>"; };
 		E3E8DB6321430ECE00FA3A13 /* SimpleBrokenBeatExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrokenBeatExampleBeat.swift; sourceTree = "<group>"; };
 		E3FD46B5214409CD006CC917 /* PathCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3FD46B6214409CD006CC917 /* PathCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -216,7 +208,7 @@
 		E3AA5DEC20E194DC0095856A = {
 			isa = PBXGroup;
 			children = (
-				E3AA5DF720E194DC0095856A /* TrainYaDrums */,
+				E3AA5DF720E194DC0095856A /* DrumTrainer */,
 				E3AA5DF620E194DC0095856A /* Products */,
 				0DDCEF75F2DD83673E9D3C2A /* Pods */,
 				DB1DB0759DC0B976B2F36765 /* Frameworks */,
@@ -231,7 +223,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E3AA5DF720E194DC0095856A /* TrainYaDrums */ = {
+		E3AA5DF720E194DC0095856A /* DrumTrainer */ = {
 			isa = PBXGroup;
 			children = (
 				E3E8DB6221430D1400FA3A13 /* Model */,
@@ -241,21 +233,9 @@
 				E35FF84D20F9DB1E00B10658 /* Extension */,
 				E3667BE7213C92BD004A1E14 /* Support Files */,
 				E3667BE6213C92B2004A1E14 /* View */,
-				E3E63C2E20F53ECB00006BA1 /* MetronomeSounds */,
-				E383EF16210E6443004879D9 /* Drums */,
+				E383EF16210E6443004879D9 /* AudioFiles */,
 			);
-			path = TrainYaDrums;
-			sourceTree = "<group>";
-		};
-		E3E63C2E20F53ECB00006BA1 /* MetronomeSounds */ = {
-			isa = PBXGroup;
-			children = (
-				E3622C9F212885B30053F190 /* metronomeSound1_C1.wav */,
-				E3E63C3A20F53F2200006BA1 /* metronomeSound1.wav */,
-				E3E63C3720F53F2200006BA1 /* metronomeSound3.wav */,
-				E3E63C3920F53F2200006BA1 /* metronomeSound4.wav */,
-			);
-			path = MetronomeSounds;
+			path = DrumTrainer;
 			sourceTree = "<group>";
 		};
 		E3E8DB6221430D1400FA3A13 /* Model */ = {
@@ -341,16 +321,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E383EF17210E6444004879D9 /* Drums in Resources */,
+				E383EF17210E6444004879D9 /* AudioFiles in Resources */,
 				E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */,
 				E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */,
 				E3FD46BC21440A3F006CC917 /* CollectionReusableView.xib in Resources */,
 				E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */,
-				E3622CA0212885B30053F190 /* metronomeSound1_C1.wav in Resources */,
-				E3E63C3D20F53F2200006BA1 /* metronomeSound4.wav in Resources */,
-				E3E63C3B20F53F2200006BA1 /* metronomeSound3.wav in Resources */,
 				E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */,
-				E3E63C3E20F53F2200006BA1 /* metronomeSound1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,12 +340,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DrumTrainer/Pods-DrumTrainer-frameworks.sh",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionViewGridLayout/CollectionViewGridLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewGridLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -597,12 +575,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DB4QGQ33;
-				INFOPLIST_FILE = "$(SRCROOT)/TrainYaDrums/Support Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DrumTrainer/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nvt.TrainYaDrums;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nvt.DrumTrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -616,12 +594,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68DB4QGQ33;
-				INFOPLIST_FILE = "$(SRCROOT)/TrainYaDrums/Support Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DrumTrainer/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nvt.TrainYaDrums;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nvt.DrumTrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

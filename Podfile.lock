@@ -1,14 +1,16 @@
 PODS:
-  - AudioKit (4.2.4):
-    - AudioKit/UI (= 4.2.4)
-  - AudioKit/UI (4.2.4)
+  - AudioKit (4.4.0):
+    - AudioKit/Core (= 4.4.0)
+    - AudioKit/UI (= 4.4.0)
+  - AudioKit/Core (4.4.0)
+  - AudioKit/UI (4.4.0)
   - CollectionViewGridLayout (2.0.0)
-  - Realm (3.7.6):
-    - Realm/Headers (= 3.7.6)
-  - Realm/Headers (3.7.6)
-  - RealmSwift (3.7.6):
-    - Realm (= 3.7.6)
-  - SwiftLint (0.26.0)
+  - Realm (3.10.0):
+    - Realm/Headers (= 3.10.0)
+  - Realm/Headers (3.10.0)
+  - RealmSwift (3.10.0):
+    - Realm (= 3.10.0)
+  - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - AudioKit
@@ -25,11 +27,11 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  AudioKit: 90ed0de2bc50ab68306f4b424ae1622fc9149b8e
+  AudioKit: 79c2b23cd00beb656938aa0b81b614391f17eaa3
   CollectionViewGridLayout: b00ad1b8a2cfb472062bc7a69e6522cc30ca49e7
-  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
-  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
-  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
+  Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
+  RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
 PODFILE CHECKSUM: 002595cedc91b07fa6b17475338d7b2779fe6362
 
