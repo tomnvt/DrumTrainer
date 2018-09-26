@@ -1,0 +1,9 @@
+excluded:
+  - Carthage
+  - Pods
+
+force_try:
+  severity: warning
+
+force_cast:
+  severity: warning

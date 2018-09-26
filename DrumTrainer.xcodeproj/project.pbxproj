@@ -23,6 +23,7 @@
 		E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3622C9D212874390053F190 /* AudioPlayer.swift */; };
 		E36D628A214C38CC00E33221 /* EmptyExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */; };
 		E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F010E2109145900ACEB59 /* GlobalClock.swift */; };
+		E37484D9215B8BA8002B273C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E37484D8215B8BA8002B273C /* .swiftlint.yml */; };
 		E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D20F620FE573600796084 /* UIColor+HexColor.swift */; };
 		E38356FB2145C0280001582F /* BeatNotesSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38356FA2145C0280001582F /* BeatNotesSaver.swift */; };
 		E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383EF14210E59C0004879D9 /* Synchronizable.swift */; };
@@ -71,6 +72,7 @@
 		E3622C9D212874390053F190 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExampleBeat.swift; sourceTree = "<group>"; };
 		E36F010E2109145900ACEB59 /* GlobalClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClock.swift; sourceTree = "<group>"; };
+		E37484D8215B8BA8002B273C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E37D20F620FE573600796084 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		E38356FA2145C0280001582F /* BeatNotesSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatNotesSaver.swift; sourceTree = "<group>"; };
 		E383EF14210E59C0004879D9 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				E3AA5DF620E194DC0095856A /* Products */,
 				0DDCEF75F2DD83673E9D3C2A /* Pods */,
 				DB1DB0759DC0B976B2F36765 /* Frameworks */,
+				E37484D8215B8BA8002B273C /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -324,6 +327,7 @@
 				E383EF17210E6444004879D9 /* AudioFiles in Resources */,
 				E3AA5E0320E194DE0095856A /* LaunchScreen.storyboard in Resources */,
 				E3FD46B8214409CD006CC917 /* PathCollectionViewCell.xib in Resources */,
+				E37484D9215B8BA8002B273C /* .swiftlint.yml in Resources */,
 				E3FD46BC21440A3F006CC917 /* CollectionReusableView.xib in Resources */,
 				E3AA5E0020E194DE0095856A /* Assets.xcassets in Resources */,
 				E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */,
