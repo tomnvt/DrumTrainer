@@ -102,21 +102,22 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         let alert = UIAlertController(title: "Add new beat",
                                       message: "Do you want to duplicate current beat or create an empty one?",
                                       preferredStyle: .alert)
-        let duplicate = UIAlertAction(title: "Duplicate", style: .default, handler: nil)
-        let createEmpty = UIAlertAction(title: "Empty beat", style: .default, handler: { _ in
+        let duplicateBeat = UIAlertAction(title: "Duplicate", style: .default, handler: { _ in
+            self.callDelegateAndDismissView()
+        })
+        let createEmptyBeat = UIAlertAction(title: "Empty beat", style: .default, handler: { _ in
             ExamplePlayer.exampleBeatNotes = EmptyExampleBeat.exampleBeatNotes
-            self.delegate?.createEmptyBeat()
-            self.dismiss(animated: true, completion: nil)
+            self.callDelegateAndDismissView()
         })
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil )
-        alert.addAction(duplicate)
-        alert.addAction(createEmpty)
+        alert.addAction(duplicateBeat)
+        alert.addAction(createEmptyBeat)
         alert.addAction(cancel)
         self.show(alert, sender: nil)
     }
 
-    func createEmptyBeat() {
-        delegate?.createEmptyBeat()
+    func callDelegateAndDismissView() {
+        delegate?.createNewBeat()
         dismiss(animated: true, completion: nil)
     }
 
@@ -127,5 +128,5 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
 }
 
 protocol EmptyBeatCreatorDelegate: AnyObject {
-    func createEmptyBeat()
+    func createNewBeat()
 }

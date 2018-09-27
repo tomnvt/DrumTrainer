@@ -14,6 +14,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     @IBOutlet var collectionView: UICollectionView!
     public var numberOfRows: Int = 16
     private var editingNewBeat: Bool = false
+    let deadline = DispatchTime.now() + 1
 
     var eighthNoteIndex = 0
     var currentBarEighthNoteIndex = 0
@@ -94,7 +95,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
-            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: "back")
+            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: .back)
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -102,7 +103,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBAction func beatsButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
-            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: "beats")
+            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: .beats)
         }
     }
 
@@ -165,7 +166,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
-            askForNewBeatNameAndSave()
+            askForNewBeatNameAndSave(senderButtonTitle: .save)
         } else {
             saveCurrentBeat()
         }
@@ -179,27 +180,29 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     func showAlertWithMessageSaved() {
         let alert = UIAlertController(title: "SAVED :-)", message: "", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
-        let deadline = DispatchTime.now() + 1
         DispatchQueue.main.asyncAfter(deadline: deadline) {
             alert.dismiss(animated: true, completion: nil)
         }
     }
 
-    func showABeatAlreadyExistsAlert(beatName: String) {
+    func showABeatAlreadyExistsAlert(beatName: String, senderButtonTitle: BeatButtonLabel) {
         let alert = UIAlertController(title: "Can't save :-(",
             message: "Beat with name:\n\n\(beatName)\n\nalready exists.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-            self.askForNewBeatNameAndSave()
+            self.askForNewBeatNameAndSave(senderButtonTitle: senderButtonTitle)
         })
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
 
-    func askForNewBeatNameAndSave() {
+    func askForNewBeatNameAndSave(senderButtonTitle: BeatButtonLabel) {
+        print(senderButtonTitle)
         let alert = UIAlertController(title: "Save beat",
                                       message: "Please enter new beat name:",
                                       preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            self.editingNewBeat = true
+        })
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             let textField = alert.textFields![0] as UITextField
             if let newBeatName = textField.text {
@@ -209,7 +212,16 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
                     self.editingNewBeat = false
                     self.defaults.set(newBeatName, forKey: "currentlySelectedBeatName")
                 } else {
-                    self.showABeatAlreadyExistsAlert(beatName: newBeatName)
+                    self.showABeatAlreadyExistsAlert(beatName: newBeatName, senderButtonTitle: senderButtonTitle)
+                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+                if senderButtonTitle == .back {
+                    print("111")
+                    self.dismiss(animated: true, completion: nil)
+                } else if senderButtonTitle == .beats {
+                    print("222")
+                    self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
                 }
             }
         }
@@ -228,7 +240,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func createEmptyBeat() {
+    func createNewBeat() {
         editingNewBeat = true
         notes = ExamplePlayer.exampleBeatNotes
         collectionView.reloadData()
@@ -252,19 +264,19 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         }
     }
 
-    func askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: String) {
+    func askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: BeatButtonLabel) {
         let alert = UIAlertController(title: "Save beat",
                                       message: "Do you want to save current beat?",
                                       preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
-            if callerButtonTitle == "back" {
+        let noAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            if callerButtonTitle == .back {
                 self.dismiss(animated: true, completion: { () -> Void in
                     let currentlySelectedBeat = self.defaults.string(forKey: "currentlySelectedBeatName")
                     ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
                         exampleBeatName: currentlySelectedBeat ?? "Simple House",
                         beatIndex: 0)
                 })
-            } else if callerButtonTitle ==  "beats" {
+            } else if callerButtonTitle == .beats {
                 self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
             }
             let currentlySelectedBeat = self.defaults.string(forKey: "currentlySelectedBeatName")
@@ -272,11 +284,15 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
                 exampleBeatName: currentlySelectedBeat ?? "Simple House",
                 beatIndex: 0)
         })
-        let noAction = UIAlertAction(title: "Yes", style: .default) { _ in
-            self.askForNewBeatNameAndSave()
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            if callerButtonTitle == .back {
+                self.askForNewBeatNameAndSave(senderButtonTitle: .back)
+            } else if callerButtonTitle == .beats {
+                self.askForNewBeatNameAndSave(senderButtonTitle: .beats)
+            }
         }
-        alert.addAction(yesAction)
         alert.addAction(noAction)
+        alert.addAction(yesAction)
         self.present(alert, animated: true, completion: nil)
         self.editingNewBeat = false
     }
@@ -363,4 +379,10 @@ protocol NoteChangerDelegate: AnyObject {
 
 protocol BeatNotesSaverDelegate: AnyObject {
     func saveBeatNotes()
+}
+
+enum BeatButtonLabel {
+    case back
+    case beats
+    case save
 }
