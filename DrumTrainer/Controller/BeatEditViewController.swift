@@ -258,10 +258,19 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
                                       preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
             if callerButtonTitle == "back" {
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: { () -> Void in
+                    let currentlySelectedBeat = self.defaults.string(forKey: "currentlySelectedBeatName")
+                    ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
+                        exampleBeatName: currentlySelectedBeat ?? "Simple House",
+                        beatIndex: 0)
+                })
             } else if callerButtonTitle ==  "beats" {
                 self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
             }
+            let currentlySelectedBeat = self.defaults.string(forKey: "currentlySelectedBeatName")
+            ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
+                exampleBeatName: currentlySelectedBeat ?? "Simple House",
+                beatIndex: 0)
         })
         let noAction = UIAlertAction(title: "Yes", style: .default) { _ in
             self.askForNewBeatNameAndSave()
@@ -269,6 +278,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         alert.addAction(yesAction)
         alert.addAction(noAction)
         self.present(alert, animated: true, completion: nil)
+        self.editingNewBeat = false
     }
 
 }

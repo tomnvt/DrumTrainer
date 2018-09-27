@@ -22,7 +22,15 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     @IBOutlet weak var drumPad6: RoundableButton!
     @IBOutlet weak var drumPad7: RoundableButton!
     @IBOutlet weak var drumPad8: RoundableButton!
-
+    @IBOutlet weak var drumPad9: RoundableButton!
+    @IBOutlet weak var drumPad10: RoundableButton!
+    @IBOutlet weak var drumPad11: RoundableButton!
+    @IBOutlet weak var drumPad12: RoundableButton!
+    @IBOutlet weak var drumPad13: RoundableButton!
+    @IBOutlet weak var drumPad14: RoundableButton!
+    @IBOutlet weak var drumPad15: RoundableButton!
+    @IBOutlet weak var drumPad16: RoundableButton!
+    
     var drumPads: [RoundableButton] = []
     let defaults: UserDefaults = UserDefaults.standard
     var audioPlayer = AudioPlayer()
@@ -52,6 +60,14 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         drumPads.append(drumPad6)
         drumPads.append(drumPad7)
         drumPads.append(drumPad8)
+        drumPads.append(drumPad9)
+        drumPads.append(drumPad10)
+        drumPads.append(drumPad11)
+        drumPads.append(drumPad12)
+        drumPads.append(drumPad13)
+        drumPads.append(drumPad14)
+        drumPads.append(drumPad15)
+        drumPads.append(drumPad16)
     }
 
     func setDefaultBeatIfNotSelected() {
