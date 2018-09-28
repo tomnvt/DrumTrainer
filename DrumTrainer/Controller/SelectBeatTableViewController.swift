@@ -84,7 +84,8 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row], beatIndex: 0)
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader
+            .getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row], beatIndex: 0)
         defaults.set(savedBeatsNames[indexPath.row], forKey: "currentlySelectedBeatName")
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()

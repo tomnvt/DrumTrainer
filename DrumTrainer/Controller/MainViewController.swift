@@ -30,10 +30,11 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     @IBOutlet weak var drumPad14: RoundableButton!
     @IBOutlet weak var drumPad15: RoundableButton!
     @IBOutlet weak var drumPad16: RoundableButton!
-    
+
     var drumPads: [RoundableButton] = []
     let defaults: UserDefaults = UserDefaults.standard
-    var audioPlayer = AudioPlayer()
+    var audioPlayer: AudioPlayer = AudioPlayer()
+    let trainer: Trainer = Trainer()
     var metronome: Metronome = Metronome()
     var examplePlayer: ExamplePlayer = ExamplePlayer()
     let globalClock: GlobalClock = GlobalClock()
@@ -125,7 +126,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     }
 
     @IBAction func trainButtonPressed(_ sender: UIButton) {
-        print("Gonna enter training mode")
+        trainer.turnTrainingModeOnOrOff()
     }
 
     func touchDownDrumPad(drumPadIndexes: [Int]) {

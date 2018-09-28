@@ -38,6 +38,9 @@ class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
 
     override func eighthNoteAction() {
         guard drumExampleIsPlaying else { return }
+        if Trainer.trainingModeIsOn {
+            guard Trainer.trainingBarCount % 2 != 0 else { return }
+        }
         for index in 0...15 where ExamplePlayer.exampleBeatNotes[index][eighthNoteIndex] == 1 {
             delegate?.touchDownDrumPad(drumPadIndexes: [index])
         }

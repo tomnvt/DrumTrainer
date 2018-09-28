@@ -29,6 +29,7 @@
 		E383EF15210E59C0004879D9 /* Synchronizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E383EF14210E59C0004879D9 /* Synchronizable.swift */; };
 		E383EF17210E6444004879D9 /* AudioFiles in Resources */ = {isa = PBXBuildFile; fileRef = E383EF16210E6443004879D9 /* AudioFiles */; };
 		E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A338A210492C100309084 /* ExamplePlayer.swift */; };
+		E38F419A215EB2480001DCCF /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F4199215EB2480001DCCF /* Trainer.swift */; };
 		E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393E7AE213997E100D10CAE /* SampleLibrary.swift */; };
 		E393E7B2213998B600D10CAE /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393E7B1213998B600D10CAE /* Sample.swift */; };
 		E394A4B520F3D146002F2183 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394A4B420F3D146002F2183 /* Metronome.swift */; };
@@ -78,6 +79,7 @@
 		E383EF14210E59C0004879D9 /* Synchronizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronizable.swift; sourceTree = "<group>"; };
 		E383EF16210E6443004879D9 /* AudioFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AudioFiles; sourceTree = "<group>"; };
 		E38A338A210492C100309084 /* ExamplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePlayer.swift; sourceTree = "<group>"; };
+		E38F4199215EB2480001DCCF /* Trainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
 		E393E7AE213997E100D10CAE /* SampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLibrary.swift; sourceTree = "<group>"; };
 		E393E7B1213998B600D10CAE /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		E394A4B420F3D146002F2183 /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				E383EF14210E59C0004879D9 /* Synchronizable.swift */,
 				E394A4B420F3D146002F2183 /* Metronome.swift */,
 				E38A338A210492C100309084 /* ExamplePlayer.swift */,
+				E38F4199215EB2480001DCCF /* Trainer.swift */,
 			);
 			path = Synchronizables;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				E393E7B2213998B600D10CAE /* Sample.swift in Sources */,
 				E38356FB2145C0280001582F /* BeatNotesSaver.swift in Sources */,
 				E3FE3BFD2130A11100F0FEAB /* SampleLoader.swift in Sources */,
+				E38F419A215EB2480001DCCF /* Trainer.swift in Sources */,
 				E32B4A1F213DB75D009F3089 /* IBDesignable.swift in Sources */,
 				E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */,
 				E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */,
