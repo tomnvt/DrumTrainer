@@ -301,27 +301,33 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
 extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
 
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
                                rowSpacingForSection section: Int) -> CGFloat {
         return 1
     }
 
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
                                columnSpacingForSection section: Int) -> CGFloat {
         return 1
     }
 
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
                                insetForSection section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
     }
 
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                               widthForItemAt indexPath: IndexPath, rowHeight columnHeight: CGFloat) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               widthForItemAt indexPath: IndexPath,
+                               rowHeight columnHeight: CGFloat) -> CGFloat {
         return 50
     }
 
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
                                widthForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
@@ -330,7 +336,8 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
         return 4
     }
 
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
                                numberOfRowsForSection section: Int) -> Int {
         return self.numberOfRows
     }
@@ -359,7 +366,8 @@ extension BeatEditViewController: UICollectionViewDataSource {
         return cell
     }
 
-    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+    public func collectionView(_ collectionView: UICollectionView,
+                               viewForSupplementaryElementOfKind kind: String,
                                at indexPath: IndexPath) -> UICollectionReusableView {
         guard let view = collectionView
             .dequeueReusableSupplementaryView(ofKind: kind,

@@ -26,10 +26,9 @@ class Metronome: Synchronizable {
     }
 
     override func playSynchronized() {
-        guard metronomeIsRunning else {
-            return
+        if metronomeIsRunning {
+            delegate?.metronomeClickAndFlash(beatIndex: beatIndex)
         }
-        delegate?.metronomeClickAndFlash(beatIndex: beatIndex)
         increaseBeatIndex()
     }
 
