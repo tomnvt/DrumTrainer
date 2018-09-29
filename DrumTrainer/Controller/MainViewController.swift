@@ -101,6 +101,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     @IBAction func buttonPressed(_ sender: UIButton) {
         audioPlayer.playDrumSample(note: sender.tag)
         sender.yellowBlink()
+        trainer.recordNoteIfTrainingModeIsOn(drumPadIndex: sender.tag)
     }
 
     @IBAction func buttonReleased(_ sender: UIButton) {
@@ -127,6 +128,13 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
 
     @IBAction func trainButtonPressed(_ sender: UIButton) {
         trainer.turnTrainingModeOnOrOff()
+        if Trainer.trainingModeIsOn {
+            metronome.metronomeIsRunning = true
+            examplePlayer.drumExampleIsPlaying = true
+        } else {
+            metronome.metronomeIsRunning = false
+            examplePlayer.drumExampleIsPlaying = false
+        }
     }
 
     func touchDownDrumPad(drumPadIndexes: [Int]) {
