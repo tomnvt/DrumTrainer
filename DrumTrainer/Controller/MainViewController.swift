@@ -144,7 +144,6 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         if let viewController = segue.destination as? BeatEditViewController {
            viewController.delegate = self
             viewController.notes = ExamplePlayer.exampleBeatNotes
-            viewController.beatNotesSaverDelegate = examplePlayer
         }
     }
 

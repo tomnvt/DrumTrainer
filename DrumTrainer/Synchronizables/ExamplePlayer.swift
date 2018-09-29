@@ -13,7 +13,7 @@ protocol ExamplePlayerDelegate: AnyObject {
     func touchDownDrumPad(drumPadIndexes: [Int])
 }
 
-class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
+class ExamplePlayer: Synchronizable {
 
     let exampleLibrary = ExampleLibrary()
     static var exampleBeatNotes: [[Int]] = []
@@ -48,11 +48,6 @@ class ExamplePlayer: Synchronizable, BeatNotesSaverDelegate {
 
     func loadExamplebeat(beatExampleIndex: Int) {
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: beatExampleIndex, beatIndex: 0)
-    }
-
-    func saveBeatNotes() {
-        let beatNotesSaver = BeatNotesSaver()
-        beatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
     }
 
     static func reloadBeatNotes(beatName: String) {

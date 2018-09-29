@@ -34,7 +34,6 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     let defaults = UserDefaults.standard
 
     weak var delegate: NoteChangerDelegate?
-    weak var beatNotesSaverDelegate: BeatNotesSaverDelegate?
 
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
@@ -173,7 +172,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     func saveCurrentBeat() {
-        beatNotesSaverDelegate?.saveBeatNotes()
+        BeatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
         showAlertWithMessageSaved()
     }
 
@@ -383,10 +382,6 @@ extension BeatEditViewController: UICollectionViewDataSource {
 
 protocol NoteChangerDelegate: AnyObject {
     func changeNote(drumPadIndex: Int, noteIndex: Int)
-}
-
-protocol BeatNotesSaverDelegate: AnyObject {
-    func saveBeatNotes()
 }
 
 enum BeatButtonLabel {

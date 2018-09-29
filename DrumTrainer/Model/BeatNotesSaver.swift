@@ -11,10 +11,10 @@ import RealmSwift
 
 class BeatNotesSaver {
 
-    let realm = try! Realm()
-    let defaults = UserDefaults.standard
+    static let realm = try! Realm()
+    static let defaults = UserDefaults.standard
 
-    func save(beatNotes: [[Int]]) {
+    static func save(beatNotes: [[Int]]) {
         let oneBeatEighthNotes = OneBeatEighthNotes()
         for drumPadIndex in 0...15 {
             let currentDrumPadEighthNotes = DrumpadEighthNotes()
@@ -23,10 +23,10 @@ class BeatNotesSaver {
             }
             oneBeatEighthNotes.notesList.append(currentDrumPadEighthNotes)
         }
-        let currentlySelectedBeatName = defaults.string(forKey: "currentlySelectedBeatName")
+        let currentlySelectedBeatName = BeatNotesSaver.defaults.string(forKey: "currentlySelectedBeatName")
         let currentBeat = realm.object(ofType: ExampleBeat.self, forPrimaryKey: currentlySelectedBeatName)
         do {
-            try realm.write {
+            try BeatNotesSaver.realm.write {
                 if let unwrappedCurrentBeat = currentBeat {
                     for index in 0...15 {
                         unwrappedCurrentBeat.oneBeatEighthNotesList[0].notesList[index]
