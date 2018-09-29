@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate, NoteChangerDelegate {
+class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDelegate, TrainerDelegate {
 
     @IBOutlet weak var bpmValueLabel: UILabel!
     @IBOutlet weak var bpmSlider: UISlider!
     @IBOutlet weak var metronomeButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var matchPercentageLabel: UILabel!
     @IBOutlet weak var drumPad1: RoundableButton!
     @IBOutlet weak var drumPad2: RoundableButton!
     @IBOutlet weak var drumPad3: RoundableButton!
@@ -50,6 +51,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         setDefaultMetronomeVolumeIfNotSet()
         setBpmSliderBySavedValue()
         setVolumeSliderSavedValue()
+        trainer.trainerDelegate = self
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -100,7 +102,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         audioPlayer.playDrumSample(note: sender.tag)
-        sender.yellowBlink()
+        sender.blackToYellowBlink()
         trainer.recordNoteIfTrainingModeIsOn(drumPadIndex: sender.tag)
     }
 
@@ -131,9 +133,11 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         if Trainer.trainingModeIsOn {
             metronome.metronomeIsRunning = true
             examplePlayer.drumExampleIsPlaying = true
+            showMatchPercentaageLabel()
         } else {
             metronome.metronomeIsRunning = false
             examplePlayer.drumExampleIsPlaying = false
+            hideMatchPercentaageLabel()
         }
     }
 
@@ -148,21 +152,38 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         metronomeButton.orangeBlink()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? BeatEditViewController {
-           viewController.delegate = self
-            viewController.notes = ExamplePlayer.exampleBeatNotes
-        }
+    func showCurrentRoundResult(score: Int) {
+        UIView.transition(with: self.matchPercentageLabel,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve, animations: {
+                            self.matchPercentageLabel.text = "Beat match: \(String(score)) %"
+        }, completion: nil)
+        matchPercentageLabel.cornerRadius = 15
     }
 
-    func changeNote(drumPadIndex: Int, noteIndex: Int) {
-        var currentNote = ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex]
-        if currentNote == 0 {
-            currentNote = 1
-        } else if currentNote == 1 {
-            currentNote = 0
-        }
-        ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
+    func showMatchPercentaageLabel() {
+        matchPercentageLabel.text = "Repeat after example"
+        UIView.animate(withDuration: 0.5, animations: {
+            self.matchPercentageLabel.layer.backgroundColor = UIColor.black.cgColor
+        })
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: {
+            UIView.transition(with: self.matchPercentageLabel,
+                              duration: 0.25,
+                              options: .transitionCrossDissolve, animations: {
+                                self.matchPercentageLabel.textColor = .white
+            }, completion: nil)
+        })
+    }
+
+    func hideMatchPercentaageLabel() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.matchPercentageLabel.layer.backgroundColor = UIColor.clear.cgColor
+        })
+        UIView.transition(with: self.matchPercentageLabel,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve, animations: {
+                            self.matchPercentageLabel.textColor = .clear
+        })
     }
 
 }

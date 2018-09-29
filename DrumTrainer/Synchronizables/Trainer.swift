@@ -14,6 +14,7 @@ class Trainer: Synchronizable {
     static var trainingBarCount: Int = 1
     var recorder = Recorder()
     var currentRoundScore: Int = 0
+    weak var trainerDelegate: TrainerDelegate?
 
     func turnTrainingModeOnOrOff() {
         Trainer.trainingModeIsOn = !Trainer.trainingModeIsOn
@@ -88,9 +89,10 @@ class Trainer: Synchronizable {
 
     override func eighthNoteAction() {
         if eighthNoteIndex == 31 {
-            if Trainer.trainingBarCount != 1 {
+            if Trainer.trainingBarCount != 1 && Trainer.trainingModeIsOn {
                 currentRoundScore = Int(compareRecordedAndExampleNotes())
-                print("Current round score is \(currentRoundScore)")
+                if currentRoundScore < 0 { currentRoundScore = 0 }
+                trainerDelegate?.showCurrentRoundResult(score: currentRoundScore)
                 recorder.resetRecord()
             }
         }
@@ -117,4 +119,8 @@ class Trainer: Synchronizable {
         return value
     }
 
+}
+
+protocol TrainerDelegate: AnyObject {
+    func showCurrentRoundResult(score: Int)
 }
