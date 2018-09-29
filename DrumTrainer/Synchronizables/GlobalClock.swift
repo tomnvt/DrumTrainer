@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Repeat
 
 class GlobalClock {
 
@@ -15,15 +16,14 @@ class GlobalClock {
     var quaterBeatIndex: Int = 0
     var eighthBeatIndex: Int = 0
     var bpmValue: Int = 120
-    var timer = Timer()
+    var timer: Repeater?
 
     func runGlobalCLock() {
         beatIndex = 0
-        let timeInterval = TimeInterval(calculateEighthIntervalPerSecond())
-        timer = Timer(timeInterval: timeInterval, repeats: true) { _ in
+        timer = Repeater.every(.seconds(calculateEighthIntervalPerSecond())) { _ in
             self.eighthBeatNotification()
         }
-        RunLoop.current.add(timer, forMode: .commonModes)
+        timer?.start()
     }
 
     func calculateEighthIntervalPerSecond() -> Double {
@@ -31,7 +31,7 @@ class GlobalClock {
     }
 
     func changeBpmValue(toBPM: Float) {
-        timer.invalidate()
+        timer?.pause()
         bpmValue = Int(toBPM)
         runGlobalCLock()
     }
@@ -51,19 +51,21 @@ class GlobalClock {
     }
 
     func eighthBeatNotification() {
-        let notificationName = Notification.Name(rawValue: "eighthNote")
-        NotificationCenter.default.post(name: notificationName, object: nil)
-        switch eighthBeatIndex {
-        case 0, 8, 16, 24:
-            let name = Notification.Name(rawValue: "globalClockBeat")
-            NotificationCenter.default.post(name: name, object: nil)
-        default:
-            break
-        }
-        if eighthBeatIndex < 31 {
-            eighthBeatIndex += 1
-        } else {
-            eighthBeatIndex = 0
+        DispatchQueue.main.sync {
+            let notificationName = Notification.Name(rawValue: "eighthNote")
+            NotificationCenter.default.post(name: notificationName, object: nil)
+            switch self.eighthBeatIndex {
+            case 0, 8, 16, 24:
+                let name = Notification.Name(rawValue: "globalClockBeat")
+                NotificationCenter.default.post(name: name, object: nil)
+            default:
+                break
+            }
+            if self.eighthBeatIndex < 31 {
+                self.eighthBeatIndex += 1
+            } else {
+                self.eighthBeatIndex = 0
+            }
         }
     }
 

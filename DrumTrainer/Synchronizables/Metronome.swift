@@ -41,6 +41,7 @@ class Metronome: Synchronizable {
     }
 
     override func firstBeatAction() {
+        print("first beat action in metronome")
         beatIndex = 0
     }
 

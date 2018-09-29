@@ -10,12 +10,14 @@ PODS:
   - Realm/Headers (3.10.0)
   - RealmSwift (3.10.0):
     - Realm (= 3.10.0)
+  - Repeat (0.5.7)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - AudioKit
   - CollectionViewGridLayout
   - RealmSwift
+  - Repeat
   - SwiftLint
 
 SPEC REPOS:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - CollectionViewGridLayout
     - Realm
     - RealmSwift
+    - Repeat
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -31,8 +34,9 @@ SPEC CHECKSUMS:
   CollectionViewGridLayout: b00ad1b8a2cfb472062bc7a69e6522cc30ca49e7
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
+  Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 002595cedc91b07fa6b17475338d7b2779fe6362
+PODFILE CHECKSUM: 2fb39408b378e48f2d771c201cce133328fb1241
 
 COCOAPODS: 1.5.3

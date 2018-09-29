@@ -35,16 +35,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2Y-Mw-MxO" customClass="RoundableView" customModule="DrumTrainer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="103" width="343" height="120"/>
+                                                <rect key="frame" x="0.0" y="103" width="343" height="152"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ia9-eJ-b48">
-                                                        <rect key="frame" x="10" y="10" width="323" height="100"/>
+                                                        <rect key="frame" x="10" y="10" width="323" height="132"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvY-SO-S2K">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="40.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSZ-iR-tiB">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="40.5"/>
                                                                         <color key="backgroundColor" red="1" green="0.88510277280000005" blue="0.32760448599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <state key="normal" title="Metronome">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,10 +61,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oQs-vz-3Ky">
-                                                                <rect key="frame" x="0.0" y="35" width="323" height="30"/>
+                                                                <rect key="frame" x="0.0" y="45.5" width="323" height="41"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-o7-CQE">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="41"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="50" id="YRu-p9-l2a"/>
                                                                         </constraints>
@@ -73,7 +73,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="120" minValue="20" maxValue="220" translatesAutoresizingMaskIntoConstraints="NO" id="thP-s2-NVF">
-                                                                        <rect key="frame" x="64" y="0.0" width="261" height="31"/>
+                                                                        <rect key="frame" x="64" y="0.0" width="261" height="42"/>
                                                                         <color key="tintColor" red="1" green="0.88627450980392153" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <connections>
                                                                             <action selector="bpmSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Txi-rZ-FrI"/>
@@ -82,10 +82,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-N3-wpy">
-                                                                <rect key="frame" x="0.0" y="70" width="323" height="30"/>
+                                                                <rect key="frame" x="0.0" y="91.5" width="323" height="40.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkv-16-2f0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="40.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="50" id="zFe-ad-cYc"/>
                                                                         </constraints>
@@ -94,7 +94,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-8a-9Qz">
-                                                                        <rect key="frame" x="64" y="0.0" width="261" height="31"/>
+                                                                        <rect key="frame" x="64" y="0.0" width="261" height="41.5"/>
                                                                         <color key="tintColor" red="1" green="0.8862745098" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <connections>
                                                                             <action selector="volumeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ARb-d7-xvl"/>
@@ -104,13 +104,31 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T1-cz-olH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="152"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Ia9-eJ-b48" secondAttribute="bottom" constant="10" id="62W-nU-mjb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="8T1-cz-olH" secondAttribute="bottom" id="9mB-RA-2wJ"/>
+                                                    <constraint firstItem="8T1-cz-olH" firstAttribute="leading" secondItem="W2Y-Mw-MxO" secondAttribute="leading" id="GDF-2X-WKo"/>
                                                     <constraint firstItem="Ia9-eJ-b48" firstAttribute="leading" secondItem="W2Y-Mw-MxO" secondAttribute="leading" constant="10" id="IlN-TV-Gea"/>
                                                     <constraint firstItem="Ia9-eJ-b48" firstAttribute="top" secondItem="W2Y-Mw-MxO" secondAttribute="top" constant="10" id="R5Q-BT-6Z1"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ia9-eJ-b48" secondAttribute="trailing" constant="10" id="Z4G-1W-vqf"/>
+                                                    <constraint firstItem="8T1-cz-olH" firstAttribute="top" secondItem="W2Y-Mw-MxO" secondAttribute="top" id="Z51-VO-vLt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8T1-cz-olH" secondAttribute="trailing" id="dbh-cd-i0D"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -125,10 +143,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="htb-bm-RDd">
-                                                <rect key="frame" x="0.0" y="238" width="343" height="62"/>
+                                                <rect key="frame" x="0.0" y="270" width="343" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9R-cw-Vb8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="62"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="30"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.96470588235294119" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Train">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +161,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pa-Xv-Peh" customClass="RoundableButton" customModule="DrumTrainer" customModuleProvider="target">
-                                                        <rect key="frame" x="93.5" y="0.0" width="150.5" height="62"/>
+                                                        <rect key="frame" x="93.5" y="0.0" width="150.5" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.88627450980392153" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Example">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,7 +176,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Faj-LM-mBr">
-                                                        <rect key="frame" x="249" y="0.0" width="94" height="62"/>
+                                                        <rect key="frame" x="249" y="0.0" width="94" height="30"/>
                                                         <color key="backgroundColor" red="0.99607843137254903" green="0.96470588235294119" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Edit">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -584,6 +602,7 @@
                         <outlet property="drumPad7" destination="53m-8T-iVo" id="hvg-Ug-ZOi"/>
                         <outlet property="drumPad8" destination="ilc-UM-cQ9" id="ftR-al-XDI"/>
                         <outlet property="drumPad9" destination="b1v-Su-TQM" id="xIM-Eg-IWS"/>
+                        <outlet property="matchPercentageLabel" destination="8T1-cz-olH" id="Ohz-og-OPS"/>
                         <outlet property="metronomeButton" destination="kSZ-iR-tiB" id="eRF-32-3Pk"/>
                         <outlet property="volumeSlider" destination="vKP-8a-9Qz" id="v3E-Ds-sDP"/>
                     </connections>

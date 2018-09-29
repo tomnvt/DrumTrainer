@@ -34,6 +34,7 @@
 		E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393E7AE213997E100D10CAE /* SampleLibrary.swift */; };
 		E393E7B2213998B600D10CAE /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393E7B1213998B600D10CAE /* Sample.swift */; };
 		E394A4B520F3D146002F2183 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E394A4B420F3D146002F2183 /* Metronome.swift */; };
+		E39CBBB821601ECA007FE5F3 /* AnimationIndexCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39CBBB721601ECA007FE5F3 /* AnimationIndexCounter.swift */; };
 		E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DF820E194DD0095856A /* AppDelegate.swift */; };
 		E3AA5DFB20E194DD0095856A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5DFA20E194DD0095856A /* MainViewController.swift */; };
 		E3AA5DFE20E194DD0095856A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5DFC20E194DD0095856A /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		E393E7AE213997E100D10CAE /* SampleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLibrary.swift; sourceTree = "<group>"; };
 		E393E7B1213998B600D10CAE /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		E394A4B420F3D146002F2183 /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		E39CBBB721601ECA007FE5F3 /* AnimationIndexCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationIndexCounter.swift; sourceTree = "<group>"; };
 		E3AA5DF520E194DC0095856A /* DrumTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5DF820E194DD0095856A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA5DFA20E194DD0095856A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				E38A338A210492C100309084 /* ExamplePlayer.swift */,
 				E38F4199215EB2480001DCCF /* Trainer.swift */,
 				E38F419B215F4B0E0001DCCF /* Recorder.swift */,
+				E39CBBB721601ECA007FE5F3 /* AnimationIndexCounter.swift */,
 			);
 			path = Synchronizables;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				"${BUILT_PRODUCTS_DIR}/CollectionViewGridLayout/CollectionViewGridLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -361,6 +365,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewGridLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -427,6 +432,7 @@
 				E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */,
 				E36D628A214C38CC00E33221 /* EmptyExampleBeat.swift in Sources */,
 				E393E7B2213998B600D10CAE /* Sample.swift in Sources */,
+				E39CBBB821601ECA007FE5F3 /* AnimationIndexCounter.swift in Sources */,
 				E38356FB2145C0280001582F /* BeatNotesSaver.swift in Sources */,
 				E3FE3BFD2130A11100F0FEAB /* SampleLoader.swift in Sources */,
 				E38F419A215EB2480001DCCF /* Trainer.swift in Sources */,

@@ -10,5 +10,6 @@ pod 'AudioKit'
 pod 'SwiftLint'
 pod 'RealmSwift'
 pod 'CollectionViewGridLayout'
+pod 'Repeat'
 
 end

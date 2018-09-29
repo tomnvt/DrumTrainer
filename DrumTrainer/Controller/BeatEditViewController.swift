@@ -15,6 +15,8 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     public var numberOfRows: Int = 16
     private var editingNewBeat: Bool = false
     let deadline = DispatchTime.now() + 1
+    var synchronizable = Synchronizable()
+    var animationIndexCounter = AnimationIndexCounter()
 
     var eighthNoteIndex = 0
     var currentBarEighthNoteIndex = 0
@@ -33,23 +35,20 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     let defaults = UserDefaults.standard
 
-    weak var delegate: NoteChangerDelegate?
-
     let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
     let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.register(UINib(nibName: String(describing: PathCollectionViewCell.self), bundle: nil),
-                                     forCellWithReuseIdentifier: PathCollectionViewCell.identifier)
+        self.collectionView.register(UINib(nibName: String(describing: PathCollectionViewCell.self),
+                                           bundle: nil), forCellWithReuseIdentifier: PathCollectionViewCell.identifier)
+        self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self),
+                                           bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                                                         withReuseIdentifier: CollectionReusableView.identifier)
 
-        self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self), bundle: nil),
-                                     forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
-                                     withReuseIdentifier: CollectionReusableView.identifier)
-
-        self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self), bundle: nil),
-                                     forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
-                                     withReuseIdentifier: CollectionReusableView.identifier)
+        self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self),
+                                           bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
+                                                         withReuseIdentifier: CollectionReusableView.identifier)
         NotificationCenter.default.addObserver(self, selector: #selector(resetSectionIndex),
                                                name: globalClockBeat, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(animateLoopProgress),
@@ -62,25 +61,14 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     @objc func animateLoopProgress() {
-        if currentBarEighthNoteIndex < 8 {
-            currentBarEighthNoteIndex += 1
-        } else {
-            currentBarEighthNoteIndex = 0
-        }
-        let sectionIndex = (eighthNoteIndex / 9) + 1
+        let sectionIndex = animationIndexCounter.sectionIndex
         for index in 0...15 {
             let currentCell = collectionView.cellForItem(at: IndexPath
-                .init(row: (16 * currentBarEighthNoteIndex + index),
-                      section: (sectionIndex - 1)))
+                .init(row: (16 * animationIndexCounter.sectionEightNoteIndex + index),
+                      section: (sectionIndex)))
             if currentCell?.isSelected == false {
                 currentCell?.yellowBlink()
             }
-
-        }
-        if eighthNoteIndex < 31 {
-            eighthNoteIndex += 1
-        } else {
-            eighthNoteIndex = 0
         }
     }
 
@@ -160,7 +148,17 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         var currentNoteValue = notes[drumPadIndex][drumPadNoteIndex]
         notes[drumPadIndex][drumPadNoteIndex] = (currentNoteValue == 1) ? 0 : 1
         currentNoteValue = notes[drumPadIndex][drumPadNoteIndex]
-        delegate?.changeNote(drumPadIndex: drumPadIndex, noteIndex: (drumPadNoteIndex + (8 * indexPath.section)))
+        changeNote(drumPadIndex: drumPadIndex, noteIndex: (drumPadNoteIndex + (8 * indexPath.section)))
+    }
+
+    func changeNote(drumPadIndex: Int, noteIndex: Int) {
+        var currentNote = ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex]
+        if currentNote == 0 {
+            currentNote = 1
+        } else if currentNote == 1 {
+            currentNote = 0
+        }
+        ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -378,10 +376,6 @@ extension BeatEditViewController: UICollectionViewDataSource {
         return view
     }
 
-}
-
-protocol NoteChangerDelegate: AnyObject {
-    func changeNote(drumPadIndex: Int, noteIndex: Int)
 }
 
 enum BeatButtonLabel {
