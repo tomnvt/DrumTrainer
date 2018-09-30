@@ -11,9 +11,17 @@ import AudioKit
 
 class Sampler: AKAppleSampler {
 
-    let sampleLibrary = SampleLibrary()
     let sampleLoader = SampleLoader()
+    var samples: [Sample]
 
-    func loadSamples() {}
+    init(samples: [Sample]) {
+        self.samples = samples
+        super.init()
+        loadSamples()
+    }
+
+    func loadSamples() {
+        sampleLoader.loadSamples(sampler: self, samples: samples)
+    }
 
 }

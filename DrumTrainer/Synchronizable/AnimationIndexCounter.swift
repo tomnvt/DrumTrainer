@@ -10,23 +10,19 @@ import Foundation
 
 class AnimationIndexCounter: Synchronizable {
 
-    var sectionIndex: Int = 0
-    var sectionEightNoteIndex: Int = 0
+    var sectionIndex: Int = GlobalClock.staticBeatIndex
+    var sectionEightNoteIndex: Int = -1
 
-//    override func increaseEighthNoteIndex() {
-//        if eighthNoteIndex == 8 {
-//            increaseSectionIndex()
-//            eighthNoteIndex = 0
-//        }
-//        eighthNoteIndex += 1
-//    }
-    
     override func eighthNoteAction() {
-        if sectionEightNoteIndex == 8 {
-            increaseSectionIndex()
-            sectionEightNoteIndex = 0
+        let beats = [0, 8, 16, 24]
+        if sectionEightNoteIndex == 7 {
+            sectionEightNoteIndex = -1
         }
         sectionEightNoteIndex += 1
+        if beats.contains(GlobalClock.staticEightNoteIndex) {
+            sectionEightNoteIndex = -1
+        }
+        sectionIndex = GlobalClock.staticBeatIndex
     }
 
     func increaseSectionIndex() {
@@ -35,9 +31,10 @@ class AnimationIndexCounter: Synchronizable {
         } else {
             sectionIndex = 0
         }
+        print("Section index: \(sectionIndex)")
     }
 
-    override func firstBeatAction() {
+    override func setBeatIndexToZero() {
         sectionIndex = 0
     }
 

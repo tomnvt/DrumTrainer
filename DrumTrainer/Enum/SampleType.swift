@@ -6,8 +6,6 @@
 //  Copyright © 2018 NVT. All rights reserved.
 //
 
-import Foundation
-
 enum SampleType {
     case metronome
     case drums

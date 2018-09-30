@@ -190,7 +190,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="HXt-lm-VEs" kind="presentation" identifier="goToBeatEditView" modalTransitionStyle="flipHorizontal" id="FoV-bn-vzl"/>
+                                                            <action selector="editButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kgb-cN-VYm"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -605,6 +605,7 @@
                         <outlet property="matchPercentageLabel" destination="8T1-cz-olH" id="Ohz-og-OPS"/>
                         <outlet property="metronomeButton" destination="kSZ-iR-tiB" id="eRF-32-3Pk"/>
                         <outlet property="volumeSlider" destination="vKP-8a-9Qz" id="v3E-Ds-sDP"/>
+                        <segue destination="HXt-lm-VEs" kind="presentation" identifier="BeatEditViewController" modalTransitionStyle="flipHorizontal" id="RtB-jf-eks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

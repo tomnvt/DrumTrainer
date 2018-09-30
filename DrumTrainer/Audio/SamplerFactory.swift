@@ -11,11 +11,12 @@ import Foundation
 class SamplerFactory {
 
     func makesSamplerOf(sampleType: SampleType) -> Sampler {
+        let sampleLibrary = SampleLibrary()
         switch sampleType {
         case .metronome:
-            return MetronomeSampler()
+            return Sampler(samples: sampleLibrary.metronomeSamples)
         case .drums:
-            return DrumSampler()
+            return Sampler(samples: sampleLibrary.drumSamples)
         }
     }
 

@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  TrainYaDrums
+//  MainViewController.swift
+//  DrumTrainer
 //
 //  Created by NVT on 25.06.18.
 //  Copyright © 2018 NVT. All rights reserved.
@@ -42,8 +42,11 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         metronome.delegate = self
         examplePlayer.delegate = self
+        trainer.trainerDelegate = self
+
         appendAllDrumPadsIntoDrumPadsArray()
         globalClock.runGlobalCLock()
         setDefaultBeatIfNotSelected()
@@ -51,7 +54,6 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         setDefaultMetronomeVolumeIfNotSet()
         setBpmSliderBySavedValue()
         setVolumeSliderSavedValue()
-        trainer.trainerDelegate = self
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -138,6 +140,12 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
             metronome.metronomeIsRunning = false
             examplePlayer.drumExampleIsPlaying = false
             hideMatchPercentaageLabel()
+        }
+    }
+
+    @IBAction func editButtonTapped(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "BeatEditViewController", sender: sender)
         }
     }
 

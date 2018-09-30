@@ -33,7 +33,7 @@ class AudioPlayer {
         do {
             try AudioKit.start()
         } catch {
-            print("Error while trying to start AudioKit!")
+            print("Error while starting AudioKit!")
         }
     }
 

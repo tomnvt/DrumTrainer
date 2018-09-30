@@ -12,45 +12,35 @@ import CollectionViewGridLayout
 class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
-    public var numberOfRows: Int = 16
-    private var editingNewBeat: Bool = false
-    let deadline = DispatchTime.now() + 1
-    var synchronizable = Synchronizable()
+    var editingNewBeat: Bool = false
     var animationIndexCounter = AnimationIndexCounter()
-
-    var eighthNoteIndex = 0
-    var currentBarEighthNoteIndex = 0
-    var sectionIndex = 0
-
+    let defaults = UserDefaults.standard
+    let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
     var notes: [[Int]] = []
+
     let notesListPointers: [[Int]] = {
         var array: [[Int]] = []
         let firstDrumPadNotesIndices = [0, 16, 32, 48, 64, 80, 96, 112]
         for index in 0...15 {
-            var multiplicatedFirstDrumPadNotesIndices: [Int] = firstDrumPadNotesIndices.map { $0 + index }
-            array.append(multiplicatedFirstDrumPadNotesIndices)
+            var incrementedDrumPadNoteIndices: [Int] = firstDrumPadNotesIndices.map { $0 + index }
+            array.append(incrementedDrumPadNoteIndices)
         }
         return array
     }()
-
-    let defaults = UserDefaults.standard
-
-    let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
-    let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UINib(nibName: String(describing: PathCollectionViewCell.self),
                                            bundle: nil), forCellWithReuseIdentifier: PathCollectionViewCell.identifier)
         self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self),
-                                           bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                                           bundle: nil),
+                                     forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
                                                          withReuseIdentifier: CollectionReusableView.identifier)
 
         self.collectionView.register(UINib(nibName: String(describing: CollectionReusableView.self),
-                                           bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
+                                           bundle: nil),
+                                     forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
                                                          withReuseIdentifier: CollectionReusableView.identifier)
-        NotificationCenter.default.addObserver(self, selector: #selector(resetSectionIndex),
-                                               name: globalClockBeat, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(animateLoopProgress),
                                                name: globalClockEighthNote, object: nil)
         self.collectionView.allowsMultipleSelection = true
@@ -62,9 +52,14 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @objc func animateLoopProgress() {
         let sectionIndex = animationIndexCounter.sectionIndex
+
+        print("Section index in beat edit: \(sectionIndex)")
+        print("Section eight note index: \(animationIndexCounter.sectionEightNoteIndex)")
+
         for index in 0...15 {
+            let noteIndex = animationIndexCounter.sectionEightNoteIndex
             let currentCell = collectionView.cellForItem(at: IndexPath
-                .init(row: (16 * animationIndexCounter.sectionEightNoteIndex + index),
+                .init(row: (16 * (noteIndex) + index),
                       section: (sectionIndex)))
             if currentCell?.isSelected == false {
                 currentCell?.yellowBlink()
@@ -72,29 +67,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         }
     }
 
-    @objc func resetSectionIndex() {
-        if sectionIndex < 3 {
-            sectionIndex = 0
-        } else {
-            sectionIndex += 1
-        }
-    }
-
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        if editingNewBeat {
-            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: .back)
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
-    }
-
-    @IBAction func beatsButtonPressed(_ sender: UIButton) {
-        if editingNewBeat {
-            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: .beats)
-        }
-    }
-
-     func selectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
+    func selectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
         let indexPathSection = currentSection
         let indexPathRow = notesListPointers[currentDrumPad][currentNote]
         let indexPathToCell = IndexPath.init(row: indexPathRow, section: indexPathSection)
@@ -161,6 +134,20 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         ExamplePlayer.exampleBeatNotes[drumPadIndex][noteIndex] = currentNote
     }
 
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        if editingNewBeat {
+            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: .back)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func beatsButtonPressed(_ sender: UIButton) {
+        if editingNewBeat {
+            askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: .beats)
+        }
+    }
+
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         if editingNewBeat {
             askForNewBeatNameAndSave(senderButtonTitle: .save)
@@ -170,19 +157,22 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     func saveCurrentBeat() {
-        BeatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
-        showAlertWithMessageSaved()
+        DispatchQueue.main.async {
+            BeatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
+            self.showAlertWithMessageSaved()
+        }
     }
 
     func showAlertWithMessageSaved() {
         let alert = UIAlertController(title: "SAVED :-)", message: "", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
+        let deadline = DispatchTime.now() + 1
         DispatchQueue.main.asyncAfter(deadline: deadline) {
             alert.dismiss(animated: true, completion: nil)
         }
     }
 
-    func showABeatAlreadyExistsAlert(beatName: String, senderButtonTitle: BeatButtonLabel) {
+    func showABeatAlreadyExistsAlert(beatName: String, senderButtonTitle: BeatEditViewButtonLabel) {
         let alert = UIAlertController(title: "Can't save :-(",
             message: "Beat with name:\n\n\(beatName)\n\nalready exists.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ in
@@ -192,8 +182,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func askForNewBeatNameAndSave(senderButtonTitle: BeatButtonLabel) {
-        print(senderButtonTitle)
+    func askForNewBeatNameAndSave(senderButtonTitle: BeatEditViewButtonLabel) {
         let alert = UIAlertController(title: "Save beat",
                                       message: "Please enter new beat name:",
                                       preferredStyle: .alert)
@@ -214,10 +203,8 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
             }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
                 if senderButtonTitle == .back {
-                    print("111")
                     self.dismiss(animated: true, completion: nil)
                 } else if senderButtonTitle == .beats {
-                    print("222")
                     self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
                 }
             }
@@ -261,7 +248,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         }
     }
 
-    func askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: BeatButtonLabel) {
+    func askIfUserWantToSaveCurrentlyEditedBeat(callerButtonTitle: BeatEditViewButtonLabel) {
         let alert = UIAlertController(title: "Save beat",
                                       message: "Do you want to save current beat?",
                                       preferredStyle: .alert)
@@ -336,7 +323,7 @@ extension BeatEditViewController: CollectionViewDelegateHorizontalGridLayout {
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                numberOfRowsForSection section: Int) -> Int {
-        return self.numberOfRows
+        return 16
     }
 
 }
@@ -376,10 +363,4 @@ extension BeatEditViewController: UICollectionViewDataSource {
         return view
     }
 
-}
-
-enum BeatButtonLabel {
-    case back
-    case beats
-    case save
 }

@@ -21,10 +21,6 @@ class Metronome: Synchronizable {
     var metronomeIsRunning: Bool = false
     weak var delegate: MetronomeDelegate?
 
-    override init() {
-        super.init()
-    }
-
     override func playSynchronized() {
         if metronomeIsRunning {
             delegate?.metronomeClickAndFlash(beatIndex: beatIndex)
@@ -41,7 +37,6 @@ class Metronome: Synchronizable {
     }
 
     override func firstBeatAction() {
-        print("first beat action in metronome")
         beatIndex = 0
     }
 
