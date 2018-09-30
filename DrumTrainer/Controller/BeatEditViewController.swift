@@ -157,10 +157,8 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     }
 
     func saveCurrentBeat() {
-        DispatchQueue.main.async {
-            BeatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
-            self.showAlertWithMessageSaved()
-        }
+        BeatNotesSaver.save(beatNotes: ExamplePlayer.exampleBeatNotes)
+        self.showAlertWithMessageSaved()
     }
 
     func showAlertWithMessageSaved() {

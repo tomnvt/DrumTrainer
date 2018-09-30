@@ -21,6 +21,14 @@ class SampleLibrary {
                                         Sample("AudioFiles/lo_tom", "_F1.wav"),
                                         Sample("AudioFiles/mid_tom", "_B1.wav"),
                                         Sample("AudioFiles/hi_tom", "_D2.wav"),
-                                        Sample("AudioFiles/clap", "_D#1.wav")]
+                                        Sample("AudioFiles/clap", "_D#1.wav"),
+                                        Sample("AudioFiles/chill_guitar01", "_E2.wav"),
+                                        Sample("AudioFiles/chill_guitar02", "_F2.wav"),
+                                        Sample("AudioFiles/chill_guitar03", "_F#2.wav"),
+                                        Sample("AudioFiles/chill_guitar04", "_G2.wav"),
+                                        Sample("AudioFiles/crash01", "_G#2.wav"),
+                                        Sample("AudioFiles/chill_guitar05", "_A2.wav"),
+                                        Sample("AudioFiles/chill_guitar06", "_A#2.wav"),
+                                        Sample("AudioFiles/chill_guitar07", "_B2.wav")]
 
 }

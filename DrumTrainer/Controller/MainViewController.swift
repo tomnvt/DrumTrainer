@@ -45,15 +45,15 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
 
         metronome.delegate = self
         examplePlayer.delegate = self
-        trainer.trainerDelegate = self
+        trainer.delegate = self
 
         appendAllDrumPadsIntoDrumPadsArray()
-        globalClock.runGlobalCLock()
         setDefaultBeatIfNotSelected()
         setDefaultBpmValueIfNotSet()
         setDefaultMetronomeVolumeIfNotSet()
-        setBpmSliderBySavedValue()
+        setBpmAndBpmSliderBySavedValue()
         setVolumeSliderSavedValue()
+        globalClock.runGlobalCLock()
     }
 
     func appendAllDrumPadsIntoDrumPadsArray() {
@@ -98,11 +98,13 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
         volumeSlider.setValue(currentMetronomeVolumeValue, animated: false)
     }
 
-    func setBpmSliderBySavedValue() {
-        bpmSlider.setValue(Float(defaults.integer(forKey: "bpmValue")), animated: false)
+    func setBpmAndBpmSliderBySavedValue() {
+        let savedBpmValue = Float(defaults.integer(forKey: "bpmValue"))
+        globalClock.bpmValue = Int(savedBpmValue)
+        bpmSlider.setValue(savedBpmValue, animated: false)
     }
 
-    @IBAction func buttonPressed(_ sender: UIButton) {
+    @IBAction func drumPadTapped(_ sender: UIButton) {
         audioPlayer.playDrumSample(note: sender.tag)
         sender.blackToYellowBlink()
         trainer.recordNoteIfTrainingModeIsOn(drumPadIndex: sender.tag)

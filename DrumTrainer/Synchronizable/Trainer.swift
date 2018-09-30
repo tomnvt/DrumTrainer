@@ -14,7 +14,7 @@ class Trainer: Synchronizable {
     static var trainingBarCount: Int = 1
     var recorder = Recorder()
     var currentRoundScore: Int = 0
-    weak var trainerDelegate: TrainerDelegate?
+    weak var delegate: TrainerDelegate?
 
     func turnTrainingModeOnOrOff() {
         Trainer.trainingModeIsOn = !Trainer.trainingModeIsOn
@@ -92,7 +92,7 @@ class Trainer: Synchronizable {
             if Trainer.trainingBarCount != 1 && Trainer.trainingModeIsOn {
                 currentRoundScore = Int(compareRecordedAndExampleNotes())
                 if currentRoundScore < 0 { currentRoundScore = 0 }
-                trainerDelegate?.showCurrentRoundResult(score: currentRoundScore)
+                delegate?.showCurrentRoundResult(score: currentRoundScore)
                 recorder.resetRecord()
             }
         }

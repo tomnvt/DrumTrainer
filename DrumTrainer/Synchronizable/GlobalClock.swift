@@ -19,13 +19,13 @@ class GlobalClock {
     static var staticEightNoteIndex: Int = 0
 
     func runGlobalCLock() {
-        timer = Repeater.every(.seconds(calculateEighthIntervalPerSecond())) { _ in
+        timer = Repeater.every(.seconds(calculateEighthNoteIntervalPerSecond())) { _ in
             self.eighthBeatNotification()
         }
         timer?.start()
     }
 
-    func calculateEighthIntervalPerSecond() -> Double {
+    func calculateEighthNoteIntervalPerSecond() -> Double {
         return (1/(Double(bpmValue)/60.0))/8
     }
 

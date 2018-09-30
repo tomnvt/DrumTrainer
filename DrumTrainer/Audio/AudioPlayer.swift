@@ -14,10 +14,11 @@ class AudioPlayer {
     private let metronomeSampler: Sampler
     private let audioMixer = AKMixer()
     private var metronomeIndex = 0
-    private let midiNotes = [36, 38, 42, 46, 47,
-                             41, 50, 39, 37, 60,
-                             61, 62, 63, 64, 65,
-                             66, 67, 68, 69, 70]
+    private let midiNotes = [36, 38, 42, 46,
+                             47, 41, 50, 39,
+                             52, 53, 54, 55,
+                             56, 57, 58, 59,
+                             60, 61]
 
     init() {
         let samplerFactory = SamplerFactory()
@@ -44,9 +45,9 @@ class AudioPlayer {
 
     public func playMetronomeSample(beatIndex: Int) {
         if beatIndex == 0 {
-            playSample(sampler: metronomeSampler, note: 9)
+            playSample(sampler: metronomeSampler, note: 16)
         } else {
-            playSample(sampler: metronomeSampler, note: 10)
+            playSample(sampler: metronomeSampler, note: 17)
         }
     }
 
@@ -56,11 +57,23 @@ class AudioPlayer {
 
     public func playSample(sampler: AKAppleSampler, note: Int) {
         let midiNoteNumber = midiNotes[note] - 12
-        if note == 42 { stopSample(sampler: drumSampler, note: 46) }
+        if midiNoteNumber == 30 { stopSample(sampler: drumSampler, note: 34) }
         do {
             try sampler.play(noteNumber: MIDINoteNumber(midiNoteNumber))
         } catch {
             print("Error while playing note \(String(note)) in sampler: \(String(describing: sampler.self))" )
+        }
+        let stoppingMidiNotes = [40, 41, 42, 43, 45, 46, 47]
+        stopOtherNotes(midiNoteNumber: midiNoteNumber, stoppingMidiNotes: stoppingMidiNotes)
+    }
+
+    func stopOtherNotes(midiNoteNumber: Int, stoppingMidiNotes: [Int]) {
+        var mutableStoppingMidiNote = stoppingMidiNotes
+        if mutableStoppingMidiNote.contains(midiNoteNumber) {
+            mutableStoppingMidiNote.remove(at: mutableStoppingMidiNote.firstIndex(of: midiNoteNumber) ?? 40)
+            for note in mutableStoppingMidiNote {
+                stopSample(sampler: drumSampler, note: note)
+            }
         }
     }
 
