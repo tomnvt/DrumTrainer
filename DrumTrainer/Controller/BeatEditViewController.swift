@@ -18,7 +18,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
     var notes: [[Int]] = []
 
-    let notesListPointers: [[Int]] = {
+    let collectionViewIndexesForBeatNotes: [[Int]] = {
         var array: [[Int]] = []
         let firstDrumPadNotesIndices = [0, 16, 32, 48, 64, 80, 96, 112]
         for index in 0...15 {
@@ -52,10 +52,6 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     @objc func animateLoopProgress() {
         let sectionIndex = animationIndexCounter.sectionIndex
-
-        print("Section index in beat edit: \(sectionIndex)")
-        print("Section eight note index: \(animationIndexCounter.sectionEightNoteIndex)")
-
         for index in 0...15 {
             let noteIndex = animationIndexCounter.sectionEightNoteIndex
             let currentCell = collectionView.cellForItem(at: IndexPath
@@ -69,14 +65,14 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
     func selectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
         let indexPathSection = currentSection
-        let indexPathRow = notesListPointers[currentDrumPad][currentNote]
+        let indexPathRow = collectionViewIndexesForBeatNotes[currentDrumPad][currentNote]
         let indexPathToCell = IndexPath.init(row: indexPathRow, section: indexPathSection)
         collectionView.selectItem(at: indexPathToCell, animated: false, scrollPosition: .left)
     }
 
     func deselectPlayingCell(_ currentSection: Int, _ currentDrumPad: Int, _ currentNote: Int) {
         let indexPathSection = currentSection
-        let indexPathRow = notesListPointers[currentDrumPad][currentNote]
+        let indexPathRow = collectionViewIndexesForBeatNotes[currentDrumPad][currentNote]
         let indexPathToCell = IndexPath.init(row: indexPathRow, section: indexPathSection)
         collectionView.deselectItem(at: indexPathToCell, animated: false)
     }
@@ -109,10 +105,10 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
     func changeNoteForCell(indexPath: IndexPath) {
         var drumPadIndex = 0
         var drumPadNoteIndex = 0
-        for index in 0..<notesListPointers.count {
-            if notesListPointers[index].contains(indexPath.row) {
+        for index in 0..<collectionViewIndexesForBeatNotes.count {
+            if collectionViewIndexesForBeatNotes[index].contains(indexPath.row) {
                 drumPadIndex = index
-                if let noteIndex = notesListPointers[index].index(of: indexPath.row) {
+                if let noteIndex = collectionViewIndexesForBeatNotes[index].index(of: indexPath.row) {
                     drumPadNoteIndex = noteIndex
                 }
                 break

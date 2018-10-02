@@ -119,8 +119,12 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     }
 
     @IBAction func bpmSliderChanged(_ sender: UISlider) {
+        bpmValueLabel.text = String(Int(sender.value))
         globalClock.changeBpmValue(toBPM: sender.value)
         defaults.set(Int(sender.value), forKey: "bpmValue")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+            self.bpmValueLabel.text = "BPM"
+        })
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {

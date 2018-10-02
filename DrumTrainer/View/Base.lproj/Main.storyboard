@@ -609,7 +609,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-0R-mwi">
-                                <rect key="frame" x="0.0" y="24" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="32" width="375" height="587"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="dI2-lK-Ex6" customClass="CollectionViewHorizontalGridLayout" customModule="CollectionViewGridLayout"/>
                                 <cells/>
@@ -667,7 +667,7 @@
                             <constraint firstItem="xJs-y4-hwi" firstAttribute="top" secondItem="VvB-gA-kH4" secondAttribute="bottom" id="Otz-jA-zh2"/>
                             <constraint firstItem="F8f-0R-mwi" firstAttribute="trailing" secondItem="Is0-fu-T4V" secondAttribute="trailing" id="Xhy-Ck-uD2"/>
                             <constraint firstItem="F8f-0R-mwi" firstAttribute="leading" secondItem="Is0-fu-T4V" secondAttribute="leading" id="cFH-XW-6Te"/>
-                            <constraint firstItem="F8f-0R-mwi" firstAttribute="top" secondItem="KoB-Ft-qtD" secondAttribute="top" constant="24" id="dpe-ZN-UOl"/>
+                            <constraint firstItem="F8f-0R-mwi" firstAttribute="top" secondItem="KoB-Ft-qtD" secondAttribute="top" constant="32" id="dpe-ZN-UOl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Is0-fu-T4V"/>
                     </view>
@@ -709,7 +709,7 @@
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="BHy-ZV-LHQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="BHy-ZV-LHQ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BHy-ZV-LHQ" id="yx7-WJ-Fag">
