@@ -19,6 +19,7 @@
 		E35FC4762148601D0092018F /* SelectBeatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FC4752148601D0092018F /* SelectBeatTableViewController.swift */; };
 		E35FF84F20F9DB4C00B10658 /* UIView+@IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */; };
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
+		E36104B521655F4300932FE2 /* BeatNotesDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36104B421655F4300932FE2 /* BeatNotesDeleter.swift */; };
 		E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3622C9D212874390053F190 /* AudioPlayer.swift */; };
 		E36D628A214C38CC00E33221 /* EmptyExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */; };
 		E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F010E2109145900ACEB59 /* GlobalClock.swift */; };
@@ -70,6 +71,7 @@
 		E35FC4752148601D0092018F /* SelectBeatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBeatTableViewController.swift; sourceTree = "<group>"; };
 		E35FF84E20F9DB4C00B10658 /* UIView+@IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+@IBInspectable.swift"; sourceTree = "<group>"; };
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
+		E36104B421655F4300932FE2 /* BeatNotesDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatNotesDeleter.swift; sourceTree = "<group>"; };
 		E3622C9D212874390053F190 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExampleBeat.swift; sourceTree = "<group>"; };
 		E36F010E2109145900ACEB59 /* GlobalClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClock.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				E319CC4B2141CDB200E1FF52 /* BeatNotesLoader.swift */,
 				E38356FA2145C0280001582F /* BeatNotesSaver.swift */,
 				E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */,
+				E36104B421655F4300932FE2 /* BeatNotesDeleter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -371,6 +375,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -451,6 +456,7 @@
 				E394A4B520F3D146002F2183 /* Metronome.swift in Sources */,
 				E3AA5DF920E194DD0095856A /* AppDelegate.swift in Sources */,
 				E319CC4A2141A49C00E1FF52 /* SimpleHouseExampleBeat.swift in Sources */,
+				E36104B521655F4300932FE2 /* BeatNotesDeleter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

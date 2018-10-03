@@ -12,6 +12,7 @@ PODS:
     - Realm (= 3.10.0)
   - Repeat (0.5.7)
   - SwiftLint (0.27.0)
+  - SwipeCellKit (2.5.0)
 
 DEPENDENCIES:
   - AudioKit
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RealmSwift
   - Repeat
   - SwiftLint
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - RealmSwift
     - Repeat
     - SwiftLint
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   AudioKit: 79c2b23cd00beb656938aa0b81b614391f17eaa3
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
   Repeat: 73c5ee602aed8f3c7bf1aa12d4cd0d3dc3edea0a
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  SwipeCellKit: d8f2617538ce3021cb0a11d1b93856a06a2f2e20
 
-PODFILE CHECKSUM: 2fb39408b378e48f2d771c201cce133328fb1241
+PODFILE CHECKSUM: bf6df488987d713ffc539d07d70e530c2a36e2b5
 
 COCOAPODS: 1.5.3

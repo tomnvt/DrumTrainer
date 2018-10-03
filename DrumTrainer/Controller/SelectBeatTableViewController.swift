@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
-class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SwipeTableViewCellDelegate {
 
     @IBOutlet weak var beatsTableView: UITableView!
 
@@ -21,6 +22,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        beatsTableView.register(SwipeTableViewCell.self, forCellReuseIdentifier: "Cell")
         beatsTableView.dataSource = self
         beatsTableView.delegate = self
         getBeatsNames()
@@ -70,9 +72,10 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SwipeTableViewCell
         cell.textLabel?.text = savedBeatsNames[indexPath.row]
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        cell.delegate = self
         if cell.isSelected {
             cell.textLabel?.font = .boldSystemFont(ofSize: 15)
         }
@@ -90,6 +93,27 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         beatsTableView.cellForRow(at: indexPath)?.textLabel?.font = .boldSystemFont(ofSize: 15)
+    }
+
+    // TODO: Make deletion safe for BeatEditView
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath,
+                   for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        let deleteAction = SwipeAction(style: .destructive,
+                                       title: "Delete") { action, indexPath in
+                                        BeatNotesDeleter.deleteExampleBeat(name: self.savedBeatsNames[indexPath.row])
+                                        self.savedBeatsNames.remove(at: indexPath.row)
+        }
+        return [deleteAction]
+    }
+
+    func tableView(_ tableView: UITableView,
+                   editActionsOptionsForRowAt indexPath: IndexPath,
+                   for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .destructive
+        return options
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {

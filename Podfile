@@ -11,5 +11,6 @@ pod 'SwiftLint'
 pod 'RealmSwift'
 pod 'CollectionViewGridLayout'
 pod 'Repeat'
+pod 'SwipeCellKit'
 
 end
