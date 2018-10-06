@@ -14,19 +14,15 @@ class Synchronizable {
     var currentBeatIndex: Int = 0
     var eighthNoteIndex = 0
 
-    let globalClockBeat = Notification.Name(rawValue: "globalClockBeat")
-    let globalClockBar = Notification.Name(rawValue: "globalClockBar")
-    let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
-
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(playSynchronized),
-                                               name: globalClockBeat, object: nil)
+                                               name: .GlobalClockBeat, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setBeatIndexToZero),
-                                               name: globalClockBar, object: nil)
+                                               name: .GlobalClockBar, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(synchronizeWithGlobalClock),
-                                               name: globalClockBeat, object: nil)
+                                               name: .GlobalClockBeat, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(increaseEighthNoteIndex),
-                                               name: globalClockEighthNote, object: nil)
+                                               name: .GlobalClockEighthNote, object: nil)
     }
 
     @objc func playSynchronized() {}

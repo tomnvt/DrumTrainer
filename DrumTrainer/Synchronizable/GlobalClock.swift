@@ -37,12 +37,10 @@ class GlobalClock {
 
     func eighthBeatNotification() {
         DispatchQueue.main.async {
-            let notificationName = Notification.Name(rawValue: "eighthNote")
-            NotificationCenter.default.post(name: notificationName, object: nil)
+            NotificationCenter.default.post(name: .GlobalClockEighthNote, object: nil)
             switch self.eighthBeatIndex {
             case 0, 8, 16, 24:
-                let name = Notification.Name(rawValue: "globalClockBeat")
-                NotificationCenter.default.post(name: name, object: nil)
+                NotificationCenter.default.post(name: .GlobalClockBeat, object: nil)
                 self.increaseBeatIndex()
             default:
                 break

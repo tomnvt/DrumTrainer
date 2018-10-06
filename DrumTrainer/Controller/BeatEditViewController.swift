@@ -11,11 +11,14 @@ import CollectionViewGridLayout
 
 class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
 
+    private enum Constants {
+        static let BeatsViewSegueIdentifier = "goToBeatsTableView"
+    }
+
     @IBOutlet var collectionView: UICollectionView!
     var editingNewBeat: Bool = false
     var animationIndexCounter = AnimationIndexCounter()
     let defaults = UserDefaults.standard
-    let globalClockEighthNote = Notification.Name(rawValue: "eighthNote")
     var notes: [[Int]] = []
 
     let collectionViewIndexesForBeatNotes: [[Int]] = {
@@ -42,7 +45,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
                                      forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
                                                          withReuseIdentifier: CollectionReusableView.identifier)
         NotificationCenter.default.addObserver(self, selector: #selector(animateLoopProgress),
-                                               name: globalClockEighthNote, object: nil)
+                                               name: .GlobalClockEighthNote, object: nil)
         self.collectionView.allowsMultipleSelection = true
     }
 
@@ -190,7 +193,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
                                                            beatName: newBeatName) {
                     self.showAlertWithMessageSaved()
                     self.editingNewBeat = false
-                    self.defaults.set(newBeatName, forKey: "currentlySelectedBeatName")
+                    self.defaults.set(newBeatName, forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
                 } else {
                     self.showABeatAlreadyExistsAlert(beatName: newBeatName, senderButtonTitle: senderButtonTitle)
                 }
@@ -199,7 +202,7 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
                 if senderButtonTitle == .back {
                     self.dismiss(animated: true, completion: nil)
                 } else if senderButtonTitle == .beats {
-                    self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
+                    self.performSegue(withIdentifier: Constants.BeatsViewSegueIdentifier, sender: self)
                 }
             }
         }
@@ -249,15 +252,15 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         let noAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
             if callerButtonTitle == .back {
                 self.dismiss(animated: true, completion: { () -> Void in
-                    let currentlySelectedBeat = self.defaults.string(forKey: "currentlySelectedBeatName")
+                    let currentlySelectedBeat = self.defaults.string(forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
                     ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
                         exampleBeatName: currentlySelectedBeat ?? "Simple House",
                         beatIndex: 0)
                 })
             } else if callerButtonTitle == .beats {
-                self.performSegue(withIdentifier: "goToBeatsTableView", sender: self)
+                self.performSegue(withIdentifier: Constants.BeatsViewSegueIdentifier, sender: self)
             }
-            let currentlySelectedBeat = self.defaults.string(forKey: "currentlySelectedBeatName")
+            let currentlySelectedBeat = self.defaults.string(forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
             ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
                 exampleBeatName: currentlySelectedBeat ?? "Simple House",
                 beatIndex: 0)

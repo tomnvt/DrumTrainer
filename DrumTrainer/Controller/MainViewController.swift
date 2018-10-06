@@ -76,20 +76,20 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     }
 
     func setDefaultBeatIfNotSelected() {
-        if defaults.string(forKey: "currentlySelectedBeatName") == nil {
-            defaults.set("Simple House", forKey: "currentlySelectedBeatName")
+        if defaults.string(forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue) == nil {
+            defaults.set("Simple House", forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
         }
     }
 
     func setDefaultBpmValueIfNotSet() {
-        if defaults.integer(forKey: "bpmValue") == 0 {
-            defaults.set(120, forKey: "bpmValue")
+        if defaults.integer(forKey: UserDefaultsKeys.bpmValue.rawValue) == 0 {
+            defaults.set(120, forKey: UserDefaultsKeys.bpmValue.rawValue)
         }
     }
 
     func setDefaultMetronomeVolumeIfNotSet() {
-        if defaults.float(forKey: "metronomeVolume") == 0 {
-            defaults.set(100, forKey: "metronomeVolume")
+        if defaults.float(forKey: UserDefaultsKeys.metronomeVolume.rawValue) == 0 {
+            defaults.set(100, forKey: UserDefaultsKeys.metronomeVolume.rawValue)
         }
     }
 
@@ -99,7 +99,7 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     }
 
     func setBpmAndBpmSliderBySavedValue() {
-        let savedBpmValue = Float(defaults.integer(forKey: "bpmValue"))
+        let savedBpmValue = Float(defaults.integer(forKey: UserDefaultsKeys.bpmValue.rawValue))
         globalClock.bpmValue = Int(savedBpmValue)
         bpmSlider.setValue(savedBpmValue, animated: false)
     }

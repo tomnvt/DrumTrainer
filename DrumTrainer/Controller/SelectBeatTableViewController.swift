@@ -12,6 +12,10 @@ import SwipeCellKit
 
 class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SwipeTableViewCellDelegate {
 
+    private enum Constants {
+        static let CellIdentifier = "Cell"
+    }
+
     @IBOutlet weak var beatsTableView: UITableView!
 
     let realm = try! Realm()
@@ -22,7 +26,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        beatsTableView.register(SwipeTableViewCell.self, forCellReuseIdentifier: "Cell")
+        beatsTableView.register(SwipeTableViewCell.self, forCellReuseIdentifier: Constants.CellIdentifier)
         beatsTableView.dataSource = self
         beatsTableView.delegate = self
         getBeatsNames()
@@ -72,7 +76,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SwipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifier, for: indexPath) as! SwipeTableViewCell
         cell.textLabel?.text = savedBeatsNames[indexPath.row]
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         cell.delegate = self
@@ -89,7 +93,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader
             .getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row], beatIndex: 0)
-        defaults.set(savedBeatsNames[indexPath.row], forKey: "currentlySelectedBeatName")
+        defaults.set(savedBeatsNames[indexPath.row], forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         beatsTableView.cellForRow(at: indexPath)?.textLabel?.font = .boldSystemFont(ofSize: 15)
@@ -101,7 +105,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
                    for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         let deleteAction = SwipeAction(style: .destructive,
-                                       title: "Delete") { action, indexPath in
+                                       title: "Delete") { _, indexPath in
                                         BeatNotesDeleter.deleteExampleBeat(name: self.savedBeatsNames[indexPath.row])
                                         self.savedBeatsNames.remove(at: indexPath.row)
         }
@@ -119,7 +123,8 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     @IBAction func backButtonPressed(_ sender: UIButton) {
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: indexOfOrinallySelectedBeat,
                                                                      beatIndex: 0)
-        defaults.set(savedBeatsNames[indexOfOrinallySelectedBeat], forKey: "currentlySelectedBeatName")
+        defaults.set(savedBeatsNames[indexOfOrinallySelectedBeat],
+                     forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
         self.dismiss(animated: true, completion: nil)
     }
 

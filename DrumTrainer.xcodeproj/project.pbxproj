@@ -21,6 +21,8 @@
 		E35FF85120F9DC3800B10658 /* UIView+Blink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FF85020F9DC3800B10658 /* UIView+Blink.swift */; };
 		E36104B521655F4300932FE2 /* BeatNotesDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36104B421655F4300932FE2 /* BeatNotesDeleter.swift */; };
 		E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3622C9D212874390053F190 /* AudioPlayer.swift */; };
+		E3628BA9216791CB00D3EFBB /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3628BA8216791CB00D3EFBB /* NotificationExtension.swift */; };
+		E3628BAB2167B15D00D3EFBB /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3628BAA2167B15D00D3EFBB /* UserDefaultsKeys.swift */; };
 		E36D628A214C38CC00E33221 /* EmptyExampleBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */; };
 		E36F010F2109145900ACEB59 /* GlobalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F010E2109145900ACEB59 /* GlobalClock.swift */; };
 		E37484D9215B8BA8002B273C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E37484D8215B8BA8002B273C /* .swiftlint.yml */; };
@@ -73,6 +75,8 @@
 		E35FF85020F9DC3800B10658 /* UIView+Blink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blink.swift"; sourceTree = "<group>"; };
 		E36104B421655F4300932FE2 /* BeatNotesDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatNotesDeleter.swift; sourceTree = "<group>"; };
 		E3622C9D212874390053F190 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		E3628BA8216791CB00D3EFBB /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		E3628BAA2167B15D00D3EFBB /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		E36D6289214C38CC00E33221 /* EmptyExampleBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExampleBeat.swift; sourceTree = "<group>"; };
 		E36F010E2109145900ACEB59 /* GlobalClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClock.swift; sourceTree = "<group>"; };
 		E37484D8215B8BA8002B273C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			children = (
 				E334029A2160BFB2005C8F5E /* BeatEditViewButtonLabel.swift */,
 				E3BCDDF9213C22A000063B5D /* SampleType.swift */,
+				E3628BAA2167B15D00D3EFBB /* UserDefaultsKeys.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				E35FF85020F9DC3800B10658 /* UIView+Blink.swift */,
 				E37D20F620FE573600796084 /* UIColor+HexColor.swift */,
 				E325AE7420FE7D7E002D5F35 /* UIView+Border.swift */,
+				E3628BA8216791CB00D3EFBB /* NotificationExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				E325AE7520FE7D7E002D5F35 /* UIView+Border.swift in Sources */,
 				E3307969211CF76600CCD037 /* ExampleBeatNotes.swift in Sources */,
 				E351E6BE213AA42600B4CF53 /* Sampler.swift in Sources */,
+				E3628BA9216791CB00D3EFBB /* NotificationExtension.swift in Sources */,
 				E3622C9E212874390053F190 /* AudioPlayer.swift in Sources */,
 				E3FD46BE21440E6F006CC917 /* BeatEditViewController.swift in Sources */,
 				E393E7AF213997E100D10CAE /* SampleLibrary.swift in Sources */,
@@ -447,6 +454,7 @@
 				E38F419A215EB2480001DCCF /* Trainer.swift in Sources */,
 				E32B4A1F213DB75D009F3089 /* IBDesignable.swift in Sources */,
 				E38A338B210492C100309084 /* ExamplePlayer.swift in Sources */,
+				E3628BAB2167B15D00D3EFBB /* UserDefaultsKeys.swift in Sources */,
 				E38F419C215F4B0E0001DCCF /* Recorder.swift in Sources */,
 				E37D20F720FE573600796084 /* UIColor+HexColor.swift in Sources */,
 				E334029B2160BFB2005C8F5E /* BeatEditViewButtonLabel.swift in Sources */,
