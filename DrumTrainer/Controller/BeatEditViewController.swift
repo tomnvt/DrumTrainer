@@ -252,7 +252,8 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
         let noAction = UIAlertAction(title: "No", style: .cancel, handler: { _ in
             if callerButtonTitle == .back {
                 self.dismiss(animated: true, completion: { () -> Void in
-                    let currentlySelectedBeat = self.defaults.string(forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
+                    let currentlySelectedBeat = self.defaults.string(forKey:
+                        UserDefaultsKeys.currentlySelectedBeatName.rawValue)
                     ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
                         exampleBeatName: currentlySelectedBeat ?? "Simple House",
                         beatIndex: 0)
@@ -260,7 +261,8 @@ class BeatEditViewController: UIViewController, EmptyBeatCreatorDelegate {
             } else if callerButtonTitle == .beats {
                 self.performSegue(withIdentifier: Constants.BeatsViewSegueIdentifier, sender: self)
             }
-            let currentlySelectedBeat = self.defaults.string(forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
+            let currentlySelectedBeat = self.defaults.string(forKey:
+                UserDefaultsKeys.currentlySelectedBeatName.rawValue)
             ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(
                 exampleBeatName: currentlySelectedBeat ?? "Simple House",
                 beatIndex: 0)

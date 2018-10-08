@@ -94,7 +94,8 @@ class MainViewController: UIViewController, MetronomeDelegate, ExamplePlayerDele
     }
 
     func setVolumeSliderSavedValue() {
-        let currentMetronomeVolumeValue = defaults.float(forKey: "metronomeVolume")
+        let currentMetronomeVolumeValue =
+            defaults.float(forKey: UserDefaultsKeys.metronomeVolume.rawValue)
         volumeSlider.setValue(currentMetronomeVolumeValue, animated: false)
     }
 

@@ -10,7 +10,8 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 
-class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SwipeTableViewCellDelegate {
+class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+    SwipeTableViewCellDelegate {
 
     private enum Constants {
         static let CellIdentifier = "Cell"
@@ -103,6 +104,7 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath,
                    for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard indexPath.row > 1 else { return nil }
         guard orientation == .right else { return nil }
         let deleteAction = SwipeAction(style: .destructive,
                                        title: "Delete") { _, indexPath in
