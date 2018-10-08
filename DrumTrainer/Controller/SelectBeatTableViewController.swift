@@ -23,7 +23,8 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     var savedBeatsNames: [String] = []
     weak var delegate: EmptyBeatCreatorDelegate?
     let defaults = UserDefaults.standard
-    var indexOfOrinallySelectedBeat: Int = 0
+    var indexOfOrinallySelectedBeatIndex: Int = 0
+    var currentlySelectedBeatIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +33,19 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
         beatsTableView.delegate = self
         getBeatsNames()
         getIndexOfOrinallySelectedBeat()
-        selectCellForBeat(withBeatIndex: indexOfOrinallySelectedBeat)
+        selectCellForCurrentlySelectedBeat(beatIndex: indexOfOrinallySelectedBeatIndex)
     }
 
     func getIndexOfOrinallySelectedBeat() {
-        indexOfOrinallySelectedBeat = BeatNotesLoader.getIndexOfCurrentlySelectedBeat()
+        indexOfOrinallySelectedBeatIndex = BeatNotesLoader.getIndexOfCurrentlySelectedBeat()
     }
 
-    func selectCellForBeat(withBeatIndex: Int) {
-        beatsTableView.selectRow(at: IndexPath.init(row: withBeatIndex,
+    func selectCellForCurrentlySelectedBeat(beatIndex: Int) {
+        beatsTableView.selectRow(at: IndexPath.init(row: beatIndex,
                                                     section: 0),
                                                     animated: true,
                                                     scrollPosition: .middle)
+        currentlySelectedBeatIndex = beatIndex
     }
 
     func getBeatsNames() {
@@ -92,9 +94,11 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentlySelectedBeatIndex = indexPath.row
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader
-            .getNotesFor(exampleBeatName: savedBeatsNames[indexPath.row], beatIndex: 0)
-        defaults.set(savedBeatsNames[indexPath.row], forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
+            .getNotesFor(exampleBeatName: savedBeatsNames[currentlySelectedBeatIndex], beatIndex: 0)
+        defaults.set(savedBeatsNames[currentlySelectedBeatIndex],
+                     forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         beatsTableView.cellForRow(at: indexPath)?.textLabel?.font = .boldSystemFont(ofSize: 15)
@@ -110,6 +114,12 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
                                        title: "Delete") { _, indexPath in
                                         BeatNotesDeleter.deleteExampleBeat(name: self.savedBeatsNames[indexPath.row])
                                         self.savedBeatsNames.remove(at: indexPath.row)
+                                        if indexPath.row == self.currentlySelectedBeatIndex {
+                                            self.selectCellForCurrentlySelectedBeat(beatIndex: 0)
+                                            self.indexOfOrinallySelectedBeatIndex = 0
+                                            self.defaults.setValue("Simple House",
+                                                                   forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
+                                        }
         }
         return [deleteAction]
     }
@@ -123,9 +133,9 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: indexOfOrinallySelectedBeat,
+        ExamplePlayer.exampleBeatNotes = BeatNotesLoader.getNotesFor(exampleIndex: indexOfOrinallySelectedBeatIndex,
                                                                      beatIndex: 0)
-        defaults.set(savedBeatsNames[indexOfOrinallySelectedBeat],
+        defaults.set(savedBeatsNames[indexOfOrinallySelectedBeatIndex],
                      forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
         self.dismiss(animated: true, completion: nil)
     }
