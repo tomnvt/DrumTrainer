@@ -94,17 +94,15 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentlySelectedBeatIndex = indexPath.row
+        tableView.reloadData()
+        selectCellForCurrentlySelectedBeat(beatIndex: indexPath.row)
+        beatsTableView.cellForRow(at: indexPath)?.textLabel?.font = .boldSystemFont(ofSize: 15)
         ExamplePlayer.exampleBeatNotes = BeatNotesLoader
             .getNotesFor(exampleBeatName: savedBeatsNames[currentlySelectedBeatIndex], beatIndex: 0)
         defaults.set(savedBeatsNames[currentlySelectedBeatIndex],
                      forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
-        tableView.deselectRow(at: indexPath, animated: true)
-        tableView.reloadData()
-        beatsTableView.cellForRow(at: indexPath)?.textLabel?.font = .boldSystemFont(ofSize: 15)
     }
 
-    // TODO: Make deletion safe for BeatEditView
     func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath,
                    for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
@@ -114,14 +112,18 @@ class SelectBeatTableViewController: UIViewController, UITableViewDataSource, UI
                                        title: "Delete") { _, indexPath in
                                         BeatNotesDeleter.deleteExampleBeat(name: self.savedBeatsNames[indexPath.row])
                                         self.savedBeatsNames.remove(at: indexPath.row)
-                                        if indexPath.row == self.currentlySelectedBeatIndex {
-                                            self.selectCellForCurrentlySelectedBeat(beatIndex: 0)
-                                            self.indexOfOrinallySelectedBeatIndex = 0
-                                            self.defaults.setValue("Simple House",
-                                                                   forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
-                                        }
+                                        self.selectSimpleHouseBeatIfUserDeletesCurrenlySelectedBeat(indexPathRow:
+                                            indexPath.row)
         }
         return [deleteAction]
+    }
+
+    func selectSimpleHouseBeatIfUserDeletesCurrenlySelectedBeat(indexPathRow: Int) {
+        if indexPathRow == self.currentlySelectedBeatIndex {
+            self.selectCellForCurrentlySelectedBeat(beatIndex: 0)
+            self.indexOfOrinallySelectedBeatIndex = 0
+            self.defaults.setValue("Simple House", forKey: UserDefaultsKeys.currentlySelectedBeatName.rawValue)
+        }
     }
 
     func tableView(_ tableView: UITableView,
